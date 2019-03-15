@@ -1,0 +1,72 @@
+.reportPage {
+  background: #fff;
+  padding: 20px;
+  min-height: 100vh;
+  table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+  }
+  th {
+    background: #1b2133;
+    color: #fff;
+    font-weight: 700;
+  }
+  th:nth-child(1){
+    width: 40px;
+    border-right: 1px #fff solid; 
+  }
+  th:nth-child(2){
+    width: 200px;
+    border-right: 1px #fff solid;
+  }
+  th:nth-child(3){
+    width: 230px;
+    border-right: 1px #fff solid;
+  }
+  th:nth-child(4){
+    width: 100px;
+    border-right: 1px #fff solid;
+  }
+  th:nth-child(5){
+    width: 90px;
+    border-right: 1px #fff solid;
+  }
+  th:nth-child(6){
+    width: 35%;
+  }
+
+  
+  table, td {
+    border: 1px solid #222;
+  }
+  th, td {
+    padding: 8px
+  }
+  td {
+    font-size: 13px;
+  }
+  tr:nth-child(even){background-color: #f2f2f2;}
+}
+
+.loader-six .text{
+  position: relative;
+  color: rgba(0, 0, 0, .3);
+  font-size: 3em
+}
+
+.loader-six .text:before {
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  max-width: 7em;
+  white-space: nowrap;
+  color: #1b2133;
+  animation: loading-text 30s linear infinite;
+}
+@keyframes loading-text {
+  0% {
+      max-width: 0;
+  }
+}

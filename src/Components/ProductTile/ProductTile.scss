@@ -1,0 +1,38 @@
+.productTile {
+  display: flex;
+  flex-direction: column; 
+  border-top: 6px solid #f28c14;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0px 40px 20px -40px rgb(133, 133, 133);
+  background: #ffffff;
+  .productInfo {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  span {
+    display: block;
+  }
+
+  .cost {
+    font-size: 1.6rem;
+    padding-top: 0.8em;
+    &::before {
+      font-family: Arial, Helvetica, sans-serif;
+      content: '₹';
+      display: inline-block;
+      padding-right: 5px;
+    }
+  }
+  img {
+    max-width: 100%;
+    display: block;
+    transform: scale(0.8);
+    transition:  all 0.5s ease;
+    flex: 1;
+    &:hover {
+      transform: scale(1)
+    }
+  }
+}

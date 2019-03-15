@@ -1,0 +1,29 @@
+.FullPageLoaderOverlay{
+    background: rgba(0, 0, 0, 0.6);
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    z-index: 999999;
+    .loader {
+        color: #f28c14;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: #14060b;
+        padding: 10px 30px 20px;
+        text-align: center;
+        svg {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            display: inline-block;
+        }
+    }
+}

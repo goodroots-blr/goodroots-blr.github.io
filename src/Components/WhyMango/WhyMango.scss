@@ -1,0 +1,39 @@
+.WhyMango {
+  padding: 50px 0 50px;
+  h1 {
+    margin-bottom: 20px;
+  }
+  .WhyMango-content {
+    color: #666;
+    font-size: 14px;
+    padding-top: 30px;
+    strong {
+      font-size: 16px;
+      color: #343a40;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li{
+        list-style: none;
+        padding-bottom: 5px;
+      }
+      li:before{
+        margin-right: 10px;
+        content: '';
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAB2AAAAdgB+lymcgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANxSURBVFiF5ZdNbFRVFMd/586bCkxpatSmrWjQju1rJxJDCTamnRkCLHBrSDQGUIz4GTUSV7UJiCFxhWnigpiwJC4gxJCQIpDpp9bYxgQomdGuIOJHunPaOnTeOy7mzfBmWqetfXXjWd37P/fe/y/n3Xvfe/B/CU3Fojrctq1Sl//E/Kr9EGH9FrCI1NqyY3KhmLPW3fzytgjh3ADQjJGk3xzArKu5Imz860tgO/A1czXpyjGrfgSaan0YY15A3S6M2eI5zYHcQhjEabwmuwbzADrU9inQi+pRMN8heoaFcFL23Px91QA6Hq0jZ50EfQ3YUGXobyinQOYR7QdOSyLzpgd0FTTCrJuU56dzsMJHoKlYlFzoR9B3ljEHaET4DNF+hEHcpnd9ubMgXURCHxSFZQF0NPY4Jj8MPLkS2PLJtBL+taHUNzLqtXp1rKVhWQCditXg5C8ATas2L0QzDqdKve70z8AcsBnHOrQsADP5jyjs4LXEfh3tiAGIoCh3AFAOVwXQoZbHgN41mgMIrnvY15vxWraO2K1VKmC9AWwMAABU9/l6uVLLJbkkgCoCvBqIeSFsHY/WFZe/L7vPLV2BsY4OoDlAAOGesb1m7X1VWpYGcJ2eAM09M1M8jptLmvLEP+wBjQcO4Ki3n3SLT61fGkAleAA0qyNPPwjU+dVFAN6ZfTRwfyO/4CzYFaqzuAKOuz9wc5jHaboF+kyFfrsMQKdiNaBH1gHgSuEVrTvLVGW6vAIz+T7+/b1fJfQ0ACK7y2TR70vfA5pq7cZIiuA/034gnuli2I6BXi/LhLCNz/zSOpg7GHlLBBdxX6zITUp3JmN0uH07RgbwXxBBhXBcetKTOtEZRuVgRfYTAIO6nwORwM2RLySeOQHA7J8vAf4LaIx45mIBoDwRVPQTT78HoBOdYaDPl8viWq+IFF5KBuVcgMazIC9LIvO+CG5Byb4NEvXyLqKvy66p6eIEwyPWx6DHgPk1mo8QCj0rifTZoqBDT7UDJ0vmcETiP33ln+Q7hrFGJP8hwiGggZXHdYQT9GTOF8taWG9rPfLAOEIb8AfIAUmkv6mcvOi/QFNJC7m7F2E3SBfQDtQCNcAscBe4g8o1hIuSSN9YvMbWesyGAdAdiJzhntXn/xmpCrDW0InOTcxlj4JmMeHz0j11u9r4vwHIpRmGxwnwEwAAAABJRU5ErkJggg==");
+        background-size: 90%;
+        background-repeat: no-repeat;
+     }
+    }
+  }
+  // .WhyMango-content {
+  //   background: red; //url("./../../resources/images/WhyMango//WhyMango.jpg") no-repeat 0px 0px;
+  //   background-size: cover;
+  //   background-attachment: fixed;
+  //   height: 400px;
+  // }
+}

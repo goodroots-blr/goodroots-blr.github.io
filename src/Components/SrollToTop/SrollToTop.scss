@@ -1,0 +1,28 @@
+.srollToTop {
+  z-index: 99999;
+  position: fixed;
+  bottom: 20px;
+  right: -100px;
+  appearance: none;
+  border: none;
+  background: rgba($color: #000000, $alpha: 0.7);
+  // border-radius: 50%;
+  // padding: 15px;
+  padding: 10px 10px 5px;
+  cursor: pointer;
+  transition: right linear 0.25s;
+  img {
+    @media (max-width: 767px) {
+      max-width: 20px;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background: #000;
+  }
+  &.active {
+    right: 20px;
+  }
+}

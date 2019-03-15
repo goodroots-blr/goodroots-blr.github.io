@@ -1,0 +1,120 @@
+.navigation {
+  display: flex;
+  .prebook {
+    margin-left: 20px;
+    margin-top: -7px;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  .socialIcons {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    width: 100%;
+    height: 100vh;
+    transition: transform .5s ease-in-out;
+    transform: translateX(-100vw);
+    // background-color: rgba($color: #000000, $alpha: 0.5);
+    &.mobile-navigation {
+      transform: translateX(0px)
+    }
+    .socialIcons {
+      display: block;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    // width: 100%;  to add pre-book btn
+    @media (max-width: 767px) {
+      flex-direction: column;
+      width: 200px;
+      height: 100vh;
+      background: #fff;
+    }
+    li{
+      list-style: none;
+    }
+  }
+  ul.parentmenu {
+    >li {
+      position: relative;
+      margin-left: 20px;
+      // padding: 25px 0;
+      // padding: 27px 0 23px;
+      padding: 25px 0 20px;
+      @media (max-width: 767px) {
+        padding: 10px 0;
+        margin-right: 20px;
+        &::after {
+          display: none;
+        }
+      }
+      border-bottom: 2px transparent solid;  
+      &::after {
+        content: "";
+        width: 100%;
+        display: inline-block;
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        border-radius: 10px;
+        border: 2px transparent solid;
+        transition: background .5s ease-in-out
+      }
+      &:hover {
+        > .childMenu {
+          max-height: 500px;
+          opacity: 1;
+        }      
+      }
+      &:hover {
+        &::after {
+          border-color: #f28c14;  
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+      }
+      a {
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .childMenu {
+    top: 70px;
+    left: -20px;
+    background: #fff;
+    flex-direction: column;
+    width: 200px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    max-height: 0;
+    opacity: 0;
+    position: absolute;
+    transition: opacity max-height .5s ease;
+    padding: 10px 20px;
+    @media (max-width: 767px) {
+      max-height: none;
+      position: static;
+      opacity: 1;
+      width: auto;
+      padding-bottom: 0px;
+      height: auto;
+    }
+    a {
+      padding-bottom: 8px;
+      display: block;
+      font-size: 14px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
