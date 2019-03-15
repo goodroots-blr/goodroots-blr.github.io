@@ -10,7 +10,7 @@ const WhyMango = props => {
         <Element name="whyMango" className="WhyMango">
             <div className="container">
                 <h1 className="main-title">
-                    <strong>Why</strong> Mango
+                    <strong>Why </strong> GoodRoots
                     </h1>
                 <div className="WhyMango-content">
                     <ul>

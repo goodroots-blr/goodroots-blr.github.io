@@ -5,7 +5,7 @@ export default {
     img: img,
     alt: "who we are",
     title: () => <><strong>Who</strong> we are</>,
-    subTitle: "welcome to our organic fruit - we serve all types of seasonal fruits",
+    subTitle: "welcome to GoodRoots - we serve Alphonso mango fruits",
     paragraph: `We are Second generation mango growers with farm in a 
     small town near bellary. Our mission is to bring back the real 
     taste of naturally ripened Alphonso mango to mango lovers.`,
