@@ -4,6 +4,17 @@ footer {
   color: #fff;
   padding: 30px 0;
   text-align: center;
+
+  .map {
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    display: inline-block;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   img {
     display: block;
     max-width: 100%;

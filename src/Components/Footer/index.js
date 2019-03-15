@@ -20,12 +20,18 @@ const Footer = props => {
                             <p className="line">{data.address.line2}</p>
                             <p className="line">{data.address.line3}</p>
                             <p className="line">{data.address.line4}</p>
+                            <p className="line">{data.address.line5}</p>
                             <p className="line">{data.address.contactNumber}</p>
                             <p className="line">{data.address.email}</p>
                             <SocialIcons />
                         </div>
                         <div className="right__content">
                             <img src={data.img} alt={data.alt} />
+                            <a className="map"
+                                target="_blank"
+                                href="https://goo.gl/maps/KpiWkomEV7U2">
+                                « Open in Google Maps »
+                            </a>
                         </div>
                     </div>
                 </div>

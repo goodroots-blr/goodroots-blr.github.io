@@ -6,11 +6,15 @@ export default {
     alt: "our address",
     title: () => <><strong>Our</strong> Address</>,
     address: {
-        line1: "Marriott Hotel, Whitefield, Bangalore",
-        line2: "8th Road, Plot No 75",
-        line3: "EPIP Area, Whitefield,",
-        line4: "Bengaluru 560066",
-        contactNumber: "+91 8424873789",
-        email: "email@email.com",
+        line1: "Syscom Seatings LLP",
+        line2: "Office Furniture Store",
+        line3: "#81, 1st Main Road, 6th Cross Road,",
+        line4: "Sampangi Rama Nagar,",
+        line5: "Bengaluru 560027",
+        contactNumber: "+91 9740762969",
+        email: "goodroots.blr@gmail.com",
+        mapLink: "https://goo.gl/maps/KpiWkomEV7U2"
     }
 };
+ 
+
