@@ -5,14 +5,14 @@ import img3 from "./../images/Certificates/img3.png";
 export default {
     title: `<strong>Our</strong> Certificates`,
     logos: [
-        {
-            src: img1,
-            alt: "img1"
-        },
-        {
-            src: img2,
-            alt: "img2"
-        },
+        // {
+        //     src: img1,
+        //     alt: "img1"
+        // },
+        // {
+        //     src: img2,
+        //     alt: "img2"
+        // },
         {
             src: img3,
             alt: "img3"

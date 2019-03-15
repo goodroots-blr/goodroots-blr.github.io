@@ -114,7 +114,7 @@ class UserForm extends Component {
                         <option value="1 dozen">1 dozen</option>
                         <option value="2 dozen">2 dozen</option>
                         <option value="3 dozen">3 dozen</option>
-                        <option value="5 dozen">5 dozen</option>
+                        {/* <option value="5 dozen">5 dozen</option> */}
                     </select>
                 </div>
                 <div className="form-group">

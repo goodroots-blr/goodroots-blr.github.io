@@ -24,10 +24,11 @@ export default [
     img: img4,
     title: "3 dozen",
     cost: "3000.00"
-  },
-  {
-    img: img5,
-    title: "5 dozen",
-    cost: "5000.00"
   }
+  // ,
+  // {
+  //   img: img5,
+  //   title: "5 dozen",
+  //   cost: "5000.00"
+  // }
 ];
