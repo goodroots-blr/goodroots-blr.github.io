@@ -39,9 +39,11 @@ header {
           justify-content: space-between;
           width: 100%;
         }
-        span {
+        a {
           display: inline-block;
+          color: #fff;
           padding-right: 10px;
+          text-decoration: none;
           &:last-child {
             padding-right: 0px;
           }

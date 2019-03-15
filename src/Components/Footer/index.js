@@ -21,8 +21,12 @@ const Footer = props => {
                             <p className="line">{data.address.line3}</p>
                             <p className="line">{data.address.line4}</p>
                             <p className="line">{data.address.line5}</p>
-                            <p className="line">{data.address.contactNumber}</p>
-                            <p className="line">{data.address.email}</p>
+                            <a href={`mailto:${data.address.email}?Subject=Hello%20Goodroots`}>
+                                {data.address.email}
+                            </a>
+                            <a href={`tel:${data.address.contactNumber}`}>
+                                {data.address.contactNumber}
+                            </a>                            
                             <SocialIcons />
                         </div>
                         <div className="right__content">

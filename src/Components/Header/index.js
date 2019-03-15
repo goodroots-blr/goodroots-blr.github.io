@@ -41,8 +41,12 @@ const Header = props => {
                 <div className="container">
                     <div className="subheader-content">
                         <div className="top-contact">
-                            <span> <i className={`icon-envelop`} /> {data.address.email}</span>
-                            <span> <i className={`icon-mobile`} /> {data.address.contactNumber}</span>
+                            <a href={`mailto:${data.address.email}?Subject=Hello%20Goodroots`}>
+                                <i className={`icon-envelop`} /> {data.address.email}
+                            </a>
+                            <a href={`tel:${data.address.contactNumber}`}>
+                                <i className={`icon-mobile`} /> {data.address.contactNumber}
+                            </a>
                         </div>
                         <SocialIcons />
                     </div>
