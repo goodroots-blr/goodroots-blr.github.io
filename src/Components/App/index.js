@@ -7,8 +7,8 @@ const App = props => {
     return (
         <Router>
             <div>
-                <Route path="/mango" exact component={Home} />
-                <Route path="/mango/report" exact component={Report} />
+                <Route path="/" exact component={Home} />
+                <Route path="/report" exact component={Report} />
             </div>
         </Router>
     );
