@@ -23,4 +23,4 @@ cp ./index.html 404.html
 today=`date '+%Y_%m_%d__%H_%M_%S'`;
 git add .
 git commit -am "Deployed at $today"
-git push origin gh-pages
+git push origin master
