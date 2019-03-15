@@ -15,19 +15,19 @@ export default
         alt: "Our farm image 1"
       },
       {
-        img: img1,
+        img: img2,
         alt: "Our farm image 2"
       },
       {
-        img: img1,
+        img: img3,
         alt: "Our farm image 3"
       },
       {
-        img: img1,
+        img: img4,
         alt: "Our farm image 4"
       },
       {
-        img: img1,
+        img: img5,
         alt: "Our farm image 5"
       }
     ]
