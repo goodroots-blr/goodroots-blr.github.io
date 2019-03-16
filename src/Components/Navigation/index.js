@@ -25,7 +25,7 @@ const navigationData = [
                 url: "ourFarm",
             },
             {
-                label: "Why Mango",
+                label: "Why GoodRoots",
                 url: "whyMango"
             }
         ]

@@ -21,7 +21,7 @@ const Footer = props => {
                             <p className="line">{data.address.line3}</p>
                             <p className="line">{data.address.line4}</p>
                             <p className="line">{data.address.line5}</p>
-                            <a href={`mailto:${data.address.email}?Subject=Hello%20Goodroots`}>
+                            <a href={`mailto:${data.address.email}?Subject=Hello%20GoodRoots`}>
                                 {data.address.email}
                             </a>
                             <a href={`tel:${data.address.contactNumber}`}>

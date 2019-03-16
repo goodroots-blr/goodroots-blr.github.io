@@ -41,7 +41,7 @@ const Header = props => {
                 <div className="container">
                     <div className="subheader-content">
                         <div className="top-contact">
-                            <a href={`mailto:${data.address.email}?Subject=Hello%20Goodroots`}>
+                            <a href={`mailto:${data.address.email}?Subject=Hello%20GoodRoots`}>
                                 <i className={`icon-envelop`} /> {data.address.email}
                             </a>
                             <a href={`tel:${data.address.contactNumber}`}>
