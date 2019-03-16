@@ -29,6 +29,17 @@
       }
     }
 
+    &.button-hero {
+      background: #f28c14;
+      border: 2px transparent solid;
+      color: #fff;
+      &:hover {
+        color: #fff;
+        background-color: transparent;
+        border: 2px #f28c14 solid;
+      }
+    }
+
     &:focus {
       outline: none;
     }

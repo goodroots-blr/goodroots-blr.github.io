@@ -1,7 +1,10 @@
 import {
   Element,
+  Link,
+  Events,
 } from "react-scroll";
 import React, { useReducer, useEffect, useRef } from "react";
+import Button from './../Button'
 import slides from "./../../resources/data/HeroSlider";
 import useProgress from "./useProgress";
 
@@ -21,7 +24,8 @@ function Slides(props) {
   return <ul {...props} />;
 }
 
-function Slide({ isCurrent, takeFocus, image, id, title, children }) {
+function Slide({ isCurrent, takeFocus, image, id, title, children, action }) {
+
   let ref = useRef();
 
   useEffect(
@@ -45,6 +49,19 @@ function Slide({ isCurrent, takeFocus, image, id, title, children }) {
       <div className="SlideContent">
         <h2 id={id} dangerouslySetInnerHTML={{ __html: title }} />
         <p dangerouslySetInnerHTML={{ __html: children }} />
+        {
+          action && (
+            <Link
+              to={action.scrollTo}
+              spy={true}
+              offset={-100}
+              smooth={true}
+              duration={500}
+            >
+              <Button title={action.text} type="hero" />
+            </Link>
+          )
+        }
       </div>
     </li>
   );
@@ -144,9 +161,10 @@ function HeroSlider() {
             id={`image-${index}`}
             image={image.img}
             title={image.title}
+            action={image.action}
+            children={image.content}
             isCurrent={index === state.currentIndex}
             takeFocus={state.takeFocus}
-            children={image.content}
           />
         ))}
       </Slides>

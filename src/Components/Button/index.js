@@ -14,7 +14,10 @@ const Button = props => {
 };
 
 Button.defaultProps = {
-    type: "primary"
+    type: "primary",
+    onClick: () => {
+        
+    }
 }
 
 export default Button;
