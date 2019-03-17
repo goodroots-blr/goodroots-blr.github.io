@@ -23,9 +23,9 @@ const WhoWeAre = props => {
                         <p>
                             {WhoWeAreData.paragraph1}
                         </p>
-                        <p>
+                        {/* <p>
                             {WhoWeAreData.paragraph2}
-                        </p>
+                        </p> */}
                         {WhoWeAreData.listItems && <ul>
                             {
                                 WhoWeAreData.listItems.map((item) => {

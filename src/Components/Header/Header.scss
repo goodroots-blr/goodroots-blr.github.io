@@ -25,6 +25,7 @@ header {
   .subheader {
     // background: #222;
     background: #1b2133;
+    // background: #34416a;
     height: 30px;
     .subheader-content {
       width: 460px;
@@ -72,12 +73,13 @@ header {
     display: inline-block;
     img {
       display: block;
-      // max-width: 200px;
-      max-width: 100px;
-      position: absolute;
-      top:0;
+      max-width: 200px;
+      // max-width: 100px;
+      // position: absolute;
+      // top:0;
       @media (max-width: 767px) {
-        max-width: 60px;
+        // max-width: 60px;
+        max-width: 150px;
         position: absolute;
         left: 50%;
         top: 71%;
