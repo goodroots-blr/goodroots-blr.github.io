@@ -27,10 +27,15 @@ header {
     background: #1b2133;
     height: 30px;
     .subheader-content {
+      width: 460px;
+      margin-left: auto;
       color: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
       .top-contact {
         font-size: 14px;
         @media (max-width: 767px) {
@@ -67,9 +72,12 @@ header {
     display: inline-block;
     img {
       display: block;
-      max-width: 200px;
+      // max-width: 200px;
+      max-width: 100px;
+      position: absolute;
+      top:0;
       @media (max-width: 767px) {
-        max-width: 130px;
+        max-width: 60px;
         position: absolute;
         left: 50%;
         top: 71%;
