@@ -3,6 +3,7 @@ import {
     Element,
 } from "react-scroll";
 
+import data from './../../resources/data/WhyMango';
 import './WhyMango.scss';
 
 const WhyMango = props => {
@@ -10,33 +11,57 @@ const WhyMango = props => {
         <Element name="whyMango" className="WhyMango">
             <div className="container">
                 <h1 className="main-title">
-                    <strong>Why </strong> GoodRoots
-                    </h1>
+                    {data.title()}
+                </h1>
+                <div className={`center-item item center-item-1`}>
+                    <i className={`icon ${data.items3[0].icon}`} />
+                    <div class="item-content">
+                        <strong>{data.items3[0].title}</strong>
+                        <p>{data.items3[0].desc}</p>
+                    </div>
+                </div>
                 <div className="WhyMango-content">
-                    <ul>
-                        <li>
-                            <strong>100% Carbide free </strong>
-we bring these mangoes directly from farms in semi ripened condition hence no ripening process is used</li>
-                        <li>
-                            <strong>Farm Fresh </strong>
-all our mangoes are farm fresh. We bring fresh stock every alternate day maintaining freshness of the fruit
-                            </li>
-                        <li>
-                           <strong>Original Alphonso's </strong>
-the mangoes are original ratnagiri Alphonso’s which are famous worldwide grown in our ratnagiri & devgad farms
-                            </li>
-                        <li>
-                            <strong>Grade 1 Quality </strong>
-we only server export quality mangoes which are grade 1 quality and each fruit is about 250 to 270 gms
-                            </li>
-                        <li><strong>Multiple harvesting</strong> over weeks to ensure naturally ripened fruits
-</li>
-                        <li><strong>Natural ripening method </strong> used at our own packaging centre
-</li>
-                        <li><strong>IIHR</strong> mandated practices for fruits setting, harvesting and ripening</li>
-                        <li><strong>Delivering</strong> from ‘tree to consumer’ in max. 5-7 days
-</li>
+                    <ul className="WhyMango-content-list">
+                        {
+                            data.items1.map((item, i) => {
+                                return (
+                                    <li className={`left-item item item1-${i + 1}`}>
+                                        <div class="item-content">
+                                            <strong>{item.title}</strong>
+                                            <p>{item.desc}</p>
+                                        </div>
+                                        <i className={`icon ${item.icon}`} />
+                                    </li>
+                                )
+                            })
+                        }
                     </ul>
+                    <div className="image-container">
+                        <div className="bgImg"></div>
+                        {/* <img src={data.img.src} alt={data.img.alt} /> */}
+                    </div>
+                    <ul className="WhyMango-content-list">
+                        {
+                            data.items2.map((item, i) => {
+                                return (
+                                    <li className={`right-item item item2-${i + 1}`}>
+                                        <i className={`icon ${item.icon}`} />
+                                        <div class="item-content">
+                                            <strong>{item.title}</strong>
+                                            <p>{item.desc}</p>
+                                        </div>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+                <div className={`center-item item center-item-2`}>
+                    <i className={`icon ${data.items3[0].icon}`} />
+                    <div class="item-content">
+                        <strong>{data.items3[0].title}</strong>
+                        <p>{data.items3[0].desc}</p>
+                    </div>
                 </div>
             </div>
         </Element >
