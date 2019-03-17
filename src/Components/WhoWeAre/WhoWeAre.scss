@@ -4,9 +4,18 @@
   @media (max-width: 767px) {
     padding: 40px 0;
   }
+
+  .right__content {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+  }
   img {
+    position: absolute;
     max-width: 100%;
     display: block;
+    top: -50%;
+    transform: translateY(-19%);
   }
   h2 {
     text-transform: capitalize;
