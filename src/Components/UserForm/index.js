@@ -53,6 +53,8 @@ class UserForm extends Component {
             email: '',
             phone: '',
             address: '',
+            address: '',
+            bulkOrder: false,
             selectedProduct: this.props.selectedProduct || '1 dozen',
             showFullPageLoader: false,
             validation: this.validator.valid()
@@ -70,6 +72,10 @@ class UserForm extends Component {
         });
     }
 
+    bulkOrderInputChange = () => {
+        this.setState({bulkOrder: !this.state.bulkOrder});
+    }
+
     handleFormSubmit = () => {
         const validation = this.validator.validate(this.state);
         this.setState({ validation });
@@ -83,6 +89,7 @@ class UserForm extends Component {
                 email: this.state.email,
                 contactNumber: this.state.phone,
                 address: this.state.address,
+                bulkOrder: this.state.bulkOrder ? "Yes" : "No" 
             }
             WriteInFirebase(data, "customers").then(() => {
                 this.setState({
@@ -164,6 +171,11 @@ class UserForm extends Component {
                         className={`form-control ${validation.phone.isInvalid && 'error'}`} >
                     </textarea>
                     <label className="has-error">{validation.address.message}</label>
+                </div>
+                <div className="checkbox">
+                    <label><input type="checkbox"
+                        onChange={this.bulkOrderInputChange}
+                        value={this.state.bulkOrder} />Do you want bulk order ?</label>
                 </div>
                 <div className="btn-container">
                     <Button title="Save Details" onClick={this.handleFormSubmit} />
