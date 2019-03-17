@@ -29,10 +29,6 @@ the mangoes are original ratnagiri Alphonso’s which are famous worldwide grown
                             <strong>Grade 1 Quality </strong>
 we only server export quality mangoes which are grade 1 quality and each fruit is about 250 to 270 gms
                             </li>
-                        <li><strong>3 Ply packaging </strong>
-we use solid 3 ply packing boxed especially designed for mangoes with vents to keep then fresh during transit</li>
-                        <li><strong>Pan India Delivery </strong>
-we can ship these mangoes almost everywhere in India in 2/4 days of time so that you enjoy best fruit</li>
                         <li><strong>Multiple harvesting</strong> over weeks to ensure naturally ripened fruits
 </li>
                         <li><strong>Natural ripening method </strong> used at our own packaging centre

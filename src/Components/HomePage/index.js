@@ -22,7 +22,7 @@ const HomePage = props => {
                 <WhoWeAre />
                 <OurFarm />
                 <WhyMango />
-                <OurProducts />
+                {/* <OurProducts /> */}
                 <div className="givingBack">
                     <div className="container">
                         <h1 className="main-title">
