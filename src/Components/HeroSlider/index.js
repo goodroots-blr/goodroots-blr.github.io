@@ -15,8 +15,8 @@ const HeroSlider = () => {
     <Element name="heroSlider" className="heroSlider Carousel">
       <Carousel
         useKeyboardArrows
-        // autoPlay
-        // infiniteLoop
+        autoPlay
+        infiniteLoop
         emulateTouch
         stopOnHover={false}
         showStatus={false}

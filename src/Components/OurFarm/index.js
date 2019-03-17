@@ -18,8 +18,8 @@ const OurFarm = () => {
                 </h1>
             </div>
             <Carousel
-            // autoPlay
-            // infiniteLoop 
+            autoPlay
+            infiniteLoop 
             stopOnHover={false}
             showStatus={false}
             showThumbs={false}>

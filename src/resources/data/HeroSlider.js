@@ -28,9 +28,9 @@ export default [
     title: "Gift Happiness <br /> & Sweetness",
     content:
       `A gift like no other. Gift your loved ones this season`,
-    action: {
-      text: "See products",
-      scrollTo: "ourProducts"
-    }
+    // action: {
+    //   text: "See products",
+    //   scrollTo: "ourProducts"
+    // }
   }
 ];
