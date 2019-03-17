@@ -33,6 +33,9 @@ footer {
 
   .line {
     padding-bottom: 3px;
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
     // font-size: 14px;
   }
 }
