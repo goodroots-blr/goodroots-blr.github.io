@@ -18,7 +18,7 @@ const ProductTile = ({ img, title, cost }) => {
             <img src={img} alt={title} />
             <div className="productInfo">
                 <strong className="title">{title}</strong>
-                <span className="cost">{cost}</span>
+                {cost && <span className="cost">{cost}</span>}
                 <Button title="Prebook now" onClick={handleClick} />
                 {toggle && <ProductOverlay title={title} hideMenu={hideMenu} />}
             </div>

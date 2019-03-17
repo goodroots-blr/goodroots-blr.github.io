@@ -13,17 +13,17 @@ export default [
   {
     img: img2,
     title: "1 dozen",
-    cost: "1000.00"
+    // cost: "1000.00"
   },
   {
     img: img3,
     title: "2 dozen",
-    cost: "2000.00"
+    // cost: "2000.00"
   },
   {
     img: img4,
     title: "3 dozen",
-    cost: "3000.00"
+    // cost: "3000.00"
   }
   // ,
   // {

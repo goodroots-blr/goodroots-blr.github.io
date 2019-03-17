@@ -17,16 +17,20 @@ const Footer = props => {
                     <div className="content">
                         <div className="left__content">
                             <p className="line1">{data.address.line1}</p>
-                            <p className="line">{data.address.line2}</p>
+                            {/* <p className="line">{data.address.line2}</p> */}
                             <p className="line">{data.address.line3}</p>
                             <p className="line">{data.address.line4}</p>
                             <p className="line">{data.address.line5}</p>
-                            <a href={`mailto:${data.address.email}?Subject=Hello%20GoodRoots`}>
-                                {data.address.email}
-                            </a>
-                            <a href={`tel:${data.address.contactNumber}`}>
-                                {data.address.contactNumber}
-                            </a>                            
+                            <p className="line">
+                                <a href={`mailto:${data.address.email}?Subject=Hello%20GoodRoots`}>
+                                    {data.address.email}
+                                </a>
+                            </p>
+                            <p className="line">
+                                <a href={`tel:${data.address.contactNumber}`}>
+                                    {data.address.contactNumber}
+                                </a>                            
+                                </p>
                             <SocialIcons />
                         </div>
                         <div className="right__content">

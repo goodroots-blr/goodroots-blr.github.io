@@ -111,11 +111,11 @@ const Navigation = props => {
                         </li>
                     )
                 })}
+                <li className="prebook">
+                    <Button title="Prebook now" type="inverse" onClick={handleClick} />
+                    {toggle && <ProductOverlay hideMenu={hideMenu} />}
+                </li>
             </ul>
-            <div className="prebook">
-                <Button title="Prebook now" type="inverse" onClick={handleClick} />
-                {toggle && <ProductOverlay hideMenu={hideMenu} />}
-            </div>
         </nav>
     );
 };

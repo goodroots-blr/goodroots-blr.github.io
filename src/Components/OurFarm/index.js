@@ -17,7 +17,8 @@ const OurFarm = () => {
                     {data.title()}
                 </h1>
             </div>
-            <Carousel 
+            <Carousel
+            autoPlay
             infiniteLoop 
             stopOnHover={false}
             showStatus={false}

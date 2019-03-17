@@ -1,10 +1,10 @@
 .navigation {
   display: flex;
   .prebook {
-    margin-left: 20px;
-    margin-top: -7px;
+    // margin-left: 20px;
+    margin-top: -30px;
     @media (max-width: 767px) {
-      display: none;
+      margin-top: 0px;
     }
   }
   .socialIcons {
@@ -33,7 +33,7 @@
     // width: 100%;  to add pre-book btn
     @media (max-width: 767px) {
       flex-direction: column;
-      width: 200px;
+      width: 220px;
       height: 100vh;
       background: #fff;
     }
