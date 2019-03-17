@@ -2,9 +2,15 @@
   display: flex;
   .prebook {
     // margin-left: 20px;
-    margin-top: -30px;
+    margin-top: -5px;
+    padding: 0!important;;
     @media (max-width: 767px) {
       margin-top: 0px;
+    }
+    &:hover {
+      &::after {
+        display: none;
+      }
     }
   }
   .socialIcons {
