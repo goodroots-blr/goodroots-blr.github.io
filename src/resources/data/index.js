@@ -4,6 +4,8 @@ import footerData from './Footer';
 import certificatesData from './Certificates';
 import givingBackData from './GivingBack';
 import ourProductsData from './OurProducts';
+import whyMangoData from './WhyMango';
+
 
 export {
     heroSliderData,
@@ -11,5 +13,6 @@ export {
     certificatesData,
     footerData,
     givingBackData,
-    ourProductsData
+    ourProductsData,
+    whyMangoData
 }

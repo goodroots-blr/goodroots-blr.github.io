@@ -1,14 +1,10 @@
 import React from 'react';
-import {
-    Element,
-} from "react-scroll";
-
-import data from './../../resources/data/WhyMango';
+import Scrolling from './../../_UI/Scrolling/Scrolling'
 import './WhyMango.scss';
 
-const WhyMango = props => {
+const WhyMango = ({ data }) => {
     return (
-        <Element name="whyMango" className="WhyMango">
+        <div className="WhyMango">
             <div className="container">
                 <h1 className="main-title">
                     {data.title()}
@@ -25,7 +21,8 @@ const WhyMango = props => {
                         {
                             data.items1.map((item, i) => {
                                 return (
-                                    <li className={`left-item item item1-${i + 1}`}>
+                                    <li key={`item1-${i + 1}`}
+                                        className={`left-item item item1-${i + 1}`}>
                                         <div className="item-content">
                                             <strong>{item.title}</strong>
                                             <p>{item.desc}</p>
@@ -38,15 +35,15 @@ const WhyMango = props => {
                     </ul>
                     <div className="image-container">
                         <div className="bgImg"></div>
-                        {/* <img src={data.img.src} alt={data.img.alt} /> */}
                     </div>
                     <ul className="WhyMango-content-list">
                         {
                             data.items2.map((item, i) => {
                                 return (
-                                    <li className={`right-item item item2-${i + 1}`}>
+                                    <li key={`item2-${i + 1}`} 
+                                        className={`right-item item item2-${i + 1}`}>
                                         <i className={`icon ${item.icon}`} />
-                                        <div class="item-content">
+                                        <div className="item-content">
                                             <strong>{item.title}</strong>
                                             <p>{item.desc}</p>
                                         </div>
@@ -64,8 +61,8 @@ const WhyMango = props => {
                     </div>
                 </div> */}
             </div>
-        </Element >
+        </div>
     );
 };
 
-export default WhyMango;
+export default Scrolling({ scrollId: "whyMango" })(WhyMango);

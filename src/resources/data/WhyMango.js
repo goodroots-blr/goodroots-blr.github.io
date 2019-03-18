@@ -1,12 +1,7 @@
 import React from 'react';
-import img from "./../images/WhyMango/WhyMango-1.png";
 
 export default {
     title: () => <><strong>Why </strong> GoodRoots</>,
-    img: {
-        src: img,
-        alt: 'Why GoodRoots'
-    },
     items1: [
         {
             title: '100% Certified Organic',
@@ -19,10 +14,10 @@ export default {
             icon: 'icon-Farm-fresh'
         },
         {
-            title: 'Original Ratnagiri Alphonso',
-            desc: 'Ratnagiri Alphonsos grown with utmost care and caution to give you the best',
-            icon: 'icon-original-alphonso'
-        },
+            title: 'Naturally Riped',
+            desc: 'All mangoes are riped naturally in hay bales',
+            icon: 'icon-Multiple-Harvesting'
+        }
     ],
     items2: [
         {
@@ -31,9 +26,9 @@ export default {
             icon: 'icon-grade-1-quality'
         },
         {
-            title: 'Naturally Riped',
-            desc: 'All mangoes are riped naturally in hay bales',
-            icon: 'icon-Multiple-Harvesting'
+            title: 'Original Ratnagiri Alphonso',
+            desc: 'Ratnagiri Alphonsos grown with utmost care and caution to give you the best',
+            icon: 'icon-original-alphonso'
         },
         {
             title: 'Certified practice habits',
