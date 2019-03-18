@@ -13,20 +13,20 @@ const WhyMango = props => {
                 <h1 className="main-title">
                     {data.title()}
                 </h1>
-                <div className={`center-item item center-item-1`}>
+                {/* <div className={`center-item item center-item-1`}>
                     <i className={`icon ${data.items3[0].icon}`} />
                     <div class="item-content">
                         <strong>{data.items3[0].title}</strong>
                         <p>{data.items3[0].desc}</p>
                     </div>
-                </div>
+                </div> */}
                 <div className="WhyMango-content">
                     <ul className="WhyMango-content-list">
                         {
                             data.items1.map((item, i) => {
                                 return (
                                     <li className={`left-item item item1-${i + 1}`}>
-                                        <div class="item-content">
+                                        <div className="item-content">
                                             <strong>{item.title}</strong>
                                             <p>{item.desc}</p>
                                         </div>
@@ -56,13 +56,13 @@ const WhyMango = props => {
                         }
                     </ul>
                 </div>
-                <div className={`center-item item center-item-2`}>
+                {/* <div className={`center-item item center-item-2`}>
                     <i className={`icon ${data.items3[0].icon}`} />
                     <div class="item-content">
                         <strong>{data.items3[0].title}</strong>
                         <p>{data.items3[0].desc}</p>
                     </div>
-                </div>
+                </div> */}
             </div>
         </Element >
     );

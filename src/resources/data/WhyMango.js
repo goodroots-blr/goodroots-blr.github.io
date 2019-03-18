@@ -9,35 +9,35 @@ export default {
     },
     items1: [
         {
-            title: '100% Carbide free',
-            desc: 'we bring these mangoes directly from farms in semi ripened condition hence no ripening process is used.',
+            title: '100% Certified Organic',
+            desc: 'The mangoes you consume are guaranteed and certified organic.',
             icon: 'icon-twitter'
         },
         {
-            title: 'Farm Fresh',
-            desc: 'all our mangoes are farm fresh. We bring fresh stock every alternate day maintaining freshness of the fruit',
+            title: 'Fresh from Farm',
+            desc: 'Every Mango you receive is harvested and delivered after order recipt.',
             icon: 'icon-twitter'
         },
         {
-            title: 'Multiple harvesting',
-            desc: ' over weeks to ensure naturally ripened fruits',
+            title: 'Original Ratnagiri Alphonso',
+            desc: 'Ratnagiri Alphonsos grown with utmost care and caution to give you the best',
             icon: 'icon-twitter'
         },
     ],
     items2: [
         {
-            title: 'Original Alphonso\'s',
-            desc: 'the mangoes are original ratnagiri Alphonso’s which are famous worldwide grown in our ratnagiri & devgad farms',
+            title: 'A Grade Quality',
+            desc: 'All mangoes that you receive are the best in size, color and shape.',
             icon: 'icon-twitter'
         },
         {
-            title: 'Grade 1 Quality',
-            desc: 'we only server export quality mangoes which are grade 1 quality and each fruit is about 250 to 270 gms',
+            title: 'Naturally Riped',
+            desc: 'All mangoes are riped naturally in hay bales',
             icon: 'icon-twitter'
         },
         {
-            title: 'IIHR',
-            desc: 'mandated practices for fruits setting, harvesting and ripening',
+            title: 'Certified practice habits',
+            desc: 'IIHR mandated practices for fruits setting, harvesting and ripening',
             icon: 'icon-twitter'
         }
     ],

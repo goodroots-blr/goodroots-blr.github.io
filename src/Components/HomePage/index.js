@@ -38,7 +38,7 @@ const HomePage = props => {
                                 which is run by the bangalore freemason’s society.
                                 </p>
                             </div>
-                            <div className="left__content"></div>
+                            {/* <div className="left__content"></div> */}
                         </div>
                     </div>
                 </div>
