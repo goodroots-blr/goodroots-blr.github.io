@@ -14,10 +14,10 @@ export default {
             icon: 'icon-Farm-fresh'
         },
         {
-            title: 'Naturally Riped',
-            desc: 'All mangoes are riped naturally in hay bales',
-            icon: 'icon-Multiple-Harvesting'
-        }
+            title: 'Original Ratnagiri Alphonso',
+            desc: 'Ratnagiri Alphonsos grown with utmost care and caution to give you the best',
+            icon: 'icon-original-alphonso'
+        },
     ],
     items2: [
         {
@@ -26,9 +26,9 @@ export default {
             icon: 'icon-grade-1-quality'
         },
         {
-            title: 'Original Ratnagiri Alphonso',
-            desc: 'Ratnagiri Alphonsos grown with utmost care and caution to give you the best',
-            icon: 'icon-original-alphonso'
+            title: 'Naturally Riped',
+            desc: 'All mangoes are riped naturally in hay bales',
+            icon: 'icon-Multiple-Harvesting'
         },
         {
             title: 'Certified practice habits',
