@@ -2,6 +2,7 @@ import React from 'react';
 import {
     heroSliderData,
     companyRelatedData,
+    certificatesData,
     footerData
 } from './../../resources/data';
 import HeroSlider from './../../Components/_UI/HeroSlider/HeroSlider';
@@ -13,7 +14,7 @@ import SrollToTop from './../../Components/_UI/SrollToTop/SrollToTop';
 // import OurFarm from './../../Components/_Section/OurFarm';
 // import givinbackImg from './../../resources/images/givinback.jpg';
 // // import OurProducts from './../OurProducts';
-// import Certificates from './../../Components/_Section/Certificates';
+import Certificates from './../../Components/_Section/Certificates/Certificates';
 import Footer from './../../Components/_Section/Footer/Footer';
 import CopyrightFooter from './../../Components/_Section/CopyrightFooter/CopyrightFooter';
 import './HomePage.scss'
@@ -23,7 +24,7 @@ const HomePage = () => {
         <div className="app">
             {/* <Header /> */}
             <HeroSlider slides={heroSliderData} />
-            {/* <main>
+            {/*
                 <AboutUs />
                 <WhoWeAre />
                 <OurFarm />
@@ -50,9 +51,10 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <Certificates />
-            </main>
             */}
+            <main>
+            <Certificates data={certificatesData} />
+            </main>
             <Footer data={footerData} />
             <CopyrightFooter content={footerData.copyrightText()} />
             <SrollToTop />
