@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Element,
   Link,
@@ -6,11 +6,21 @@ import {
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Button from './../Button'
+import ProductOverlay from './../ProductOverlay';
 import slides from "./../../resources/data/HeroSlider";
 
 import './HeroSlider.scss';
 
 const HeroSlider = () => {
+  const [toggle, setToggle] = useState(false);
+  const handleClick = () => {
+    document.body.classList.add('productOverlay--open');
+    setToggle(true);
+  }
+  const hideMenu = () => {
+    setToggle(false);
+    document.body.classList.remove('productOverlay--open');
+  }
   return (
     <Element name="heroSlider" className="heroSlider Carousel">
       <Carousel
@@ -31,7 +41,7 @@ const HeroSlider = () => {
                 <h2 dangerouslySetInnerHTML={{ __html: item.title }} />
                 <p dangerouslySetInnerHTML={{ __html: item.content }} />
                 {
-                  item.action && (
+                  !item.action.isClickable ? (
                     <Link
                       to={item.action.scrollTo}
                       spy={true}
@@ -41,6 +51,11 @@ const HeroSlider = () => {
                     >
                       <Button title={item.action.text} type="hero" />
                     </Link>
+                  ): (
+                    <>
+                    <Button title={item.action.text} type="hero"  onClick={handleClick} />
+                    {toggle && <ProductOverlay hideMenu={hideMenu} />}
+                    </>
                   )
                 }
               </div>
