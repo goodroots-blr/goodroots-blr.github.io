@@ -12,14 +12,13 @@ main {
     }
   }
 }
-
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?6j30r0');
-  src:  url('fonts/icomoon.eot?6j30r0#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?6j30r0') format('truetype'),
-    url('fonts/icomoon.woff?6j30r0') format('woff'),
-    url('fonts/icomoon.svg?6j30r0#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?70t8lt');
+  src:  url('fonts/icomoon.eot?70t8lt#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?70t8lt') format('truetype'),
+    url('fonts/icomoon.woff?70t8lt') format('woff'),
+    url('fonts/icomoon.svg?70t8lt#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -39,28 +38,40 @@ main {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-twitter1:before {
-  content: "\e900";
-  color: #1da1f2;
+.icon--carbide-free:before {
+  content: "\e905";
 }
-.icon-envelop:before {
-  content: "\e945";
+.icon-Farm-fresh:before {
+  content: "\e906";
+}
+.icon-grade-1-quality:before {
+  content: "\e907";
+}
+.icon-IIHR-mandated-practices:before {
+  content: "\e908";
+}
+.icon-Multiple-Harvesting:before {
+  content: "\e909";
+}
+.icon-original-alphonso:before {
+  content: "\e90a";
+}
+
+.icon-instagram:before {
+  content: "\e90b";
 }
 .icon-mobile:before {
-  content: "\e958";
+  content: "\e904";
 }
-.icon-facebook:before {
-  content: "\ea90";
-}
-.icon-facebook2:before {
-  content: "\ea91";
-}
-.icon-instagram:before {
-  content: "\ea92";
+.icon-envelop:before {
+  content: "\e902";
 }
 .icon-twitter:before {
-  content: "\ea96";
+  content: "\e903";
 }
 .icon-youtube:before {
-  content: "\ea9d";
+  content: "\e901";
+}
+.icon-facebook2:before {
+  content: "\e900";
 }
