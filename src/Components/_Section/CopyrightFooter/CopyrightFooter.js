@@ -5,7 +5,7 @@ const CopyrightFooter = props => {
     return (
         <div className="copyrightFooter">
             <div className="container">
-                Copyright @ 2018 GoodRoots LLP Bangalore.
+                {props.content}
             </div>
         </div>
     );

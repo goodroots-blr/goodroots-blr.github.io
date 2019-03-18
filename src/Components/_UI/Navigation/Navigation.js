@@ -4,8 +4,8 @@ import {
     Link,
     Events,
 } from "react-scroll";
-import Button from './../Button';
-import ProductOverlay from './../ProductOverlay';
+import Button from './../Button/Button';
+// import ProductOverlay from './../../_Section/ProductOverlay/ProductOverlay';
 
 const navigationData = [
     {
@@ -113,7 +113,7 @@ const Navigation = props => {
                 })}
                 <li className="prebook">
                     <Button title="Prebook now" type="inverse" onClick={handleClick} />
-                    {toggle && <ProductOverlay hideMenu={hideMenu} />}
+                    {/* {toggle && <ProductOverlay hideMenu={hideMenu} />} */}
                 </li>
             </ul>
         </nav>

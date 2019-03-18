@@ -1,19 +1,17 @@
 import React from 'react';
-import img1 from "./../images/Footer/map.png";
+import map from "./../images/Footer/map.png";
+import data from './CompanyRelated';
 
 export default {
-    img: img1,
-    alt: "our address",
     title: () => <><strong>Our</strong> Address</>,
-    address: {
-        line1: "Good Roots LLP",
-        line3: "#81, 1st Main Road, 6th Cross Road,",
-        line4: "Sampangi Rama Nagar,",
-        line5: "Bengaluru 560027",
-        contactNumber: "+91 9108890950",
-        email: "goodroots.blr@gmail.com",
-        mapLink: "https://goo.gl/maps/KpiWkomEV7U2"
-    }
+    address: data.address,
+    contactNumber: data.contactNumber,
+    email: data.email,
+    img: map,
+    alt: "Our Address",
+    socailIcons : data.socialIcons,
+    mapLink: "https://goo.gl/maps/KpiWkomEV7U2",
+    copyrightText: () => <>Copyright @ 2018 GoodRoots LLP Bangalore</>
 };
  
 

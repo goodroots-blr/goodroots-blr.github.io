@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDom from 'react-dom';
 import UserForm from './../UserForm'
-import Button from './../Button'
+import Button from './../../_UI/Button/Button'
 import './ProductOverlay.scss';
 
 const ProductOverlay = props => {

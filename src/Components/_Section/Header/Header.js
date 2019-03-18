@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Logo from './images/logo.jpg';
-import Navigation from './../Navigation';
-import Hamburger from './../Hamburger';
-import SocialIcons from './../SocialIcons';
-import data from './../../resources/data/Footer'
+import Navigation from './../../_UI/Navigation/Navigation';
+import Hamburger from './../../_UI/Hamburger/Hamburger';
+import SocialIcons from './../../_UI/SocialIcons/SocialIcons';
+import { companyRelatedData } from './../../../resources/data';
 import './Header.scss';
 
 const Header = props => {
@@ -23,7 +23,6 @@ const Header = props => {
     }
 
     useEffect(() => {
-        // toggle ? document.body.classList.add('nav--open') : document.body.classList.remove('nav--open');
         window.addEventListener('resize', onResizeScreen, false);
         window.addEventListener("scroll", onScrollScreen, false);
         return () => {
@@ -41,11 +40,11 @@ const Header = props => {
                 <div className="container">
                     <div className="subheader-content">
                         <div className="top-contact">
-                            <a href={`mailto:${data.address.email}?Subject=Hello%20GoodRoots`}>
-                                <i className={`icon-envelop`} /> {data.address.email}
+                            <a href={`mailto:${companyRelatedData.email}?Subject=Hello%20GoodRoots`}>
+                                <i className={`icon-envelop`} /> {companyRelatedData.email}
                             </a>
-                            <a href={`tel:${data.address.contactNumber}`}>
-                                <i className={`icon-mobile`} /> {data.address.contactNumber}
+                            <a href={`tel:${companyRelatedData.contactNumber}`}>
+                                <i className={`icon-mobile`} /> {companyRelatedData.contactNumber}
                             </a>
                         </div>
                         <SocialIcons />
@@ -57,9 +56,6 @@ const Header = props => {
                 <a href="/">
                     <img className="logo" src={Logo} />
                 </a>
-                {/* <div className="social-icons-mobile mobileOnly">
-                    <SocialIcons />
-                </div> */}
                 <Navigation toggle={toggle} />
             </div>
         </header>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Button from './../Button';
-import { ReadFromFirebase } from './../../Firebase';
-import { downloadAsFile } from './../../resources/helpers'
+import Button from './../../Components/_UI/Button/Button';
+import { ReadFromFirebase } from './../../../Firebase';
+import { downloadAsFile } from './../../../resources/helpers'
 import './ReportPage.scss';
 
 
@@ -24,7 +24,6 @@ class ReportPage extends Component {
         })
     }
     handleClick = () => {
-        // 
         const csv = this.state.data.map(function (d) {
             const order = JSON.parse(JSON.stringify(d, [
                 "name",

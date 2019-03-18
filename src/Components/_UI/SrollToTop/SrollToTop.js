@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SrollToTopImg from './images/SrollToTop.png'
+import SrollToTopImg from './../../../resources/images/SrollToTop/SrollToTop.png';
 import './SrollToTop.scss';
 
 const SrollToTop = props => {

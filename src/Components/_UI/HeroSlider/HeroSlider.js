@@ -5,13 +5,12 @@ import {
 } from "react-scroll";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import Button from './../Button'
-import ProductOverlay from './../ProductOverlay';
-import slides from "./../../resources/data/HeroSlider";
+import Button from './../Button/Button'
+// import ProductOverlay from './../../_Section/ProductOverlay/ProductOverlay';
 
 import './HeroSlider.scss';
 
-const HeroSlider = () => {
+const HeroSlider = ({ slides }) => {
   const [toggle, setToggle] = useState(false);
   const handleClick = () => {
     document.body.classList.add('productOverlay--open');
@@ -51,12 +50,12 @@ const HeroSlider = () => {
                     >
                       <Button title={item.action.text} type="hero" />
                     </Link>
-                  ): (
-                    <>
-                    <Button title={item.action.text} type="hero"  onClick={handleClick} />
-                    {toggle && <ProductOverlay hideMenu={hideMenu} />}
-                    </>
-                  )
+                  ) : (
+                      <>
+                        <Button title={item.action.text} type="hero" onClick={handleClick} />
+                        {/* {toggle && <ProductOverlay hideMenu={hideMenu} />} */}
+                      </>
+                    )
                 }
               </div>
             </div>
