@@ -1,4 +1,8 @@
 export default {
+    aboutUs: `Red soils of Karnataka and firece hot temperature of 
+    Bellary coupled with the help of decades of best organic agricultural 
+    practice - we bring the best of Ratnagiri Alphonso 
+    Mango's to your door step in Namma Bengaluru. Yes you read it right!`,
     address: {
         title: "Good Roots LLP",
         lines: ["#81, 1st Main Road, 6th Cross Road,", "Sampangi Rama Nagar,", "Bengaluru 560027"]

@@ -10,7 +10,7 @@ import {
 import HeroSlider from './../../Components/_UI/HeroSlider/HeroSlider';
 import SrollToTop from './../../Components/_UI/SrollToTop/SrollToTop';
 // import Header from './../../Components/_Section/Header/Header';
-// import AboutUs from './../../Components/_Section/AboutUs';
+import AboutUs from './../../Components/_Section/AboutUs/AboutUs';
 // import WhoWeAre from './../../Components/_Section/WhoWeAre';
 // import WhyMango from './../../Components/_Section/WhyMango';
 // import OurFarm from './../../Components/_Section/OurFarm';
@@ -51,7 +51,6 @@ const HomePage = () => {
             {/* <Header /> */}
             <HeroSlider slides={heroSliderData} />
             {/*
-                <AboutUs />
                 <WhoWeAre />
                 <OurFarm />
                 <WhyMango /> */}
@@ -59,6 +58,7 @@ const HomePage = () => {
             {/* 
             */}
             <main>
+                <AboutUs content={companyRelatedData.aboutUs} />
                 <OurProducts data={ourProductsData} />
                 {renderGivingBack()}
                 <Certificates data={certificatesData} />
