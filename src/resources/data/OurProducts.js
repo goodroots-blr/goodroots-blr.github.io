@@ -8,7 +8,7 @@ import data from './CompanyRelated';
 
 export default {
   "bulkOrderText": () => <>
-    For bulk orders or for regular supply of our mangoes please write to us at
+    For bulk orders or for regular supply of our mangoes please write to us at &nbsp;
     <u>
       {data.email}
     </u>
