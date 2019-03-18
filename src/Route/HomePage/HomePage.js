@@ -7,13 +7,14 @@ import {
     ourProductsData,
     whyMangoData,
     ourFarmData,
+    whoWeAreData,
     footerData
 } from './../../resources/data';
 import HeroSlider from './../../Components/_UI/HeroSlider/HeroSlider';
 import SrollToTop from './../../Components/_UI/SrollToTop/SrollToTop';
 // import Header from './../../Components/_Section/Header/Header';
 import AboutUs from './../../Components/_Section/AboutUs/AboutUs';
-// import WhoWeAre from './../../Components/_Section/WhoWeAre';
+import WhoWeAre from './../../Components/_Section/WhoWeAre/WhoWeAre';
 import WhyMango from './../../Components/_Section/WhyMango/WhyMango';
 import OurFarm from './../../Components/_Section/OurFarm/OurFarm';
 import OurProducts from './../../Components/_Section/OurProducts/OurProducts';
@@ -53,13 +54,13 @@ const HomePage = () => {
             {/* <Header /> */}
             <HeroSlider slides={heroSliderData} />
             {/*
-                <WhoWeAre />
                  */}
             {/*  */}
             {/* 
             */}
             <main>
                 <AboutUs content={companyRelatedData.aboutUs} />
+                <WhoWeAre data={whoWeAreData} />
                 <OurFarm data={ourFarmData}/>
                 <WhyMango data={whyMangoData} />
                 <OurProducts data={ourProductsData} />

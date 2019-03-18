@@ -6,6 +6,7 @@ import givingBackData from './GivingBack';
 import ourProductsData from './OurProducts';
 import whyMangoData from './WhyMango';
 import ourFarmData from './OurFarm';
+import whoWeAreData from './WhoWeAre';
 
 
 export {
@@ -16,5 +17,6 @@ export {
     givingBackData,
     ourProductsData,
     whyMangoData,
-    ourFarmData
+    ourFarmData,
+    whoWeAreData
 }
