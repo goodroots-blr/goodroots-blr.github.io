@@ -1,13 +1,11 @@
 import React from 'react';
 import ProductTile from './../../_UI/ProductTile/ProductTile';
+import Scrolling from './../../_UI/Scrolling/Scrolling'
 import './OurProducts.scss';
-import {
-    Element,
-} from "react-scroll";
 
 const OurProducts = ({data}) => {
     return (
-        <Element name="ourProducts" className="ourProducts">
+        <div className="ourProducts">
             <div className="container">
                 <h1 className="main-title">
                     <strong>Our</strong> products
@@ -21,8 +19,8 @@ const OurProducts = ({data}) => {
                     {data.bulkOrderText()}
                 </p>
             </div>
-        </Element>
+        </div>
     );
 };
 
-export default OurProducts;
+export default Scrolling({ scrollId: "ourProducts" })(OurProducts);
