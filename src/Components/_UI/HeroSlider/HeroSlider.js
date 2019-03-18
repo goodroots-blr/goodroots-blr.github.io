@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import {
-  Element,
-  Link,
-} from "react-scroll";
+import { Link } from "react-scroll";
+import Scrolling from './../../_UI/Scrolling/Scrolling';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Button from './../Button/Button'
@@ -21,7 +19,7 @@ const HeroSlider = ({ slides }) => {
     document.body.classList.remove('productOverlay--open');
   }
   return (
-    <Element name="heroSlider" className="heroSlider Carousel">
+    <div className="heroSlider Carousel">
       <Carousel
         useKeyboardArrows
         autoPlay
@@ -62,8 +60,8 @@ const HeroSlider = ({ slides }) => {
           )
         })}
       </Carousel>
-    </Element>
+    </div>
   );
 }
 
-export default HeroSlider;
+export default Scrolling({ scrollId: "heroSlider" })(HeroSlider);

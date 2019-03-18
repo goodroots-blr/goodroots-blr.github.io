@@ -1,13 +1,11 @@
 import React from 'react';
-import {
-    Element,
-} from "react-scroll";
+import Scrolling from './../../_UI/Scrolling/Scrolling';
 import SocialIcons from './../../_UI/SocialIcons/SocialIcons';
 import './Footer.scss';
 
 const Footer = ({ data }) => {
     return (
-        <Element name="contactus">
+        <div>
             <footer>
                 <div className="container">
                     <h1 className="main-title">
@@ -49,8 +47,8 @@ const Footer = ({ data }) => {
                     </div>
                 </div>
             </footer>
-        </Element>
+        </div>
     );
 };
 
-export default Footer;
+export default Scrolling({ scrollId: "contactus" })(Footer);
