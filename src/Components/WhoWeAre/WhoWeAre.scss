@@ -4,19 +4,29 @@
   @media (max-width: 767px) {
     padding: 40px 0;
   }
-
   .right__content {
-    position: relative;
-    height: 220px;
-    overflow: hidden;
-  }
-  img {
-    position: absolute;
-    max-width: 100%;
-    display: block;
-    top: -50%;
-    transform: translateY(-19%);
-  }
+      img {
+        max-width: 100%;
+      display: block;
+      }
+    }
+
+  // .right__content {
+  //   position: relative;
+  //   height: 260px;
+  //   overflow: hidden;
+  // }
+  // img {
+  //   position: absolute;
+  //   max-width: 100%;
+  //   display: block;
+  //   top: -50%;
+  //   transform: translateY(20%);
+  //   @media (max-width: 768px) {
+  //     transform: translateY(0%);
+  //   }
+  //   // transform: translateY(-19%);
+  // }
   h2 {
     text-transform: capitalize;
     margin-bottom: 20px;

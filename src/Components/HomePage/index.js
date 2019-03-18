@@ -5,7 +5,8 @@ import AboutUs from './../AboutUs';
 import WhoWeAre from './../WhoWeAre';
 import WhyMango from './../WhyMango';
 import OurFarm from './../OurFarm';
-import OurProducts from './../OurProducts';
+import givinbackImg from './../../resources/images/givinback.jpg';
+// import OurProducts from './../OurProducts';
 import Certificates from './../Certificates';
 import SrollToTop from './../SrollToTop';
 import Footer from './../Footer';
@@ -32,13 +33,15 @@ const HomePage = props => {
                         <div className="content">
                             <div className="left__content">
                                 <p>
-                                Feel proud when you buy a mango 
-                                from us because you are helping in contributing to an 
-                                Institution for the Aged  – TARA in Rajarajeshwari Nagar 
-                                which is run by the bangalore freemason’s society.
+                                    Feel proud when you buy a mango
+                                    from us because you are helping in contributing to an
+                                    Institution for the Aged  – TARA in Rajarajeshwari Nagar
+                                    which is run by the bangalore freemason’s society.
                                 </p>
                             </div>
-                            {/* <div className="left__content"></div> */}
+                            <div className="left__content">
+                                <img src={givinbackImg} alt="Giving back to society" />
+                            </div>
                         </div>
                     </div>
                 </div>
