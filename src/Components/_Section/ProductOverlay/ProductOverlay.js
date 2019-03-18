@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDom from 'react-dom';
-import UserForm from './../UserForm'
+import UserForm from './../UserForm/UserForm'
 import Button from './../../_UI/Button/Button'
 import './ProductOverlay.scss';
 

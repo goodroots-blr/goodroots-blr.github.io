@@ -4,6 +4,7 @@ import {
     companyRelatedData,
     certificatesData,
     givingBackData,
+    ourProductsData,
     footerData
 } from './../../resources/data';
 import HeroSlider from './../../Components/_UI/HeroSlider/HeroSlider';
@@ -13,7 +14,7 @@ import SrollToTop from './../../Components/_UI/SrollToTop/SrollToTop';
 // import WhoWeAre from './../../Components/_Section/WhoWeAre';
 // import WhyMango from './../../Components/_Section/WhyMango';
 // import OurFarm from './../../Components/_Section/OurFarm';
-// // import OurProducts from './../OurProducts';
+import OurProducts from './../../Components/_Section/OurProducts/OurProducts';
 import Certificates from './../../Components/_Section/Certificates/Certificates';
 import Footer from './../../Components/_Section/Footer/Footer';
 import CopyrightFooter from './../../Components/_Section/CopyrightFooter/CopyrightFooter';
@@ -54,10 +55,11 @@ const HomePage = () => {
                 <WhoWeAre />
                 <OurFarm />
                 <WhyMango /> */}
-            {/* <OurProducts /> */}
+            {/*  */}
             {/* 
             */}
             <main>
+                <OurProducts data={ourProductsData} />
                 {renderGivingBack()}
                 <Certificates data={certificatesData} />
             </main>

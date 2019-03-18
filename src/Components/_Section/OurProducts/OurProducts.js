@@ -1,13 +1,11 @@
 import React from 'react';
-import ProductTile from './../ProductTile';
-import OurProductsData from './../../resources/data/OurProducts';
+import ProductTile from './../../_UI/ProductTile/ProductTile';
 import './OurProducts.scss';
 import {
     Element,
 } from "react-scroll";
-import data from './../../resources/data/Footer'
 
-const OurProducts = props => {
+const OurProducts = ({data}) => {
     return (
         <Element name="ourProducts" className="ourProducts">
             <div className="container">
@@ -15,12 +13,12 @@ const OurProducts = props => {
                     <strong>Our</strong> products
                 </h1>
                 <div className="products">
-                    {OurProductsData.map((product, i) => (
+                    {data.products.map((product, i) => (
                         <ProductTile key={i} {...product} />
                     ))}
                 </div>
                 <p>
-                    For bulk orders or for regular supply of our mangoes please write to us at <u>{data.address.email}</u>
+                    {data.bulkOrderText()}
                 </p>
             </div>
         </Element>

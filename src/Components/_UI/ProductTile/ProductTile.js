@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Button from './../Button';
-import ProductOverlay from './../ProductOverlay';
+import Button from './../Button/Button';
+// import ProductOverlay from './../../_Section/ProductOverlay/ProductOverlay';
 import './ProductTile.scss';
 
 const ProductTile = ({ img, title, cost }) => {
@@ -20,7 +20,7 @@ const ProductTile = ({ img, title, cost }) => {
                 <strong className="title">{title}</strong>
                 {cost && <span className="cost">{cost}</span>}
                 <Button title="Prebook now" onClick={handleClick} />
-                {toggle && <ProductOverlay title={title} hideMenu={hideMenu} />}
+                {/* {toggle && <ProductOverlay title={title} hideMenu={hideMenu} />} */}
             </div>
         </div>
     );
