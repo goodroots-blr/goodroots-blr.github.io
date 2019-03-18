@@ -1,5 +1,5 @@
 import React from 'react';
-import Scrolling from './../../_UI/Scrolling/Scrolling'
+import Scrolling from './../../_UI/Scrolling/Scrolling';
 import './AboutUs.scss';
 
 const AboutUs = ({content}) => {

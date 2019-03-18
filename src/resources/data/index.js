@@ -5,6 +5,7 @@ import certificatesData from './Certificates';
 import givingBackData from './GivingBack';
 import ourProductsData from './OurProducts';
 import whyMangoData from './WhyMango';
+import ourFarmData from './OurFarm';
 
 
 export {
@@ -14,5 +15,6 @@ export {
     footerData,
     givingBackData,
     ourProductsData,
-    whyMangoData
+    whyMangoData,
+    ourFarmData
 }

@@ -1,17 +1,13 @@
 import React from 'react';
-import {
-    Element,
-} from "react-scroll";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import Counter from './../Counter'
-import data from './../../resources/data/OurFarm';
+import Scrolling from './../../_UI/Scrolling/Scrolling';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './OurFarm.scss';
 
 
-const OurFarm = () => {
+const OurFarm = ({data}) => {
     return (
-        <Element name="ourFarm" className="ourFarm">
+        <div name="ourFarm" className="ourFarm">
             <div className="container">
                 <h1 className="main-title">
                     {data.title()}
@@ -31,8 +27,8 @@ const OurFarm = () => {
                     )
                 })}
             </Carousel>
-        </Element>
+        </div>
     );
 };
 
-export default OurFarm;
+export default Scrolling({ scrollId: "ourFarm" })(OurFarm);
