@@ -12,7 +12,7 @@ import {
 } from './../../resources/data';
 import HeroSlider from './../../Components/_UI/HeroSlider/HeroSlider';
 import SrollToTop from './../../Components/_UI/SrollToTop/SrollToTop';
-// import Header from './../../Components/_Section/Header/Header';
+import Header from './../../Components/_Section/Header/Header';
 import AboutUs from './../../Components/_Section/AboutUs/AboutUs';
 import WhoWeAre from './../../Components/_Section/WhoWeAre/WhoWeAre';
 import WhyMango from './../../Components/_Section/WhyMango/WhyMango';
@@ -27,9 +27,8 @@ const renderGivingBack = () => (
     <div className="givingBack">
         <div className="container">
             <h1 className="main-title">
-                <strong>Giving </strong>
-                back to society
-                        </h1>
+                <strong>Giving </strong> back to society
+            </h1>
             <div className="content">
                 <div className="left__content">
                     {
@@ -51,17 +50,12 @@ const renderGivingBack = () => (
 const HomePage = () => {
     return (
         <div className="app">
-            {/* <Header /> */}
+            <Header data={companyRelatedData} />
             <HeroSlider slides={heroSliderData} />
-            {/*
-                 */}
-            {/*  */}
-            {/* 
-            */}
             <main>
                 <AboutUs content={companyRelatedData.aboutUs} />
                 <WhoWeAre data={whoWeAreData} />
-                <OurFarm data={ourFarmData}/>
+                <OurFarm data={ourFarmData} />
                 <WhyMango data={whyMangoData} />
                 <OurProducts data={ourProductsData} />
                 {renderGivingBack()}

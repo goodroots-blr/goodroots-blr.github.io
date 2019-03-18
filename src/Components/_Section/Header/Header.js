@@ -3,10 +3,9 @@ import Logo from './images/logo.jpg';
 import Navigation from './../../_UI/Navigation/Navigation';
 import Hamburger from './../../_UI/Hamburger/Hamburger';
 import SocialIcons from './../../_UI/SocialIcons/SocialIcons';
-import { companyRelatedData } from './../../../resources/data';
 import './Header.scss';
 
-const Header = props => {
+const Header = ({data}) => {
     const [scroll, setScroll] = useState(0);
     const [toggle, setToggle] = useState(false);
     const handleClick = () => {
@@ -40,14 +39,14 @@ const Header = props => {
                 <div className="container">
                     <div className="subheader-content">
                         <div className="top-contact">
-                            <a href={`mailto:${companyRelatedData.email}?Subject=Hello%20GoodRoots`}>
-                                <i className={`icon-envelop`} /> {companyRelatedData.email}
+                            <a href={`mailto:${data.email}?Subject=Hello%20GoodRoots`}>
+                                <i className={`icon-envelop`} /> {data.email}
                             </a>
-                            <a href={`tel:${companyRelatedData.contactNumber}`}>
-                                <i className={`icon-mobile`} /> {companyRelatedData.contactNumber}
+                            <a href={`tel:${data.contactNumber}`}>
+                                <i className={`icon-mobile`} /> {data.contactNumber}
                             </a>
                         </div>
-                        <SocialIcons />
+                        <SocialIcons icons={data.socialIcons} />
                     </div>
                 </div>
             </div>
