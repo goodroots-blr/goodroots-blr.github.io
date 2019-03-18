@@ -10,6 +10,7 @@ export default {
     img: map,
     alt: "Our Address",
     socailIcons : data.socialIcons,
+    mapText: "« Open in Google Maps »",
     mapLink: "https://goo.gl/maps/KpiWkomEV7U2",
     copyrightText: () => <>Copyright @ 2018 GoodRoots LLP Bangalore</>
 };

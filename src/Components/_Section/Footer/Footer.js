@@ -43,7 +43,7 @@ const Footer = ({ data }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href={data.mapLink}>
-                                « Open in Google Maps »
+                                {data.mapText}
                             </a>
                         </div>
                     </div>
