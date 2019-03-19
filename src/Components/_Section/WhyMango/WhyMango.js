@@ -4,7 +4,7 @@ import './WhyMango.scss';
 
 const WhyMango = ({ data }) => {
     return (
-        <div className="WhyMango">
+        <div className="WhyMango section-top-spacing">
             <div className="container">
                 <h1 className="main-title">
                     {data.title()}

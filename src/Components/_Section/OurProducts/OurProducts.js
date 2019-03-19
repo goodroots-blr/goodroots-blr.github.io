@@ -5,7 +5,7 @@ import './OurProducts.scss';
 
 const OurProducts = ({data}) => {
     return (
-        <div className="ourProducts">
+        <div className="ourProducts section-top-spacing">
             <div className="container">
                 <h1 className="main-title">
                     <strong>Our</strong> products

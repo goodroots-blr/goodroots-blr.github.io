@@ -19,6 +19,7 @@ import WhyMango from './../../Components/_Section/WhyMango/WhyMango';
 import OurFarm from './../../Components/_Section/OurFarm/OurFarm';
 import OurProducts from './../../Components/_Section/OurProducts/OurProducts';
 import Certificates from './../../Components/_Section/Certificates/Certificates';
+import Givingback from './../../Components/_Section/Givingback/Givingback';
 import Footer from './../../Components/_Section/Footer/Footer';
 import CopyrightFooter from './../../Components/_Section/CopyrightFooter/CopyrightFooter';
 import './HomePage.scss'
@@ -58,7 +59,7 @@ const HomePage = () => {
                 <OurFarm data={ourFarmData} />
                 <WhyMango data={whyMangoData} />
                 <OurProducts data={ourProductsData} />
-                {renderGivingBack()}
+                {<Givingback data={givingBackData}/>}
                 <Certificates data={certificatesData} />
             </main>
             <Footer data={footerData} />

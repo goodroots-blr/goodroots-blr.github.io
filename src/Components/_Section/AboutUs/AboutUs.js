@@ -4,7 +4,7 @@ import './AboutUs.scss';
 
 const AboutUs = ({content}) => {
     return (
-        <div className="aboutUs">
+        <div className="aboutUs section-top-spacing">
             <div className="container">
                 {content}
             </div>

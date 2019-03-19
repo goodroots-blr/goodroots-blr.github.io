@@ -4,7 +4,7 @@ import './WhoWeAre.scss';
 
 const WhoWeAre = ({ data }) => {
     return (
-        <div className="whoWeAre">
+        <div className="whoWeAre section-top-spacing">
             <div className="container">
                 <h1 className="main-title">
                     {data.title()}

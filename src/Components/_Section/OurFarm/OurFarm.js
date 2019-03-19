@@ -7,7 +7,7 @@ import './OurFarm.scss';
 
 const OurFarm = ({data}) => {
     return (
-        <div name="ourFarm" className="ourFarm">
+        <div name="ourFarm" className="ourFarm section-top-spacing">
             <div className="container">
                 <h1 className="main-title">
                     {data.title()}

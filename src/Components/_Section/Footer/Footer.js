@@ -5,7 +5,7 @@ import './Footer.scss';
 
 const Footer = ({ data }) => {
     return (
-        <div>
+        <div className="section-top-spacing">
             <footer>
                 <div className="container">
                     <h1 className="main-title">

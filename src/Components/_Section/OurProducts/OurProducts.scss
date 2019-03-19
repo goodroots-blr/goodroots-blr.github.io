@@ -1,14 +1,14 @@
 .ourProducts {
+  // padding: 2.187em 0 2.5em;
+  // @media (min-width: 576px) {
+  //   padding: 3.125em 0 3.75em;
+  // }
   p {
     text-align: center;
     margin-top: 30px;
     font-weight: bold;
   }
-  padding: 2.187em 0 2.5em;
   background: #f9f8f4;
-  @media (min-width: 576px) {
-    padding: 3.125em 0 3.75em;
-  }
   .products {
     margin-top: 2.125em;
     display: flex;

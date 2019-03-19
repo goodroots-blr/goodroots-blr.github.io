@@ -3,7 +3,7 @@ import './Givingback.scss'
 
 const Givingback = ({ data }) => {
     return (
-        <div className="givingBack">
+        <div className="givingBack section-top-spacing">
             <div className="container">
                 <h1 className="main-title">
                     {data.title()}
