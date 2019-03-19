@@ -31,19 +31,19 @@ const navigationData = [
         ]
     },
     {
+        label: "Buy",
+        url: "ourProducts"
+    },
+    {
+        label: "Gift",
+        url: ""
+    },
+    {
         label: "Contact",
         url: "contactus"
     }
 ]
 
-// {
-//     label: "Buy",
-//     url: "ourProducts"
-// },
-// {
-//     label: "Gift",
-//     url: ""
-// }
 
 
 
@@ -111,10 +111,6 @@ const Navigation = props => {
                         </li>
                     )
                 })}
-                <li className="prebook">
-                    <Button title="Prebook now" type="inverse" onClick={handleClick} />
-                    {/* {toggle && <ProductOverlay hideMenu={hideMenu} />} */}
-                </li>
             </ul>
         </nav>
     );
