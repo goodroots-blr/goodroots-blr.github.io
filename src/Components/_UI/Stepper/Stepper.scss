@@ -1,0 +1,23 @@
+.stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 15px;
+  button {
+    border: 2px #f28c14 solid;
+    font-size: inherit;
+    width: 30px;
+    height: 30px;
+    &:hover {
+      background: #f28c14;
+      color: #fff;
+    }
+  }
+  .text {
+    border-top: 2px #f28c14 solid;
+    border-bottom: 2px #f28c14 solid;
+    width: 30px;
+    height: 30px;
+  }
+}

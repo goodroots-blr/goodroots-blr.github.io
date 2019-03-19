@@ -1,26 +1,32 @@
 import React, { useState } from 'react';
 import Button from './../Button/Button';
-// import ProductOverlay from './../../_Section/ProductOverlay/ProductOverlay';
+import Stepper from './../Stepper/Stepper';
 import './ProductTile.scss';
 
 const ProductTile = ({ img, title, cost }) => {
-    const [toggle, setToggle] = useState(false);
-    const handleClick = () => {
-        document.body.classList.add('productOverlay--open');
-        setToggle(true);
+    const [toggle, setToggle] = useState(false)
+    const handleAddToCart = () => {
+        setToggle(true)
     }
-    const hideMenu = () => {
-        setToggle(false);
-        document.body.classList.remove('productOverlay--open');
+
+    const handleCheckout = () => {
+
+    }
+
+    const handleStepper = (count) => {
+        console.log(count);
     }
     return (
         <div className="productTile">
-            <img src={img} alt={title} />
             <div className="productInfo">
+                <img src={img} alt={title} />
                 <strong className="title">{title}</strong>
                 {cost && <span className="cost">{cost}</span>}
-                <Button title="Prebook now" onClick={handleClick} />
-                {/* {toggle && <ProductOverlay title={title} hideMenu={hideMenu} />} */}
+            </div>
+            <div className="productAction">
+                {toggle && <Stepper onStepper={handleStepper} />}
+                {!toggle && <Button title="Add to cart" onClick={handleAddToCart} />}
+                {toggle && <Button title="Checkout now" onClick={handleCheckout} />}
             </div>
         </div>
     );
