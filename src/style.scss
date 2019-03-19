@@ -21,6 +21,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+body * {
+  -webkit-tap-highlight-color: transparent;
+}
+
 ul, p, 
 h1, h2, h3, h4 {
   margin: 0;
@@ -30,11 +34,19 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 }
+
 
 img {
   display: block;
   max-width: 100%;
+}
+
+p {
+  line-height: 1.4em;
 }
 
 .container {
@@ -75,7 +87,6 @@ img {
     position: absolute;
     width: 50px;
     height: 5px;
-    // background-color: #9fc74d;
     background-color: #f28c14;
     border-radius: 8px;
     bottom: 0;
@@ -96,44 +107,20 @@ img {
   @media (min-width: 576px) {
     flex-direction: row;
   }
-  
-  .left__content {
-    width: 100%;
-    margin-bottom: 30px;
-    text-align: left;
-    @media (min-width: 576px) {
-      width: 95%;
-      margin-bottom: 0;
-      margin-right: 2.5%;   
+
+  .col-3 {
+    width: 30.5%; 
+    @media (max-width: 767px) {
+      width: 100%;
     }
   }
-  .right__content {
-    width: 100%;
-    // margin-bottom: 2.5%;
-    @media (min-width: 576px) {
-      width: 95%;
-      margin-bottom: 0;
-      margin-left: 2.5%;   
+
+  .col-9 {
+    width: 66.5%;
+    @media (max-width: 767px) {
+      width: 100%;
     }
   }
-}
-
-p {
-  line-height: 1.4em;
-}
-
-.productOverlay--open {
-  overflow: hidden;
-}
-
-button {
-  &:focus {
-    outline: none;
-  }
-}
-
-body * {
-  -webkit-tap-highlight-color: transparent;
 }
 
 .mobileOnly {

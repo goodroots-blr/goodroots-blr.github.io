@@ -12,7 +12,7 @@ const Footer = ({ data }) => {
                         {data.title()}
                     </h1>
                     <div className="content">
-                        <div className="left__content">
+                        <div className="col-3">
                             <p className="address-title">
                                 {data.address.title}
                             </p>
@@ -35,12 +35,12 @@ const Footer = ({ data }) => {
                             </p>
                             <SocialIcons icons={data.socailIcons} />
                         </div>
-                        <div className="right__content">
-                            <img src={data.img} alt={data.alt} />
-                            <a className="map"
+                        <div className="col-9">
+                            <a className="map-link"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href={data.mapLink}>
+                                <img src={data.img} alt={data.alt} />
                                 {data.mapText}
                             </a>
                         </div>

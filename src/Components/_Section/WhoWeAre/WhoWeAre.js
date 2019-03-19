@@ -10,7 +10,7 @@ const WhoWeAre = ({ data }) => {
                     {data.title()}
                 </h1>
                 <div className="content">
-                    <div className="left__content">
+                    <div className="col-9">
                         <h2>
                             {data.subTitle}
                         </h2>
@@ -34,7 +34,7 @@ const WhoWeAre = ({ data }) => {
                             }
                         </ul>}
                     </div>
-                    <div className="right__content">
+                    <div className="col-3">
                         <img src={data.img} alt={data.alt} />
                     </div>
                 </div>

@@ -1,3 +1,7 @@
+.productOverlay--open {
+    overflow: hidden;
+}
+
 .productOverlay{
     background: rgba(0, 0, 0, 0.6);
     content: '';

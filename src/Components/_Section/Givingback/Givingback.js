@@ -9,10 +9,10 @@ const Givingback = ({ data }) => {
                     {data.title()}
                 </h1>
                 <div className="content">
-                    <div className="left__content">
+                    <div className="col-3">
                         <img src={data.img} alt={data.alt} />
                     </div>
-                    <div className="right__content">
+                    <div className="col-9">
                         {
                             data.paragraphs.map((para, index) => {
                                 return (

@@ -3,17 +3,21 @@ footer {
   background: #222;
   color: #fff;
   padding: 30px 0;
-  text-align: center;
+  // text-align: center;
 
   a{
     color: #fff;
     text-decoration: none;
     display: block;
   }
-  .map {
+  .map-link {
     color: #fff;
-    font-size: 12px;    
-    display: inline-block;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    img {
+      padding-bottom: 10px;
+    }
     &:hover {
       text-decoration: underline;
     }
@@ -29,6 +33,5 @@ footer {
     @media (max-width: 767px) {
       font-size: 14px;
     }
-    // font-size: 14px;
   }
 }
