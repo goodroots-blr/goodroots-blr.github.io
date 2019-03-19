@@ -32,6 +32,11 @@ button {
   cursor: pointer;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -91,6 +96,7 @@ button {
   @media (min-width: 576px) {
     flex-direction: row;
   }
+  
   .left__content {
     width: 100%;
     margin-bottom: 30px;
