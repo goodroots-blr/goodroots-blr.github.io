@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Stepper.scss';
 
-const Stepper = ({onStepper}) => {
+const Stepper = ({ onStepper }) => {
     const [count, setCount] = useState(1)
     const handleClick = (type) => {
-        if(type=="add") {
+        if (type === "add") {
             setCount(count + 1)
             onStepper(count + 1)
         }
-        if(count > 1 && type=="sub") {
+        if (count > 1 && type === "sub") {
             setCount(count - 1)
             onStepper(count - 1)
         }

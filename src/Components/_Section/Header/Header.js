@@ -53,7 +53,7 @@ const Header = ({data}) => {
             <div className="container header-content">
                 <Hamburger toggle={toggle} onClick={handleClick} />
                 <a href="/">
-                    <img className="logo" src={Logo} />
+                    <img className="logo" src={Logo} alt="GoodRoots" />
                 </a>
                 <Navigation toggle={toggle} />
             </div>

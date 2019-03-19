@@ -22,31 +22,7 @@ import Certificates from './../../Components/_Section/Certificates/Certificates'
 import Givingback from './../../Components/_Section/Givingback/Givingback';
 import Footer from './../../Components/_Section/Footer/Footer';
 import CopyrightFooter from './../../Components/_Section/CopyrightFooter/CopyrightFooter';
-import './HomePage.scss'
-
-const renderGivingBack = () => (
-    <div className="givingBack">
-        <div className="container">
-            <h1 className="main-title">
-                <strong>Giving </strong> back to society
-            </h1>
-            <div className="content">
-                <div className="left__content">
-                    {
-                        givingBackData.paragraphs.map((para, index) => {
-                            return (
-                                <p key={index}>{para}</p>
-                            )
-                        })
-                    }
-                </div>
-                <div className="left__content">
-                    <img src={givingBackData.img} alt={givingBackData.alt} />
-                </div>
-            </div>
-        </div>
-    </div>
-)
+import './HomePage.scss';
 
 const HomePage = () => {
     return (
