@@ -1,20 +1,35 @@
 import React, { useState } from 'react';
 import Button from './../Button/Button';
 import Stepper from './../Stepper/Stepper';
+import SessionStorage from './../../../resources/helpers/SessionStorage';
 import './ProductTile.scss';
 
 const ProductTile = ({ img, title, cost }) => {
     const [toggle, setToggle] = useState(false)
     const handleAddToCart = () => {
-        setToggle(true)
+        setToggle(true);
+        const existingProducts = JSON.parse(SessionStorage.get("products")) || [];
+        const currentProduct = {
+            type: title,
+            count: 1
+        }
+        if (existingProducts) {
+            existingProducts.push(currentProduct)
+        }
+        storeData(existingProducts)
     }
 
     const handleCheckout = () => {
 
     }
 
+    const storeData = (existingProducts) => {
+        SessionStorage.set("products", existingProducts);
+    }
+
     const handleStepper = (count) => {
-        console.log(count);
+        const existingProducts = JSON.parse(SessionStorage.get("products"));
+        existingProducts.
     }
     return (
         <div className="productTile">
