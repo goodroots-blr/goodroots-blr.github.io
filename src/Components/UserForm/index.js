@@ -54,6 +54,8 @@ class UserForm extends Component {
             phone: '',
             address: '',
             address: '',
+            alphanso: true,
+            banganapalli: false,
             bulkOrder: false,
             selectedProduct: this.props.selectedProduct || '1 dozen',
             showFullPageLoader: false,
@@ -61,19 +63,41 @@ class UserForm extends Component {
         }
 
         this.submitted = false;
+        this.mangoTypeChange = this.mangoTypeChange.bind(this);
 
     }
 
     handleInputChange = event => {
         event.preventDefault();
-
         this.setState({
             [event.target.name]: event.target.value,
         });
     }
 
+    mangoTypeChange(obj) {
+        if (obj.hasOwnProperty('alphanso')) {
+            this.setState({ alphanso: !obj.alphanso });
+        }
+        if (obj.hasOwnProperty('banganapalli')) {
+            this.setState({ banganapalli: !obj.banganapalli });
+        }
+
+    }
     bulkOrderInputChange = () => {
-        this.setState({bulkOrder: !this.state.bulkOrder});
+        this.setState({ bulkOrder: !this.state.bulkOrder });
+    }
+
+    getTypeOfMango = () => {
+        const { alphanso, banganapalli } = this.state
+        let types = '';
+        if(alphanso && banganapalli) {
+            types = "Alphonso, Banganapalli"
+        } else if(banganapalli) {
+            types = "Banganapalli"
+        } else {
+            types = "Alphonso"
+        }
+        return types;
     }
 
     handleFormSubmit = () => {
@@ -89,8 +113,10 @@ class UserForm extends Component {
                 email: this.state.email,
                 contactNumber: this.state.phone,
                 address: this.state.address,
-                bulkOrder: this.state.bulkOrder ? "Yes" : "No" 
+                bulkOrder: this.state.bulkOrder ? "Yes" : "No",
+                typeOfMango: this.getTypeOfMango()
             }
+
             WriteInFirebase(data, "customers").then(() => {
                 this.setState({
                     showFullPageLoader: false
@@ -110,6 +136,27 @@ class UserForm extends Component {
         return (
             <div className="userForm">
                 <h3>Enter your details</h3>
+                <div className="form-group checkbox-group">
+                    <div className="checkbox">
+                        <label htmlFor="alphanso">
+                            <input type="checkbox"
+                                id="alphanso"
+                                checked={this.state.alphanso}
+                                value={this.state.alphanso}
+                                onChange={() => this.mangoTypeChange({ "alphanso": this.state.alphanso })}
+                            />Alphonso
+                        </label>
+                    </div>
+                    <div className="checkbox">
+                        <label htmlFor="banganapalli">
+                            <input type="checkbox"
+                                id="banganapalli"
+                                onChange={() => this.mangoTypeChange({ "banganapalli": this.state.banganapalli })}
+                                checked={this.state.banganapalli}
+                            />Banganapalli
+                        </label>
+                    </div>
+                </div>
                 <div className="form-group">
                     <label htmlFor="sel1">Select Product:</label>
                     <select className="form-control"

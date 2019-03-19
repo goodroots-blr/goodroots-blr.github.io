@@ -38,7 +38,12 @@
     border-right: 1px #fff solid;
   }
   th:nth-child(7){
+    width: 130px;
+    border-right: 1px #fff solid;
+  }
+  th:nth-child(8) {
     width: 100px;
+    word-break: break-all;
   }
 
   

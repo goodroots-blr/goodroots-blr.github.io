@@ -32,13 +32,14 @@ class ReportPage extends Component {
                 "contactNumber",
                 "selectedProduct",
                 "address",
+                "typeOfMango",
                 "bulkOrder"
             ], 2))
             return JSON.stringify(Object.values(order));
         })
         .join('\n')
         .replace(/(^\[)|(\]$)/mg, '');
-        const header="Name,Email,Contact Number,Selected Product,Address, Bulk Order \n"
+        const header="Name,Email,Contact Number,Selected Product,Address,Types,Bulk Order \n"
         downloadAsFile(header + csv)
     }
     renderTable = () => {
@@ -54,6 +55,7 @@ class ReportPage extends Component {
                             <th>Phone</th>
                             <th>Product</th>
                             <th>Address</th>
+                            <th>Type of Mangos</th>
                             <th>Bulk Order</th>
                         </tr>
                     </thead>
@@ -68,6 +70,7 @@ class ReportPage extends Component {
                                         <td>{d.contactNumber}</td>
                                         <td>{d.selectedProduct}</td>
                                         <td>{d.address}</td>
+                                        <td>{d.typeOfMango}</td>
                                         <td>{d.bulkOrder}</td>
                                     </tr>
                                 )
