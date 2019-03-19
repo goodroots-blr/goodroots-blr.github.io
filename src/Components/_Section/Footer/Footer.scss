@@ -3,12 +3,23 @@ footer {
   background: #222;
   color: #fff;
   padding: 30px 0;
-  // text-align: center;
+  .col-9 {
+    overflow: hidden;
+    img {
+      transition: transform .5s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
 
   a{
     color: #fff;
     text-decoration: none;
     display: block;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   .map-link {
     color: #fff;
@@ -17,9 +28,6 @@ footer {
     text-align: center;
     img {
       padding-bottom: 10px;
-    }
-    &:hover {
-      text-decoration: underline;
     }
   }
   .address-title {

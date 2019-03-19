@@ -41,7 +41,7 @@ const Footer = ({ data }) => {
                                 rel="noopener noreferrer"
                                 href={data.mapLink}>
                                 <img src={data.img} alt={data.alt} />
-                                {data.mapText}
+                                <span className="map-text">{data.mapText}</span>
                             </a>
                         </div>
                     </div>
