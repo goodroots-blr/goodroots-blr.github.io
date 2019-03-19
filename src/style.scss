@@ -33,11 +33,11 @@ button {
 }
 
 .container {
-  width: 100%;
-  // height: 100%;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1136px;
+  max-width: 1140px;
+  padding-right: 32px;
+  padding-left: 32px;
   width: 100%;
   @media (max-width: 767px) {
     max-width: 100%;
@@ -48,6 +48,9 @@ button {
 
 .section-top-spacing {
   padding-top: 80px;
+  @media (max-width: 767px) {
+    padding-top: 60px;
+  }
 }
 
 .main-title {
@@ -100,7 +103,7 @@ button {
   }
   .right__content {
     width: 100%;
-    margin-bottom: 2.5%;
+    // margin-bottom: 2.5%;
     @media (min-width: 576px) {
       width: 95%;
       margin-bottom: 0;
