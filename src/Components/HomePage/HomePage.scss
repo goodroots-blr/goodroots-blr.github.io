@@ -1,7 +1,7 @@
 main {
   .givingBack {
     // padding: 20px 0 50px;
-    padding: 80px 0 50px;
+    padding: 80px 0 25px;
     img {
       max-width: 100%;
       display: block;
@@ -80,4 +80,16 @@ main {
 }
 .icon-facebook2:before {
   content: "\e900";
+}
+
+.mobile-prebook {
+ text-align: center;
+ margin-bottom: 50px;
+ background: #650a1f;
+ padding-top: 30px;
+ padding-bottom: 20px;
+ color: #fff;
+ p {
+  font-size: 25px;
+ }
 }
