@@ -29,7 +29,13 @@ const ProductTile = ({ img, title, cost }) => {
 
     const handleStepper = (count) => {
         const existingProducts = JSON.parse(SessionStorage.get("products"));
-        existingProducts.
+        existingProducts.forEach(product => {
+            if(product.type === title) {
+                product.count = count
+            }
+            return product
+        });
+        SessionStorage.set("products", existingProducts);  
     }
     return (
         <div className="productTile">
@@ -39,9 +45,9 @@ const ProductTile = ({ img, title, cost }) => {
                 {cost && <span className="cost">{cost}</span>}
             </div>
             <div className="productAction">
-                {toggle && <Stepper onStepper={handleStepper} />}
+                {/* {toggle && <Stepper onStepper={handleStepper} />} */}
                 {!toggle && <Button title="Add to cart" onClick={handleAddToCart} />}
-                {toggle && <Button title="Checkout now" onClick={handleCheckout} />}
+                {toggle && <Button title="Checkout now" type="solid" onClick={handleCheckout} />}
             </div>
         </div>
     );

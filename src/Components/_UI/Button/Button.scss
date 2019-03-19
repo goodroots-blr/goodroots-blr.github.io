@@ -42,6 +42,19 @@
       }
     }
 
+    &.button-solid {
+      background: #f28c14;
+      border: 2px transparent solid;
+      color: #fff;
+      width: 160px;
+      padding: 12px 15px;
+      &:hover {
+        color: #000;
+        background-color: #fff;
+        border: 2px #f28c14 solid;
+      }
+    }
+
     &:focus {
       outline: none;
     }

@@ -6,11 +6,12 @@ const Stepper = ({onStepper}) => {
     const handleClick = (type) => {
         if(type=="add") {
             setCount(count + 1)
+            onStepper(count + 1)
         }
         if(count > 1 && type=="sub") {
             setCount(count - 1)
+            onStepper(count - 1)
         }
-        onStepper(count)
     }
     return (
         <div className="stepper">
