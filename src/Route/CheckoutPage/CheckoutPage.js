@@ -83,7 +83,7 @@ const CheckoutPage = ({ data }) => {
                     showChangeBtnInOrderSummary: false
                 };
             case 'HIDE_ADDRESS':
-                if(Object.keys(userFormRef.current.handleFormSubmit()).length > 0) {
+                if (Object.keys(userFormRef.current.handleFormSubmit()).length > 0) {
                     dataToPost["userDetails"] = userFormRef.current.handleFormSubmit();
                     return {
                         hideOrder: true,
@@ -117,7 +117,7 @@ const CheckoutPage = ({ data }) => {
                     <div className="col-9">
                         <div className="white-box">
                             <div className="cart-title">
-                                <h2>My Cart(2)</h2>
+                                <h2>My Cart (2)</h2>
                                 {state.showChangeBtnInOrder &&
                                     <Button title="Change" onClick={() => dispatch({ type: 'SHOW_ORDER' })} />}
                             </div>
@@ -159,14 +159,31 @@ const CheckoutPage = ({ data }) => {
                                     <SmallProductTitle stepper={false} />
                                 </div>
                                 <div className="actions">
-                                    <Button type="solid" title="Pay now" onClick={()=> console.log(dataToPost)}/>
+                                    <Button type="solid" title="Pay now" onClick={() => console.log(dataToPost)} />
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="col-3">
-                        <div className="white-box">
-                            Price Details
+                        <div className="white-box price-details-container">
+                            <div className="cart-title">
+                                <h2>
+                                    Bill Details
+                                </h2>
+                            </div>
+                            <div className="price-details">
+                                <div className="items">
+                                    Price (2 items)<span> ₹1,559</span>
+                                </div>
+                                <div className="delivery">
+                                    Delivery Fee<span>FREE</span>
+                                </div>
+
+                                <div className="totalpay">
+                                    TO PAY<span> ₹1,559</span>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
