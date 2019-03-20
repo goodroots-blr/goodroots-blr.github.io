@@ -39,6 +39,12 @@ button {
   }
 }
 
+a {
+  &:focus {
+    outline: none;
+  }
+}
+
 
 img {
   display: block;

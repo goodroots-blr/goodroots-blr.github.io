@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from './../Button/Button';
-import Stepper from './../Stepper/Stepper';
+import { Link } from "react-router-dom";
+// import Stepper from './../Stepper/Stepper';
 import SessionStorage from './../../../resources/helpers/SessionStorage';
 import './ProductTile.scss';
 
@@ -30,12 +31,12 @@ const ProductTile = ({ img, title, cost }) => {
     const handleStepper = (count) => {
         const existingProducts = JSON.parse(SessionStorage.get("products"));
         existingProducts.forEach(product => {
-            if(product.type === title) {
+            if (product.type === title) {
                 product.count = count
             }
             return product
         });
-        SessionStorage.set("products", existingProducts);  
+        SessionStorage.set("products", existingProducts);
     }
     return (
         <div className="productTile">
@@ -47,7 +48,8 @@ const ProductTile = ({ img, title, cost }) => {
             <div className="productAction">
                 {/* {toggle && <Stepper onStepper={handleStepper} />} */}
                 {!toggle && <Button title="Add to cart" onClick={handleAddToCart} />}
-                {toggle && <Button title="Checkout now" type="solid" onClick={handleCheckout} />}
+                {toggle && <Link className="button button-solid" to="/checkout">Checkout now</Link>}
+                {/* {toggle && <Button title="Checkout now" type="solid" onClick={handleCheckout} />} */}
             </div>
         </div>
     );
