@@ -19,4 +19,8 @@ const SmallProductTitle = ({ data, stepper }) => {
     );
 };
 
+SmallProductTitle.defaultProps = {
+    stepper: true
+}
+
 export default SmallProductTitle;
