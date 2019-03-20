@@ -76,6 +76,18 @@ p {
   }
 }
 
+.section-top-spacing-layout {
+  margin-top: 120px;
+  @media (max-width: 767px) {
+    margin-top: 60px;
+  }
+}
+
+.white-box {
+  padding: 20px 30px;
+  background: #fff;
+}
+
 .main-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -87,6 +99,9 @@ p {
   text-align: left;
   @media (min-width: 576px) {
     font-size: 3rem;
+  }
+  &.small {
+    font-size: 2rem;
   }
   &::before {
     content: "";

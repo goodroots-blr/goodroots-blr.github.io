@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomePage from './Route/HomePage/HomePage';
 import CheckoutPage from './Route/CheckoutPage/CheckoutPage';
 import ReportPage from './Route/ReportPage/ReportPage';
+import { checkoutPageData } from './resources/data'
 import './style.scss';
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
                 />
                 <Route path="/checkout"
                     exact
-                    render={(props) => <CheckoutPage {...props} />}
+                    render={(props) => <CheckoutPage {...props} data={checkoutPageData} />}
                 />
 
                 <Route path="/report"

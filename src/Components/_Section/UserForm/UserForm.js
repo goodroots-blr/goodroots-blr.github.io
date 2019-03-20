@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Button from './../Button';
+import Button from './../../_UI/Button/Button';
 import FormValidator from './FormValidator';
-import FullPageLoader from './../FullPageLoader'
-import { WriteInFirebase } from './../../Firebase';
+import FullPageLoader from './../../_UI/FullPageLoader/FullPageLoader'
+import { WriteInFirebase } from './../../../Firebase';
 import './UserForm.scss';
 
 class UserForm extends Component {
@@ -109,7 +109,7 @@ class UserForm extends Component {
             this.state.validation
         return (
             <div className="userForm">
-                <h3>Enter your details</h3>
+                {/* <h3>Enter your details</h3> */}
                 <div className="form-group">
                     <label htmlFor="sel1">Select Product:</label>
                     <select className="form-control"
@@ -125,10 +125,10 @@ class UserForm extends Component {
                     </select>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="cname">
+                    {/* <label htmlFor="cname">
                         Name
                             <span className="asterisk">*</span>
-                    </label>
+                    </label> */}
                     <input type="text"
                         name="cname"
                         id="cname"
@@ -139,8 +139,8 @@ class UserForm extends Component {
                     <label className="has-error">{validation.cname.message}</label>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="emailid">Email
-                        <span className="asterisk">*</span></label>
+                    {/* <label htmlFor="emailid">Email
+                        <span className="asterisk">*</span></label> */}
                     <input type="email"
                         name="email"
                         id="emailid"
@@ -150,9 +150,9 @@ class UserForm extends Component {
                     <label className="has-error">{validation.email.message}</label>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="phone">Contact number
+                    {/* <label htmlFor="phone">Contact number
                         <span className="asterisk">*</span>
-                    </label>
+                    </label> */}
                     <input type="tel"
                         name="phone"
                         id="phone"
@@ -162,8 +162,8 @@ class UserForm extends Component {
                     <label className="has-error">{validation.phone.message}</label>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="address">Delivery address
-                        <span className="asterisk">*</span></label>
+                    {/* <label htmlFor="address">Delivery address
+                        <span className="asterisk">*</span></label> */}
                     <textarea id="address"
                         name="address"
                         onChange={this.handleInputChange}

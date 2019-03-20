@@ -6,6 +6,7 @@ import givingBackData from './GivingBack';
 import ourProductsData from './OurProducts';
 import whyMangoData from './WhyMango';
 import ourFarmData from './OurFarm';
+import checkoutPageData from './CheckoutPage';
 import whoWeAreData from './WhoWeAre';
 
 
@@ -18,5 +19,6 @@ export {
     ourProductsData,
     whyMangoData,
     ourFarmData,
+    checkoutPageData,
     whoWeAreData
 }

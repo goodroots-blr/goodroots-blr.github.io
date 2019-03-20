@@ -82,7 +82,7 @@ class ReportPage extends Component {
     render() {
         return (
             <Layout>
-                <div className="reportPage">
+                <div className="reportPage section-top-spacing-layout container">
                     <div className="container">
                         <h1>Report - </h1>
                         {this.state.data === 1 && <div className="loading-animation-container">
