@@ -83,11 +83,6 @@ p {
   }
 }
 
-.white-box {
-  padding: 20px 30px;
-  background: #fff;
-}
-
 .main-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -101,7 +96,7 @@ p {
     font-size: 3rem;
   }
   &.small {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   &::before {
     content: "";

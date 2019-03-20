@@ -109,7 +109,24 @@ class UserForm extends Component {
             this.state.validation
         return (
             <div className="userForm">
+                {/* <h3>Enter your details</h3> */}
+                {/* <div className="form-group">
+                    <label htmlFor="sel1">Select Product:</label>
+                    <select className="form-control"
+                        value={this.state.selectedProduct}
+                        name="selectedProduct"
+                        onChange={this.handleInputChange}
+                        id="sel1">
+                        <option value="1 dozen">1 dozen</option>
+                        <option value="2 dozen">2 dozen</option>
+                        <option value="3 dozen">3 dozen</option> 
+                    </select>
+                </div> */}
                 <div className="form-group">
+                    {/* <label htmlFor="cname">
+                        Name
+                            <span className="asterisk">*</span>
+                    </label> */}
                     <input type="text"
                         name="cname"
                         id="cname"
@@ -120,6 +137,8 @@ class UserForm extends Component {
                     <label className="has-error">{validation.cname.message}</label>
                 </div>
                 <div className="form-group">
+                    {/* <label htmlFor="emailid">Email
+                        <span className="asterisk">*</span></label> */}
                     <input type="email"
                         name="email"
                         id="emailid"
@@ -129,6 +148,9 @@ class UserForm extends Component {
                     <label className="has-error">{validation.email.message}</label>
                 </div>
                 <div className="form-group">
+                    {/* <label htmlFor="phone">Contact number
+                        <span className="asterisk">*</span>
+                    </label> */}
                     <input type="tel"
                         name="phone"
                         id="phone"
@@ -138,6 +160,8 @@ class UserForm extends Component {
                     <label className="has-error">{validation.phone.message}</label>
                 </div>
                 <div className="form-group">
+                    {/* <label htmlFor="address">Delivery address
+                        <span className="asterisk">*</span></label> */}
                     <textarea id="address"
                         name="address"
                         onChange={this.handleInputChange}
@@ -146,6 +170,11 @@ class UserForm extends Component {
                     </textarea>
                     <label className="has-error">{validation.address.message}</label>
                 </div>
+                {/* <div className="checkbox">
+                    <label><input type="checkbox"
+                        onChange={this.bulkOrderInputChange}
+                        value={this.state.bulkOrder} />Do you want bulk order ?</label>
+                </div> */}
                 <div className="btn-container">
                     <Button title="Save Details" onClick={this.handleFormSubmit} />
                 </div>
