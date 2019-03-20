@@ -5,7 +5,7 @@ import Hamburger from './../../_UI/Hamburger/Hamburger';
 import SocialIcons from './../../_UI/SocialIcons/SocialIcons';
 import './Header.scss';
 
-const Header = ({data}) => {
+const Header = ({ data, showNavigation }) => {
     const [scroll, setScroll] = useState(0);
     const [toggle, setToggle] = useState(false);
     const handleClick = () => {
@@ -51,11 +51,11 @@ const Header = ({data}) => {
                 </div>
             </div>
             <div className="container header-content">
-                <Hamburger toggle={toggle} onClick={handleClick} />
+                {showNavigation && <Hamburger toggle={toggle} onClick={handleClick} />}
                 <a href="/">
                     <img className="logo" src={Logo} alt="GoodRoots" />
                 </a>
-                <Navigation toggle={toggle} />
+                {showNavigation && <Navigation toggle={toggle} />}
             </div>
         </header>
     );

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Button from './../../Components/_UI/Button/Button';
-import { ReadFromFirebase } from './../../../Firebase';
-import { downloadAsFile } from './../../../resources/helpers'
+import Layout from './../../Components/_UI/Layout/Layout';
+import { ReadFromFirebase } from './../../Firebase';
+import { downloadAsFile } from './../../resources/helpers'
 import './ReportPage.scss';
 
 
@@ -35,9 +36,9 @@ class ReportPage extends Component {
             ], 2))
             return JSON.stringify(Object.values(order));
         })
-        .join('\n')
-        .replace(/(^\[)|(\]$)/mg, '');
-        const header="Name,Email,Contact Number,Selected Product,Address, Bulk Order \n"
+            .join('\n')
+            .replace(/(^\[)|(\]$)/mg, '');
+        const header = "Name,Email,Contact Number,Selected Product,Address, Bulk Order \n"
         downloadAsFile(header + csv)
     }
     renderTable = () => {
@@ -80,18 +81,20 @@ class ReportPage extends Component {
     }
     render() {
         return (
-            <div className="reportPage">
-                <div className="container">
-                    <h1>Report - </h1>
-                    {this.state.data === 1 && <div className="loading-animation-container">
-                        <div className="loader-six">
-                            <h1 data-text="It's loading…" className="text">It's loading…</h1>
-                        </div>
-                    </div>}
-                    {this.state.data.length === 0 && <h2>No records found</h2>}
-                    {this.state.data.length && this.renderTable()}
+            <Layout>
+                <div className="reportPage">
+                    <div className="container">
+                        <h1>Report - </h1>
+                        {this.state.data === 1 && <div className="loading-animation-container">
+                            <div className="loader-six">
+                                <h1 data-text="It's loading…" className="text">It's loading…</h1>
+                            </div>
+                        </div>}
+                        {this.state.data.length === 0 && <h2>No records found</h2>}
+                        {this.state.data.length && this.renderTable()}
+                    </div>
                 </div>
-            </div>
+            </Layout>
         );
     }
 }
