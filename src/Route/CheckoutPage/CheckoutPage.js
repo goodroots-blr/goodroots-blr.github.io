@@ -1,5 +1,6 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import Layout from './../../Components/_UI/Layout/Layout';
+import UserDetailsForm from './../../Components/_Section/UserDetailsForm/UserDetailsForm';
 import SmallProductTitle from './../../Components/_UI/SmallProductTitle/SmallProductTitle';
 import Button from './../../Components/_UI/Button/Button';
 import './CheckoutPage.scss';
@@ -91,7 +92,7 @@ const CheckoutPage = ({ data }) => {
                             </div>
                             <div className={`white-box-content ${state.hideDeliveryAddress && "hide"}`}>
                                 <div className="smallProductTitle-container">
-                                    <SmallProductTitle />
+                                    <UserDetailsForm />
                                 </div>
                                 <div className="actions">
                                     <Button type="solid" title="Continue" onClick={() => dispatch({ type: 'HIDE_ADDRESS' })} />
@@ -106,7 +107,7 @@ const CheckoutPage = ({ data }) => {
                             </div>
                             <div className={`white-box-content ${state.hideOrderSummary && "hide"}`}>
                                 <div className="smallProductTitle-container">
-                                    <SmallProductTitle />
+                                    <SmallProductTitle stepper={false} />
                                 </div>
                                 <div className="actions">
                                     <Button type="solid" title="Pay now" />
