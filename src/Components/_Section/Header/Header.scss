@@ -73,20 +73,21 @@ header {
     display: inline-block;
     img {
       max-width: 200px;
-      // max-width: 100px;
-      // position: absolute;
-      // top:0;
+      transform: scale(0.9);
+      transition: transform .3s cubic-bezier(.215,.61,.355,1);
+      &:hover {
+        transform: scale(0.95);
+      }
       @media (max-width: 767px) {
-        // max-width: 60px;
-        max-width: 150px;
+        max-width: 130px;
         position: absolute;
         left: 50%;
-        top: 70%;
-        transform: translate(-50%, -50%);
+        top: 66%;
+        transform: scale(0.90) translate(-50%, -50%);
+        &:hover {
+          transform: scale(0.95) translate(-50%, -50%);
+        }
       }
     }
   }
-  // .navigation {
-  //   flex: 1
-  // }
 }
