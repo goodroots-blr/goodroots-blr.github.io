@@ -9,7 +9,7 @@ const OurProducts = ({ data }) => {
         <div className="ourProducts section-top-spacing">
             <div className="container">
                 <h1 className="main-title">
-                    <strong>Our</strong> products
+                    {data.title()}
                 </h1>
                 <div className="desktopOnly">
                     {

@@ -8,6 +8,7 @@ import img6 from "./../images/OurProducts/product-6.png";
 import data from './CompanyRelated';
 
 export default {
+  "title": () => <><strong>Our</strong> products</>,
   "bulkOrderText": () => <>
     For bulk orders or for regular supply of our mangoes please write to us at &nbsp;
     <u>
