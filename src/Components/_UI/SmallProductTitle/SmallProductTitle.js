@@ -7,7 +7,7 @@ const SmallProductTitle = ({ data, stepper }) => {
     return (
         <div className="smallProductTitle">
             <div className="smallProductTitle-left">
-                <img src={ourProductsData.products[0].img} alt="hello" />
+                <img src={ourProductsData.products[0][0].img} alt="hello" />
                 {stepper && <Stepper />}
             </div>
             <div className="smallProductTitle-right">

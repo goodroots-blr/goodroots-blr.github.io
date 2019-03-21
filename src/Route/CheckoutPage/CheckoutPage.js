@@ -124,6 +124,7 @@ const CheckoutPage = ({ data }) => {
                             <div className={`white-box-content ${state.hideOrder && "hide"}`}>
                                 <div className="smallProductTitle-container">
                                     <SmallProductTitle />
+                                    <SmallProductTitle />
                                 </div>
                                 <div className="actions">
                                     <Button title="Continue shopping" />
@@ -134,7 +135,7 @@ const CheckoutPage = ({ data }) => {
                         <div className="white-box">
                             <div className="cart-title">
                                 <h2>
-                                    Enter Delivery Address
+                                    Delivery Address
                                 </h2>
                                 {state.showChangeBtnInDeliveryAddress &&
                                     <Button title="Change" onClick={() => dispatch({ type: 'SHOW_ADDRESS' })} />}
