@@ -15,9 +15,9 @@ export default [
   },
   {
     img: img2,
-    title: "Fresh Produce<br /> Right to Your Door",
+    title: "Fresh Produce<br /> Right to Your Door step",
     content:
-      ` The best quality Alphonso mangoes from <br /> our farms to your home`,
+      ` The best of Alphonso and Banganapalli mangoes from <br /> our farms to your home`,
     action: {
       text: "Who we are",
       scrollTo: "whoweare"
@@ -27,7 +27,7 @@ export default [
     img: img3,
     title: "Gift Happiness <br /> & Sweetness",
     content:
-      `A gift like no other. Gift your loved ones this season`,
+      `Gift your loved ones this season.<div> <strong>Prebook</strong> now to not miss out on pre season offers<div>`,
     action: {
       isClickable: true,
       text: "Prebook now",
