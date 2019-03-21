@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  padding: 10px 20px 10px 10px;
+  padding: 20px 20px 20px 10px;
   margin-right: 0px;
   margin-bottom: 1em;
   a {
@@ -13,22 +13,20 @@
   }
   .productImage {
     img {
-      transform: scale(0.8);
+      transform: scale(0.95);
       transition: all 0.5s ease;
       flex: 1;
-      max-width: 100px;
+      max-width: 120px;
       &:hover {
         transform: scale(1);
       }
     }
   }
   .productInfo {
+    display: flex;
+    flex: 1;
     flex-direction: column;
     font-size: 14px;
-    flex: 1;
-    display: flex;
-    text-align: left;
-    justify-content: space-evenly;
     .button {
       display: flex;
       justify-content: center;
@@ -38,24 +36,33 @@
       margin-left: auto;
       font-size: 14px;
       padding: 6px 15px;
-      height: 33px;
+      height: 38px;
     }
   }
   .productExtraInfo {
     display: flex;
-    justify-content: space-between;
-  }
-
-  .title {
-    display: inline-block;
+    justify-content: flex-end;
+    strong {
+      font-size: 1.1rem;
+      &.title {
+        margin-left: 15px;
+        background: #f28c14;
+        color: #fff;
+        padding: 6px;
+        font-weight: 400;
+        font-size: .9rem;
+        line-height: 1;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+      }
+    }
   }
 
   .cost {
-    display: flex;
-    justify-content: space-between;
     font-size: 1rem;
-    padding-top: 0;
-    &::before {
+    margin-left: auto;
+    padding-top: 20px;
+    span::before {
       font-family: Arial, Helvetica, sans-serif;
       content: "₹";
       display: inline-block;
@@ -63,8 +70,3 @@
     }
   }
 }
-
-// a.button.button-solid {
-//   display: block;
-//   width: 100%;
-// }

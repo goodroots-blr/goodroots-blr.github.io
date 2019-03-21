@@ -1,5 +1,5 @@
 .ourProducts {
-  p {
+  p.bulkOrderText {
     text-align: center;
     margin-top: 30px;
     font-weight: bold;
@@ -9,6 +9,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin-top: 3.125em;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 }

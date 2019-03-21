@@ -26,18 +26,13 @@ const OurProducts = ({ data }) => {
                 </div>
                 <div className="mobileOnly">
                     {
-                        data.products.map((products) => {
-                            return (
-                                <div className="products">
-                                    {products.map((product, i) => (
-                                        <MobileProductTile key={i} {...product} />
-                                    ))}
-                                </div>
-                            )
-                        })
+                        <>
+                            <MobileProductTile {...data.products[0][0]} />
+                            <MobileProductTile {...data.products[1][0]} />
+                        </>
                     }
                 </div>
-                <p>
+                <p className="bulkOrderText">
                     {data.bulkOrderText()}
                 </p>
             </div>

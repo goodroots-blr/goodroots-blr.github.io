@@ -22,7 +22,7 @@ const MobileProductTile = ({ img, title, cost, category }) => {
     const storeData = (existingProducts) => {
         SessionStorage.set("products", existingProducts);
     }
-    
+
     return (
         <div className="mobileProductTile">
             <div className="productImage">
@@ -30,11 +30,11 @@ const MobileProductTile = ({ img, title, cost, category }) => {
             </div>
             <div className="productInfo">
                 <div className="productExtraInfo">
-                    <div className="">
-                        {category && <strong className="title">{category}</strong>}
-                        <strong className="title">&nbsp;&nbsp;{title}</strong>
-                    </div>
-                    {cost && <span className="cost">{cost}</span>}
+                    {category && <strong>{category}</strong>}
+                    <strong className="title">{title}</strong>
+                </div>
+                <div className="cost">
+                    <span>{cost}</span>
                 </div>
                 {!toggle && <Button title="Add to cart" onClick={handleAddToCart} />}
                 {toggle && <Link className="button button-inverse" to="/checkout">Checkout now</Link>}
