@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 import Button from './../Button/Button';
+import MobileOverlay from './../MobileOverlay/MobileOverlay';
+import RadioButtons from './../RadioButtons/RadioButtons';
 import { Link } from "react-router-dom";
 import SessionStorage from './../../../resources/helpers/SessionStorage';
 import './MobileProductTile.scss';
+
+const renderMobileOverlay = () => {
+    return(
+        <MobileOverlay type="full">
+            <RadioButtons />
+        </MobileOverlay>
+    )
+}
 
 const MobileProductTile = ({ img, title, cost, category }) => {
     const [toggle, setToggle] = useState(false)
@@ -36,8 +46,10 @@ const MobileProductTile = ({ img, title, cost, category }) => {
                 <div className="cost">
                     <span>{cost}</span>
                 </div>
-                {!toggle && <Button title="Add to cart" onClick={handleAddToCart} />}
-                {toggle && <Link className="button button-inverse" to="/checkout">Checkout now</Link>}
+                {<Button title="Add to cart" onClick={handleAddToCart} />}
+                {renderMobileOverlay()}
+                {/* {toggle && renderMobileOverlay()} */}
+                {/* {toggle && <Link className="button button-inverse" to="/checkout">Checkout now</Link>} */}
             </div>
         </div>
     );
