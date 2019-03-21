@@ -18,21 +18,21 @@
       flex-direction: row;
       margin-top: 3.125em;
     }
-    .productTile {
-      margin-bottom: 1.75em;
-      @media (min-width: 576px) {
-        margin-right: 10px;
-        margin-bottom: 0px;
-      }
-      @media (min-width: 992px) {
-        // margin-right: 3.75em;
-        margin-right: 20px;
-        margin-bottom: 0px;
-        flex: 1;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
-    }
+    // .productTile {
+    //   margin-bottom: 1.75em;
+    //   @media (min-width: 576px) {
+    //     margin-right: 10px;
+    //     margin-bottom: 0px;
+    //   }
+    //   @media (min-width: 992px) {
+    //     // margin-right: 3.75em;
+    //     margin-right: 20px;
+    //     margin-bottom: 0px;
+    //     flex: 1;
+    //   }
+    //   &:last-child {
+    //     margin-right: 0;
+    //   }
+    // }
   }
 }

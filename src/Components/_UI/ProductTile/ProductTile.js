@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Button from './../Button/Button';
 import { Link } from "react-router-dom";
-// import Stepper from './../Stepper/Stepper';
 import SessionStorage from './../../../resources/helpers/SessionStorage';
 import './ProductTile.scss';
 
-const ProductTile = ({ img, title, cost }) => {
+const ProductTile = ({ img, title, cost, category }) => {
     const [toggle, setToggle] = useState(false)
     const handleAddToCart = () => {
         setToggle(true);
@@ -20,36 +19,36 @@ const ProductTile = ({ img, title, cost }) => {
         storeData(existingProducts)
     }
 
-    const handleCheckout = () => {
-
-    }
-
     const storeData = (existingProducts) => {
         SessionStorage.set("products", existingProducts);
     }
 
-    const handleStepper = (count) => {
-        const existingProducts = JSON.parse(SessionStorage.get("products"));
-        existingProducts.forEach(product => {
-            if (product.type === title) {
-                product.count = count
-            }
-            return product
-        });
-        SessionStorage.set("products", existingProducts);
-    }
+    // const handleStepper = (count) => {
+    //     const existingProducts = JSON.parse(SessionStorage.get("products"));
+    //     existingProducts.forEach(product => {
+    //         if (product.type === title) {
+    //             product.count = count
+    //         }
+    //         return product
+    //     });
+    //     SessionStorage.set("products", existingProducts);
+    // }
     return (
         <div className="productTile">
-            <div className="productInfo">
+            <div className="productImage">
                 <img src={img} alt={title} />
-                <strong className="title">{title}</strong>
-                {cost && <span className="cost">{cost}</span>}
             </div>
-            <div className="productAction">
-                {/* {toggle && <Stepper onStepper={handleStepper} />} */}
+            <div className="productInfo">
+                <div className="productExtraInfo">
+                    <div className="">
+                        {category && <strong className="title">{category}</strong>}
+                        <strong className="title">&nbsp;&nbsp;{title}</strong>
+                    </div>
+                    {cost && <span className="cost">{cost}</span>}
+                </div>
                 {!toggle && <Button title="Add to cart" onClick={handleAddToCart} />}
-                {toggle && <Link className="button button-solid" to="/checkout">Checkout now</Link>}
-                {/* {toggle && <Button title="Checkout now" type="solid" onClick={handleCheckout} />} */}
+                {toggle && <Link className="button button-inverse" to="/checkout">Checkout now</Link>}
+                {/* {toggle && <Button title="Checkout now" type="inverse" onClick={handleAddToCart} />} */}
             </div>
         </div>
     );
