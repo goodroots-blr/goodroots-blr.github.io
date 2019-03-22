@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './RadioButtons.scss';
 const data = {
@@ -41,31 +41,63 @@ const data = {
         }
     ]
 }
-const RadioButtons = ({ selectedProduct, onCloseClick }) => {
+const RadioButtons = ({ selectedProduct, onCloseClick, onProductionSelection }) => {
+    useEffect(() => {
+        const obj = {}
+        obj[selectedProduct.toLowerCase()] = {
+            "label": "1 dozon",
+            "quantity": 1
+        };
+        handleChange(obj)
+    })
+    const handleChange = (obj) => {
+        onProductionSelection(obj)
+    }
     return (
         <div className="RadioButtons">
             <h1 className="main-title small">Choose your mangoes</h1>
             {
-                data.items.map((item) => {
+                data.items.map((item, i) => {
                     return (
-                        <section>
+                        <section key={`section-${i}`}>
                             <h3>{item.title}</h3>
                             {
                                 item.options.map(({ label, price }, i) => {
                                     {
                                         if ((selectedProduct.toLowerCase() === item.name) && i === 0) {
                                             return (
-                                                <label class="custom-radio">{label} {price}
-                                                    <input type="radio" checked="checked" name={item.name} />
-                                                    <span class="checkmark"></span>
+                                                <label key={`${label}-${item.name}`}
+                                                    className="custom-radio">{label} {price}
+                                                    <input type="radio"
+                                                        onChange={() => {
+                                                            const obj = {}
+                                                            obj[item.name] = {
+                                                                "label": label,
+                                                                "quantity": 1
+                                                            };
+                                                            handleChange(obj)
+                                                        }}
+                                                        defaultChecked={true}
+                                                        name={item.name} />
+                                                    <span className="checkmark"></span>
                                                 </label>
                                             )
                                         }
                                         else {
                                             return (
-                                                <label class="custom-radio">{label} {price}
-                                                    <input type="radio"  name={item.name} />
-                                                    <span class="checkmark"></span>
+                                                <label key={`${label}-${item.name}`}
+                                                    className="custom-radio">{label} {price}
+                                                    <input type="radio"
+                                                        onChange={() => {
+                                                            const obj = {}
+                                                            obj[item.name] = {
+                                                                "label": label,
+                                                                "quantity": 1
+                                                            };
+                                                            handleChange(obj)
+                                                        }}
+                                                        name={item.name} />
+                                                    <span className="checkmark"></span>
                                                 </label>
                                             )
                                         }

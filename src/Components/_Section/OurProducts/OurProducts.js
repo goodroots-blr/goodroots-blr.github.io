@@ -3,10 +3,12 @@ import ProductTile from './../../_UI/ProductTile/ProductTile';
 import MobileOverlay from './../../_UI/MobileOverlay/MobileOverlay';
 import RadioButtons from './../../_UI/RadioButtons/RadioButtons';
 import MobileProductTile from './../../_UI/MobileProductTile/MobileProductTile';
-import Scrolling from './../../_UI/Scrolling/Scrolling'
+import Scrolling from './../../_UI/Scrolling/Scrolling';
+import SessionStorage, { STORE_NAME } from './../../../resources/helpers/SessionStorage'
 import './OurProducts.scss';
 
 const OurProducts = ({ data }) => {
+    let results = {};
     const [toggle, setToggle] = useState(false)
     const [selectedProduct, setSelectedProduct] = useState(undefined)
     const handleClick = (category) => {
@@ -18,6 +20,11 @@ const OurProducts = ({ data }) => {
         setSelectedProduct('')
         setToggle(false)
         document.body.classList.remove('productOverlay--open');
+        SessionStorage.clear(STORE_NAME)
+    }
+    const onProductionSelection = (obj) => {
+        const existingProducts = JSON.parse(SessionStorage.get(STORE_NAME)) || {};
+        SessionStorage.set(STORE_NAME, { ...existingProducts, ...obj });
     }
     return (
         <div className="ourProducts section-top-spacing">
@@ -54,6 +61,7 @@ const OurProducts = ({ data }) => {
             </div>
             {toggle && <MobileOverlay>
                 <RadioButtons
+                    onProductionSelection={onProductionSelection}
                     selectedProduct={selectedProduct}
                     onCloseClick={onCloseClick} />
             </MobileOverlay>}

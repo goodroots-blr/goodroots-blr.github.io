@@ -6,22 +6,6 @@ const MobileProductTile = ({ img, title, cost, category, onClick }) => {
     const handleAddToCart = () => {
         onClick(category);
     }
-    // const handleAddToCart = () => {
-    //     setToggle(true);
-    //     const existingProducts = JSON.parse(SessionStorage.get("products")) || [];
-    //     const currentProduct = {
-    //         type: title,
-    //         count: 1
-    //     }
-    //     if (existingProducts) {
-    //         existingProducts.push(currentProduct)
-    //     }
-    //     storeData(existingProducts)
-    // }
-
-    // const storeData = (existingProducts) => {
-    //     SessionStorage.set("products", existingProducts);
-    // }
 
     return (
         <div className="mobileProductTile">

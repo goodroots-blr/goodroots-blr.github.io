@@ -1,13 +1,15 @@
+const STORE_NAME = "products"
 const SessionStorage = {
-    get:(key) => {
+    get: (key) => {
         return window.sessionStorage.getItem(key);
     },
-    set:(key, val) => {
+    set: (key, val) => {
         window.sessionStorage.setItem(key, JSON.stringify(val));
     },
-    clear:(key)=>{
+    clear: (key) => {
         window.sessionStorage.removeItem(key)
     }
 }
 
+export { STORE_NAME }
 export default SessionStorage;
