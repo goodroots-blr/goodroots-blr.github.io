@@ -1,6 +1,36 @@
 .RadioButtons {
+  background: #fff;
+  padding: 20px 25px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+  width: 400px;
+  transform: translate(-50%, -30%);
   section {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+  }
+  .close-btn {
+    position: absolute;
+    top: -20px;
+    right: -13px;
+    border: none;
+    background: #e02007;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 }

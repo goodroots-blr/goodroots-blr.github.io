@@ -40,7 +40,7 @@ const data = {
         }
     ]
 }
-const RadioButtons = (props) => {
+const RadioButtons = ({ selectedProduct, onCloseClick }) => {
     return (
         <div className="RadioButtons">
             {
@@ -48,20 +48,34 @@ const RadioButtons = (props) => {
                     return (
                         <section>
                             {
-                                item.options.map(({label, price}) => {
-                                    return(
-                                        <label>
-                                            <input name={item.name} type="radio"/>
-                                            {label} {price}
+                                item.options.map(({ label, price }, i) => {                                    
+                                    {
+                                        if ((selectedProduct.toLowerCase() === item.name) && i === 0) {
+                                            return (
+                                                <label>
+                                                    <input checked="checked" name={item.name} type="radio" />
+                                                    {label} {price}
 
-                                        </label>
-                                    )
+                                                </label>
+                                            )
+                                        }
+                                        else {
+                                            return(
+                                                <label>
+                                                <input name={item.name} type="radio" />
+                                                {label} {price}
+
+                                            </label>
+                                            )
+                                        }
+                                    }
                                 })
                             }
                         </section>
                     )
                 })
             }
+            <div className="close-btn" onClick={onCloseClick}>x</div>
         </div>
     );
 };
