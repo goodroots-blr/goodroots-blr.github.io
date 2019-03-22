@@ -1,4 +1,4 @@
-import React, { useReducer, useRef } from 'react';
+import React, { useReducer, useRef, useEffect } from 'react';
 import Layout from './../../Components/_UI/Layout/Layout';
 import UserDetailsForm from './../../Components/_Section/UserDetailsForm/UserDetailsForm';
 import SmallProductTitle from './../../Components/_UI/SmallProductTitle/SmallProductTitle';
@@ -109,6 +109,11 @@ const CheckoutPage = ({ data }) => {
                 };
         }
     }, initialState);
+
+    useEffect(()=>{
+        document.body.classList.remove('productOverlay--open');
+        window.scrollTo(0, 0);
+    })
 
     return (
         <Layout>

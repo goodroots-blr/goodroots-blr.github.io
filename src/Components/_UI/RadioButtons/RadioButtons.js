@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './RadioButtons.scss';
 const data = {
     "items": [
@@ -43,29 +44,29 @@ const data = {
 const RadioButtons = ({ selectedProduct, onCloseClick }) => {
     return (
         <div className="RadioButtons">
+            <h1 className="main-title small">Choose your mangoes</h1>
             {
                 data.items.map((item) => {
                     return (
                         <section>
+                            <h3>{item.title}</h3>
                             {
-                                item.options.map(({ label, price }, i) => {                                    
+                                item.options.map(({ label, price }, i) => {
                                     {
                                         if ((selectedProduct.toLowerCase() === item.name) && i === 0) {
                                             return (
-                                                <label>
-                                                    <input checked="checked" name={item.name} type="radio" />
-                                                    {label} {price}
-
+                                                <label class="custom-radio">{label} {price}
+                                                    <input type="radio" checked="checked" name={item.name} />
+                                                    <span class="checkmark"></span>
                                                 </label>
                                             )
                                         }
                                         else {
-                                            return(
-                                                <label>
-                                                <input name={item.name} type="radio" />
-                                                {label} {price}
-
-                                            </label>
+                                            return (
+                                                <label class="custom-radio">{label} {price}
+                                                    <input type="radio"  name={item.name} />
+                                                    <span class="checkmark"></span>
+                                                </label>
                                             )
                                         }
                                     }
@@ -75,6 +76,7 @@ const RadioButtons = ({ selectedProduct, onCloseClick }) => {
                     )
                 })
             }
+            {<Link className="button button-inverse" to="/checkout">Checkout now</Link>}
             <div className="close-btn" onClick={onCloseClick}>x</div>
         </div>
     );

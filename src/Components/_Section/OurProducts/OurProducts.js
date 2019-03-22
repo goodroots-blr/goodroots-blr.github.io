@@ -10,12 +10,14 @@ const OurProducts = ({ data }) => {
     const [ toggle, setToggle ] = useState(false)
     const [ selectedProduct, setSelectedProduct ] = useState(undefined)
     const handleClick = (category) => {
+        document.body.classList.add('productOverlay--open');
         setSelectedProduct(category)
         setToggle(true)
     }
     const onCloseClick = () => {
         setSelectedProduct('')
         setToggle(false)
+        document.body.classList.remove('productOverlay--open');
     }
     return (
         <div className="ourProducts section-top-spacing">
