@@ -26,14 +26,14 @@ export default {
             icon: 'icon-grade-1-quality'
         },
         {
-            title: 'Naturally Riped',
-            desc: 'All mangoes are riped naturally in hay bales',
-            icon: 'icon-Multiple-Harvesting'
-        },
-        {
             title: 'Certified practice habits',
             desc: 'IIHR mandated practices for fruits setting, harvesting and ripening',
             icon: 'icon-IIHR-mandated-practices'
+        },
+        {
+            title: 'Naturally Riped',
+            desc: 'All mangoes are riped naturally in hay bales',
+            icon: 'icon-Multiple-Harvesting'
         }
     ],
     items3: [

@@ -47,7 +47,7 @@ const MobileProductTile = ({ img, title, cost, category }) => {
                     <span>{cost}</span>
                 </div>
                 {<Button title="Add to cart" onClick={handleAddToCart} />}
-                {renderMobileOverlay()}
+                {/* {renderMobileOverlay()} */}
                 {/* {toggle && renderMobileOverlay()} */}
                 {/* {toggle && <Link className="button button-inverse" to="/checkout">Checkout now</Link>} */}
             </div>

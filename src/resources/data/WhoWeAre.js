@@ -5,12 +5,13 @@ export default {
     img: img,
     alt: "who we are",
     title: () => <><strong>Who</strong> we are</>,
-    subTitle: "welcome to GoodRoots - we serve Alphonso mango fruits",
+    subTitle: "Welcome To GoodRoots - We Produce Organic Alphonso & Banganapalli Mangoes",
     paragraphs: [
-        `We are Second generation mango growers with farm in a small 
-        town near bellary. Our mission is to bring back the 
-        real taste of naturally ripened Ratnagiri Alphonso mango to true mango lovers.`,
-        `We are happy to bring our premium category of Ratnagiri Alphonso mangoes 
-        which have been special taken care in our farm and delivered to you.`
+        `We are Third generation mango growers with farm in a small town near bellary. 
+        Our mission is to bring back the real taste of 
+        naturally ripened Alphonso & Banganapalli mangoes to true mango lovers.`,
+        `We are happy to bring our premium category of 
+        Ratnagiri Alphonso & Banganapalli mangoes which have been 
+        taken care specially in our farm and delivered to you.`
     ]
 }

@@ -35,10 +35,6 @@ const navigationData = [
         url: "ourProducts"
     },
     {
-        label: "Gift",
-        url: ""
-    },
-    {
         label: "Contact",
         url: "contactus"
     }

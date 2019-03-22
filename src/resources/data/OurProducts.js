@@ -22,18 +22,6 @@ export default {
         category: "Alphanso",
         title: "1 dozen",
         cost: "1000.00"
-      },
-      {
-        img: img2,
-        category: "Alphanso",
-        title: "2 dozen",
-        cost: "2000.00"
-      },
-      {
-        img: img3,
-        category: "Alphanso",
-        title: "3 dozen",
-        cost: "3000.00"
       }
     ],
     [
@@ -42,18 +30,6 @@ export default {
         category: "Banganapalli",
         title: "1 dozen",
         cost: "1000.00"
-      },
-      {
-        img: img5,
-        category: "Banganapalli",
-        title: "2 dozen",
-        cost: "2000.00"
-      },
-      {
-        img: img6,
-        category: "Banganapalli",
-        title: "3 dozen",
-        cost: "3000.00"
       }
     ]
   ]

@@ -12,17 +12,19 @@ const OurProducts = ({ data }) => {
                     {data.title()}
                 </h1>
                 <div className="desktopOnly">
-                    {
-                        data.products.map((products) => {
-                            return (
-                                <div className="products">
-                                    {products.map((product, i) => (
-                                        <ProductTile key={i} {...product} />
-                                    ))}
-                                </div>
-                            )
-                        })
-                    }
+                    <div className="desktop-products-container">
+                        {
+                            data.products.map((products) => {
+                                return (
+                                    <div className="products">
+                                        {products.map((product, i) => (
+                                            <ProductTile key={i} {...product} />
+                                        ))}
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
                 <div className="mobileOnly">
                     {
