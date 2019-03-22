@@ -9,6 +9,9 @@
       &:hover {
         transform: scale(1.1);
       }
+      @media (max-width: 767px) {
+        margin-bottom: 20px;
+      }
     }
   }
   p {

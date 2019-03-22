@@ -1,11 +1,7 @@
 .WhyMango {
-  h1 {
-    margin-bottom: 20px;
-  }
   .WhyMango-content {
     color: #666;
     font-size: 14px;
-    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     .image-container {
@@ -77,6 +73,9 @@
   .item {
     list-style: none;
     padding-bottom: 40px;
+    @media (max-width: 768px) {
+      padding-bottom: 0px;
+    }
     &:last-child {
       padding-bottom: 0;
     }

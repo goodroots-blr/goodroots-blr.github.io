@@ -16,7 +16,7 @@ const Givingback = ({ data }) => {
                         {
                             data.paragraphs.map((para, index) => {
                                 return (
-                                    <p key={index}>{para}</p>
+                                    <p key={index}>{para()}</p>
                                 )
                             })
                         }

@@ -1,4 +1,9 @@
 footer {
+  @media (max-width: 767px) {
+    .socialIcons {
+      margin-bottom: 20px;
+    }
+  }
   border-top: 6px #f28c14 solid;
   background: #222;
   color: #fff;
