@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ProductTile from './../../_UI/ProductTile/ProductTile';
 import MobileOverlay from './../../_UI/MobileOverlay/MobileOverlay';
 import RadioButtons from './../../_UI/RadioButtons/RadioButtons';
@@ -7,8 +7,8 @@ import Scrolling from './../../_UI/Scrolling/Scrolling'
 import './OurProducts.scss';
 
 const OurProducts = ({ data }) => {
-    const [ toggle, setToggle ] = useState(false)
-    const [ selectedProduct, setSelectedProduct ] = useState(undefined)
+    const [toggle, setToggle] = useState(false)
+    const [selectedProduct, setSelectedProduct] = useState(undefined)
     const handleClick = (category) => {
         document.body.classList.add('productOverlay--open');
         setSelectedProduct(category)
@@ -43,8 +43,8 @@ const OurProducts = ({ data }) => {
                 <div className="mobileOnly">
                     {
                         <>
-                            <MobileProductTile {...data.products[0][0]} />
-                            <MobileProductTile {...data.products[1][0]} />
+                            <MobileProductTile onClick={handleClick} {...data.products[0][0]} />
+                            <MobileProductTile onClick={handleClick} {...data.products[1][0]} />
                         </>
                     }
                 </div>
@@ -53,11 +53,9 @@ const OurProducts = ({ data }) => {
                 </p>
             </div>
             {toggle && <MobileOverlay>
-                <div className="desktopRadioButtons">
-                    <RadioButtons 
-                        selectedProduct={selectedProduct}
-                        onCloseClick={onCloseClick} />
-                </div>
+                <RadioButtons
+                    selectedProduct={selectedProduct}
+                    onCloseClick={onCloseClick} />
             </MobileOverlay>}
         </div>
     );
