@@ -8,15 +8,15 @@ const data = [
     },
     {
         icon: "twitter",
-        url: "javascipt:void(0)"
+        url: "https://twitter.com/GoodRoots2"
     },
     {
         icon: "instagram",
-        url: "javascipt:void(0)"
+        url: "https://instagram.com/goodrootsblr?utm_source=ig_profile_share&igshid=wpdribi535v0"
     },
     {
         icon: "youtube",
-        url: "javascipt:void(0)"
+        url: "https://www.youtube.com/channel/UCK-aCPecUXhplimNB8nuW5Q?view_as=subscriber"
     }
 ]
 
