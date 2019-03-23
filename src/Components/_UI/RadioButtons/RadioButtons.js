@@ -1,29 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import SessionStorage, { STORE_NAME } from './../../../resources/helpers/SessionStorage'
 import './RadioButtons.scss';
 
+const productObject = (parentId, id) => {
+    const obj = {}, child = {}
+    child[id] = 1;
+    obj[parentId] = child
+    return obj;
+}
+
+const onProductionSelection = (obj) => {
+    SessionStorage.set(STORE_NAME, { ...obj });
+}
+
 const RadioButtons = ({
     availableItems,
     selectedProductId,
-    onCloseClick,
-    onProductionSelection,
-    checkoutProducts
+    onCloseClick
 }) => {
+    const items = [availableItems["product-id-1"], availableItems["product-id-2"]];
+    const [checkoutProducts, setCheckoutProducts] = useState(
+        productObject(selectedProductId, `${selectedProductId}-1`))
+
     useEffect(() => {
         if (!SessionStorage.get(STORE_NAME)) {
-            const obj = {}, child = {}
-            child[`${selectedProductId}-1`] = 1;
-            obj[selectedProductId] = child
-            onProductionSelection(obj)
+            onProductionSelection(checkoutProducts);
         }
-    })
-    const items = [availableItems["product-id-1"], availableItems["product-id-2"]];
+    });
+
     const handleChange = (parentId, id) => {
-        const obj = {}, child = {}
-        child[id] = 1;
-        obj[parentId] = child
-        onProductionSelection(obj)
+        let updatedCheckoutProducts = { ...checkoutProducts, ...productObject(parentId, id) };
+        setCheckoutProducts(updatedCheckoutProducts)
+        onProductionSelection(updatedCheckoutProducts)
     }
 
     return (

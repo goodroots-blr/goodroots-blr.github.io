@@ -32,7 +32,6 @@ const getProductTile = (Component, availableProducts, handleClick) => {
 const OurProducts = ({ data }) => {
     const availableProducts = [data.products["product-id-1"], data.products["product-id-2"]];
     const [toggle, setToggle] = useState(false);
-    const [checkoutProducts, setCheckoutProducts] = useState({});
     const [selectedProductId, setSelectedProductId] = useState(undefined)
 
     const handleClick = (id, parentId) => {
@@ -48,11 +47,6 @@ const OurProducts = ({ data }) => {
         SessionStorage.clear(STORE_NAME)
     }
 
-    const onProductionSelection = (obj) => {
-        const existingProducts = JSON.parse(SessionStorage.get(STORE_NAME)) || {};
-        setCheckoutProducts(existingProducts);
-        SessionStorage.set(STORE_NAME, { ...existingProducts, ...obj });
-    }
     return (
         <div className="ourProducts section-top-spacing">
             <div className="container">
@@ -75,8 +69,6 @@ const OurProducts = ({ data }) => {
                 <RadioButtons
                     selectedProductId={selectedProductId}
                     availableItems={data.products}
-                    checkoutProducts={checkoutProducts}
-                    onProductionSelection={onProductionSelection}
                     onCloseClick={onCloseClick} />
             </MobileOverlay>}
         </div>

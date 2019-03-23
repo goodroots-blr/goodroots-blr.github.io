@@ -8,11 +8,14 @@ import './CheckoutPage.scss';
 
 const CheckoutPage = (props) => {
     const products = props.location.state.products;
+    console.log(products);
+    
     const showProducts = () => {
         return (
             <>
-                {products.hasOwnProperty('Alphanso') && <SmallProductTitle />}
-                {products.hasOwnProperty('Banganapalli') && <SmallProductTitle />}
+            div
+                {/* {products.hasOwnProperty('Alphanso') && <SmallProductTitle />}
+                {products.hasOwnProperty('Banganapalli') && <SmallProductTitle />} */}
             </>
         )
     }
@@ -125,7 +128,7 @@ const CheckoutPage = (props) => {
                             </div>
                             <div className={`white-box-content ${state.hideOrderSummary && "hide"}`}>
                                 <div className="smallProductTitle-container">
-                                    <SmallProductTitle stepper={false} />
+                                    {/* <SmallProductTitle stepper={false} /> */}
                                 </div>
                                 <div className="actions">
                                     <Button type="solid" title="Pay now" onClick={() => console.log(dataToPost)} />
