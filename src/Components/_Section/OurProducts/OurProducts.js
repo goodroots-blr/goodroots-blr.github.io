@@ -7,6 +7,28 @@ import Scrolling from './../../_UI/Scrolling/Scrolling';
 import SessionStorage, { STORE_NAME } from './../../../resources/helpers/SessionStorage'
 import './OurProducts.scss';
 
+const getProductTile = (Component, availableProducts, handleClick) => {
+    return (
+        availableProducts.map((products) => {
+            return (
+                <div className="products"
+                key={`${products.options[0].id}`}
+                >
+                    {/* {products.options[0].map((product) => ( */}
+                    <Component
+                        id={products.options[0].id}
+                        parentId={products.options[0].parentId}
+                        label={products.options[0].label}
+                        category={products.category}
+                        img={products.options[0].img}
+                        cost={products.options[0].price}
+                        onClick={handleClick} />
+                </div>
+            )
+        })
+    )
+}
+
 const OurProducts = ({ data }) => {
     const availableProducts = [data.products["product-id-1"], data.products["product-id-2"]];
     const [toggle, setToggle] = useState(false);
@@ -39,45 +61,11 @@ const OurProducts = ({ data }) => {
                 </h1>
                 <div className="desktopOnly">
                     <div className="desktop-products-container">
-                        {
-                            availableProducts.map((products) => {
-                                return (
-                                    <div className="products">
-                                        {/* {products.options[0].map((product) => ( */}
-                                        <ProductTile
-                                            key={products.options[0].id}
-                                            id={products.options[0].id}
-                                            parentId={products.options[0].parentId}
-                                            label={products.options[0].label}
-                                            category={products.category}
-                                            img={products.options[0].img}
-                                            cost={products.options[0].price}
-                                            onClick={handleClick} />
-                                    </div>
-                                )
-                            })
-                        }
+                        {getProductTile(ProductTile, availableProducts,handleClick)}
                     </div>
                 </div>
                 <div className="mobileOnly">
-                    {
-                        availableProducts.map((products) => {
-                            return (
-                                <>
-                                    {/* {products.options[0].map((product) => ( */}
-                                    <MobileProductTile
-                                        key={products.options[0].id}
-                                        id={products.options[0].id}
-                                        parentId={products.options[0].parentId}
-                                        label={products.options[0].label}
-                                        category={products.category}
-                                        img={products.options[0].img}
-                                        cost={products.options[0].price}
-                                        onClick={handleClick} />
-                                </>
-                            )
-                        })
-                    }
+                    {getProductTile(MobileProductTile, availableProducts, handleClick)}
                 </div>
                 <p className="bulkOrderText">
                     {data.bulkOrderText()}
