@@ -1,21 +1,36 @@
 import React, { useReducer, useRef, useEffect } from 'react';
+import _map from 'lodash/map';
+import _keys from 'lodash/keys';
+import _get from 'lodash/get';
 import Layout from './../../Components/_UI/Layout/Layout';
 import UserDetailsForm from './../../Components/_Section/UserDetailsForm/UserDetailsForm';
 import SmallProductTitle from './../../Components/_UI/SmallProductTitle/SmallProductTitle';
 import Button from './../../Components/_UI/Button/Button';
 import SessionStorage, { STORE_NAME } from './../../resources/helpers/SessionStorage'
+import { ourProductsData } from './../../resources/data'
 import './CheckoutPage.scss';
 
 const CheckoutPage = (props) => {
-    const products = props.location.state.products;
-    console.log(products);
-    
+    const passedProps = _get(props,"location.state.products") || JSON.parse(SessionStorage.get(STORE_NAME));
+    let items = [];
+    _map(passedProps, (value, key) => {
+        const prodData = ourProductsData.products[key];
+        const options = ourProductsData.products[key].options;
+        const rest = options.filter(option => option.id === _keys(value)[0])[0];
+        const obj = {
+            ...rest,
+            category: prodData.category,
+        }
+        items.push(obj);
+        return items
+    })
+
     const showProducts = () => {
         return (
             <>
-            div
-                {/* {products.hasOwnProperty('Alphanso') && <SmallProductTitle />}
-                {products.hasOwnProperty('Banganapalli') && <SmallProductTitle />} */}
+                {items.map((item)=>{
+                    return (<SmallProductTitle key={item.parentId} {...item}/>)
+                })}
             </>
         )
     }

@@ -1,19 +1,18 @@
 import React from 'react';
 import Stepper from './../Stepper/Stepper'
-import { ourProductsData } from './../../../resources/data'
 import './SmallProductTitle.scss'
 
-const SmallProductTitle = ({ name, quantity, price, stepper }) => {
+const SmallProductTitle = ({ id, parentId, category, label, price, img, stepper }) => {
     return (
-        <div className="smallProductTitle">
+        <div className="smallProductTitle" id={id} data-parent-id={parentId}>
             <div className="smallProductTitle-left">
-                <img src={ourProductsData.products[0][0].img} alt="hello" />
+                <img src={img} alt={id} />
                 {stepper && <Stepper />}
             </div>
             <div className="smallProductTitle-right">
-                <p className="product-name">Alphanso</p>
-                <p className="product-quantity">1 dozen</p>
-                <p className="product-price">1000</p>
+                <p className="product-name">{category}</p>
+                <p className="product-quantity">{label}</p>
+                <p className="product-price">{price}</p>
             </div>
         </div>
     );

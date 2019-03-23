@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import SessionStorage, { STORE_NAME } from './../../../resources/helpers/SessionStorage'
 import './RadioButtons.scss';
 
-const productObject = (parentId, id) => {
+const productObject = (parentId, id, label="1 dozon") => {
     const obj = {}, child = {}
-    child[id] = 1;
+    child[id] = label;
     obj[parentId] = child
     return obj;
 }
@@ -29,8 +29,8 @@ const RadioButtons = ({
         }
     });
 
-    const handleChange = (parentId, id) => {
-        let updatedCheckoutProducts = { ...checkoutProducts, ...productObject(parentId, id) };
+    const handleChange = (parentId, id, label) => {
+        let updatedCheckoutProducts = { ...checkoutProducts, ...productObject(parentId, id, label) };
         setCheckoutProducts(updatedCheckoutProducts)
         onProductionSelection(updatedCheckoutProducts)
     }
@@ -50,7 +50,7 @@ const RadioButtons = ({
                                             <label key={`${id}`}
                                                 className="custom-radio">{label} {price}
                                                 <input type="radio"
-                                                    onChange={() => handleChange(parentId, id)}
+                                                    onChange={() => handleChange(parentId, id, label)}
                                                     defaultChecked={(selectedProductId === parentId) && i === 0}
                                                     name={item.title} />
                                                 <span className="checkmark"></span>
