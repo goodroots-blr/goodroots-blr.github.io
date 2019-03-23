@@ -59,14 +59,26 @@ const OurProducts = ({ data }) => {
                         }
                     </div>
                 </div>
-                {/* <div className="mobileOnly">
+                <div className="mobileOnly">
                     {
-                        <>
-                            <MobileProductTile onClick={handleClick} {...data.products[0][0]} />
-                            <MobileProductTile onClick={handleClick} {...data.products[1][0]} />
-                        </>
+                        availableProducts.map((products) => {
+                            return (
+                                <>
+                                    {/* {products.options[0].map((product) => ( */}
+                                    <MobileProductTile
+                                        key={products.options[0].id}
+                                        id={products.options[0].id}
+                                        parentId={products.options[0].parentId}
+                                        label={products.options[0].label}
+                                        category={products.category}
+                                        img={products.options[0].img}
+                                        cost={products.options[0].price}
+                                        onClick={handleClick} />
+                                </>
+                            )
+                        })
                     }
-                </div> */}
+                </div>
                 <p className="bulkOrderText">
                     {data.bulkOrderText()}
                 </p>
