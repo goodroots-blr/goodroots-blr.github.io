@@ -3,55 +3,19 @@ import Layout from './../../Components/_UI/Layout/Layout';
 import UserDetailsForm from './../../Components/_Section/UserDetailsForm/UserDetailsForm';
 import SmallProductTitle from './../../Components/_UI/SmallProductTitle/SmallProductTitle';
 import Button from './../../Components/_UI/Button/Button';
+import SessionStorage, { STORE_NAME } from './../../resources/helpers/SessionStorage'
 import './CheckoutPage.scss';
 
-// const reducer = (state, action) => {
-//     switch (action.type) {
-//         case 'HIDE_ORDER':
-//             return {
-//                 hideOrder: true,
-//                 showChangeBtnInOrder: true,
-//                 hideDeliveryAddress: false,
-//                 showChangeBtnInDeliveryAddress: false,
-//                 hideOrderSummary: true,
-//                 showChangeBtnInOrderSummary: false
-//             };
-//         case 'SHOW_ORDER':
-//             return {
-//                 hideOrder: false,
-//                 showChangeBtnInOrder: false,
-//                 hideDeliveryAddress: true,
-//                 showChangeBtnInDeliveryAddress: false,
-//                 hideOrderSummary: true,
-//                 showChangeBtnInOrderSummary: false
-//             };
-//         case 'HIDE_ADDRESS':
-//             userFormRef.current.handleFormSubmit()
-//             return {
-//                 hideOrder: true,
-//                 showChangeBtnInOrder: true,
-//                 hideDeliveryAddress: true,
-//                 showChangeBtnInDeliveryAddress: true,
-//                 hideOrderSummary: false,
-//                 showChangeBtnInOrderSummary: false
-//             };
-//         case 'SHOW_ADDRESS':
-//             return {
-//                 hideOrder: true,
-//                 showChangeBtnInOrder: true,
-//                 hideDeliveryAddress: false,
-//                 showChangeBtnInDeliveryAddress: false,
-//                 hideOrderSummary: true,
-//                 showChangeBtnInOrderSummary: false
-//             };
-//         default:
-//             return {
-//                 error: `Passed action type "${action.type}" is not allowed`
-//             };
-//     }
-// };
-
-const CheckoutPage = ({ data }) => {
+const CheckoutPage = (props) => {
+    const products = props.location.state.products;
+    const showProducts = () => {
+        return (
+            <>
+                {products.hasOwnProperty('Alphanso') && <SmallProductTitle />}
+                {products.hasOwnProperty('Banganapalli') && <SmallProductTitle />}
+            </>
+        )
+    }
     const dataToPost = []
     const userFormRef = useRef();
     let initialState = {
@@ -110,7 +74,7 @@ const CheckoutPage = ({ data }) => {
         }
     }, initialState);
 
-    useEffect(()=>{
+    useEffect(() => {
         document.body.classList.remove('productOverlay--open');
         window.scrollTo(0, 0);
     })
@@ -128,8 +92,7 @@ const CheckoutPage = ({ data }) => {
                             </div>
                             <div className={`white-box-content ${state.hideOrder && "hide"}`}>
                                 <div className="smallProductTitle-container">
-                                    <SmallProductTitle />
-                                    <SmallProductTitle />
+                                    {showProducts()}
                                 </div>
                                 <div className="actions">
                                     <Button title="Continue shopping" />

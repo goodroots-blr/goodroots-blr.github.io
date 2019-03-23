@@ -3,7 +3,7 @@ import Stepper from './../Stepper/Stepper'
 import { ourProductsData } from './../../../resources/data'
 import './SmallProductTitle.scss'
 
-const SmallProductTitle = ({ data, stepper }) => {
+const SmallProductTitle = ({ name, quantity, price, stepper }) => {
     return (
         <div className="smallProductTitle">
             <div className="smallProductTitle-left">

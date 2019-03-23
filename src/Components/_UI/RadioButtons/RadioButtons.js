@@ -4,7 +4,6 @@ import './RadioButtons.scss';
 const data = {
     "items": [
         {
-            "name": "alphanso",
             "title": "Alphanso",
             "options": [
                 {
@@ -22,7 +21,6 @@ const data = {
             ]
         },
         {
-            "name": "banganapalli",
             "title": "Banganapalli",
             "options": [
                 {
@@ -41,12 +39,13 @@ const data = {
         }
     ]
 }
-const RadioButtons = ({ selectedProduct, onCloseClick, onProductionSelection }) => {
+const RadioButtons = ({ selectedProduct, onCloseClick, onProductionSelection, products }) => {
     useEffect(() => {
         const obj = {}
-        obj[selectedProduct.toLowerCase()] = {
+        obj[selectedProduct] = {
             "label": "1 dozon",
-            "quantity": 1
+            "quantity": 1,
+            "price": 1000
         };
         handleChange(obj)
     })
@@ -64,39 +63,41 @@ const RadioButtons = ({ selectedProduct, onCloseClick, onProductionSelection }) 
                             {
                                 item.options.map(({ label, price }, i) => {
                                     {
-                                        if ((selectedProduct.toLowerCase() === item.name) && i === 0) {
+                                        if ((selectedProduct === item.title) && i === 0) {
                                             return (
-                                                <label key={`${label}-${item.name}`}
+                                                <label key={`${label}-${item.title}`}
                                                     className="custom-radio">{label} {price}
                                                     <input type="radio"
                                                         onChange={() => {
                                                             const obj = {}
-                                                            obj[item.name] = {
+                                                            obj[item.title] = {
                                                                 "label": label,
-                                                                "quantity": 1
+                                                                "quantity": 1,
+                                                                "price": price
                                                             };
                                                             handleChange(obj)
                                                         }}
                                                         defaultChecked={true}
-                                                        name={item.name} />
+                                                        name={item.title} />
                                                     <span className="checkmark"></span>
                                                 </label>
                                             )
                                         }
                                         else {
                                             return (
-                                                <label key={`${label}-${item.name}`}
+                                                <label key={`${label}-${item.title}`}
                                                     className="custom-radio">{label} {price}
                                                     <input type="radio"
                                                         onChange={() => {
                                                             const obj = {}
-                                                            obj[item.name] = {
+                                                            obj[item.title] = {
                                                                 "label": label,
-                                                                "quantity": 1
+                                                                "quantity": 1,
+                                                                "price": price
                                                             };
                                                             handleChange(obj)
                                                         }}
-                                                        name={item.name} />
+                                                        name={item.title} />
                                                     <span className="checkmark"></span>
                                                 </label>
                                             )
@@ -108,7 +109,12 @@ const RadioButtons = ({ selectedProduct, onCloseClick, onProductionSelection }) 
                     )
                 })
             }
-            {<Link className="button button-inverse" to="/checkout">Checkout now</Link>}
+            {
+                <Link className="button button-inverse"
+                    to={{ pathname: '/checkout', state: { products: products } }}>
+                    Checkout now
+                 </Link>
+            }
             <div className="close-btn" onClick={onCloseClick}>x</div>
         </div>
     );

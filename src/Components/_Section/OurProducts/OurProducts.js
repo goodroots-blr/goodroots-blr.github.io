@@ -9,7 +9,8 @@ import './OurProducts.scss';
 
 const OurProducts = ({ data }) => {
     let results = {};
-    const [toggle, setToggle] = useState(false)
+    const [toggle, setToggle] = useState(false);
+    const [products, setProducts] = useState({});
     const [selectedProduct, setSelectedProduct] = useState(undefined)
     const handleClick = (category) => {
         document.body.classList.add('productOverlay--open');
@@ -24,6 +25,7 @@ const OurProducts = ({ data }) => {
     }
     const onProductionSelection = (obj) => {
         const existingProducts = JSON.parse(SessionStorage.get(STORE_NAME)) || {};
+        setProducts(existingProducts);
         SessionStorage.set(STORE_NAME, { ...existingProducts, ...obj });
     }
     return (
@@ -61,6 +63,7 @@ const OurProducts = ({ data }) => {
             </div>
             {toggle && <MobileOverlay>
                 <RadioButtons
+                    products={products}
                     onProductionSelection={onProductionSelection}
                     selectedProduct={selectedProduct}
                     onCloseClick={onCloseClick} />
