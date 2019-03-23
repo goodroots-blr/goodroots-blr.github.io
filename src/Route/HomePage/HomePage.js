@@ -19,7 +19,6 @@ import OurProducts from './../../Components/_Section/OurProducts/OurProducts';
 import Certificates from './../../Components/_Section/Certificates/Certificates';
 import Givingback from './../../Components/_Section/Givingback/Givingback';
 import './HomePage.scss';
-
 const HomePage = (props) => {
     return (
         <Layout showNavigation={props.showNavigation}>

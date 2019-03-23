@@ -8,24 +8,27 @@ import SessionStorage, { STORE_NAME } from './../../../resources/helpers/Session
 import './OurProducts.scss';
 
 const OurProducts = ({ data }) => {
-    let results = {};
+    const availableProducts = [data.products["product-id-1"], data.products["product-id-2"]];
     const [toggle, setToggle] = useState(false);
-    const [products, setProducts] = useState({});
-    const [selectedProduct, setSelectedProduct] = useState(undefined)
-    const handleClick = (category) => {
+    const [checkoutProducts, setCheckoutProducts] = useState({});
+    const [selectedProductId, setSelectedProductId] = useState(undefined)
+
+    const handleClick = (id, parentId) => {
         document.body.classList.add('productOverlay--open');
-        setSelectedProduct(category)
+        setSelectedProductId(parentId)
         setToggle(true)
     }
+
     const onCloseClick = () => {
-        setSelectedProduct('')
+        setSelectedProductId('')
         setToggle(false)
         document.body.classList.remove('productOverlay--open');
         SessionStorage.clear(STORE_NAME)
     }
+
     const onProductionSelection = (obj) => {
         const existingProducts = JSON.parse(SessionStorage.get(STORE_NAME)) || {};
-        setProducts(existingProducts);
+        setCheckoutProducts(existingProducts);
         SessionStorage.set(STORE_NAME, { ...existingProducts, ...obj });
     }
     return (
@@ -37,35 +40,43 @@ const OurProducts = ({ data }) => {
                 <div className="desktopOnly">
                     <div className="desktop-products-container">
                         {
-                            data.products.map((products) => {
+                            availableProducts.map((products) => {
                                 return (
                                     <div className="products">
-                                        {products.map((product, i) => (
-                                            <ProductTile key={i} {...product} onClick={handleClick} />
-                                        ))}
+                                        {/* {products.options[0].map((product) => ( */}
+                                        <ProductTile
+                                            key={products.options[0].id}
+                                            id={products.options[0].id}
+                                            parentId={products.options[0].parentId}
+                                            label={products.options[0].label}
+                                            category={products.category}
+                                            img={products.options[0].img}
+                                            cost={products.options[0].price}
+                                            onClick={handleClick} />
                                     </div>
                                 )
                             })
                         }
                     </div>
                 </div>
-                <div className="mobileOnly">
+                {/* <div className="mobileOnly">
                     {
                         <>
                             <MobileProductTile onClick={handleClick} {...data.products[0][0]} />
                             <MobileProductTile onClick={handleClick} {...data.products[1][0]} />
                         </>
                     }
-                </div>
+                </div> */}
                 <p className="bulkOrderText">
                     {data.bulkOrderText()}
                 </p>
             </div>
             {toggle && <MobileOverlay>
                 <RadioButtons
-                    products={products}
+                    selectedProductId={selectedProductId}
+                    availableItems={data.products}
+                    checkoutProducts={checkoutProducts}
                     onProductionSelection={onProductionSelection}
-                    selectedProduct={selectedProduct}
                     onCloseClick={onCloseClick} />
             </MobileOverlay>}
         </div>
