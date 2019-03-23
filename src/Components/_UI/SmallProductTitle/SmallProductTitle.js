@@ -7,7 +7,7 @@ const SmallProductTitle = ({ id, parentId, category, label, price, img, stepper 
         <div className="smallProductTitle" id={id} data-parent-id={parentId}>
             <div className="smallProductTitle-left">
                 <img src={img} alt={id} />
-                {stepper && <Stepper />}
+                {/* {stepper && <Stepper />} */}
             </div>
             <div className="smallProductTitle-right">
                 <p className="product-name">{category}</p>

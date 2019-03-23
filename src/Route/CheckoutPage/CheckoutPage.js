@@ -1,19 +1,22 @@
 import React, { useReducer, useRef, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import _map from 'lodash/map';
 import _keys from 'lodash/keys';
 import _get from 'lodash/get';
+import _isEmpty from 'lodash/isEmpty';
 import Layout from './../../Components/_UI/Layout/Layout';
 import UserDetailsForm from './../../Components/_Section/UserDetailsForm/UserDetailsForm';
 import SmallProductTitle from './../../Components/_UI/SmallProductTitle/SmallProductTitle';
 import Button from './../../Components/_UI/Button/Button';
 import SessionStorage, { STORE_NAME } from './../../resources/helpers/SessionStorage'
 import { ourProductsData } from './../../resources/data'
+import LABELS from './../../resources/labels'
 import './CheckoutPage.scss';
 
 const CheckoutPage = (props) => {
-    const passedProps = _get(props,"location.state.products") || JSON.parse(SessionStorage.get(STORE_NAME));
+    const passedProps = _get(props, "location.state.products") || JSON.parse(SessionStorage.get(STORE_NAME));
     let items = [];
-    _map(passedProps, (value, key) => {
+    !_isEmpty(passedProps) && _map(passedProps, (value, key) => {
         const prodData = ourProductsData.products[key];
         const options = ourProductsData.products[key].options;
         const rest = options.filter(option => option.id === _keys(value)[0])[0];
@@ -28,8 +31,8 @@ const CheckoutPage = (props) => {
     const showProducts = () => {
         return (
             <>
-                {items.map((item)=>{
-                    return (<SmallProductTitle key={item.parentId} {...item}/>)
+                {items.map((item) => {
+                    return (<SmallProductTitle key={item.parentId} {...item} />)
                 })}
             </>
         )
@@ -99,82 +102,97 @@ const CheckoutPage = (props) => {
 
     return (
         <Layout>
-            <div className="checkoutPage section-top-spacing-layout container">
-                <div className="content">
-                    <div className="col-9">
-                        <div className="white-box">
-                            <div className="cart-title">
-                                <h2>My Cart (2)</h2>
-                                {state.showChangeBtnInOrder &&
-                                    <Button title="Change" onClick={() => dispatch({ type: 'SHOW_ORDER' })} />}
-                            </div>
-                            <div className={`white-box-content ${state.hideOrder && "hide"}`}>
-                                <div className="smallProductTitle-container">
-                                    {showProducts()}
+            {
+                items.length > 0 ?
+                    <div className="checkoutPage section-top-spacing-layout container">
+                        <div className="content">
+                            <div className="col-9">
+                                <div className="white-box">
+                                    <div className="cart-title">
+                                        <h2>{LABELS.CHECKOUT_PAGE.MYCART_SECTION.TITLE}
+                                            ({items.length})</h2>
+                                        {state.showChangeBtnInOrder &&
+                                            <Button title="Change" onClick={() => dispatch({ type: 'SHOW_ORDER' })} />}
+                                    </div>
+                                    <div className={`white-box-content ${state.hideOrder && "hide"}`}>
+                                        <div className="smallProductTitle-container">
+                                            {showProducts()}
+                                        </div>
+                                        <div className="actions">
+                                            <Link className="button button-inverse" to='/'>
+                                                {LABELS.CHECKOUT_PAGE.MYCART_SECTION.SHOPPING_BTN}
+                                            </Link>
+                                            <Button type="solid"
+                                                title={LABELS.CHECKOUT_PAGE.MYCART_SECTION.PLACE_ORDER_BTN}
+                                                onClick={() => dispatch({ type: 'HIDE_ORDER' })} />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="actions">
-                                    <Button title="Continue shopping" />
-                                    <Button type="solid" title="Place order" onClick={() => dispatch({ type: 'HIDE_ORDER' })} />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="white-box">
-                            <div className="cart-title">
-                                <h2>
-                                    Delivery Address
+                                <div className="white-box">
+                                    <div className="cart-title">
+                                        <h2>
+                                            Delivery Address
                                 </h2>
-                                {state.showChangeBtnInDeliveryAddress &&
-                                    <Button title="Change" onClick={() => dispatch({ type: 'SHOW_ADDRESS' })} />}
-                            </div>
-                            <div className={`white-box-content ${state.hideDeliveryAddress && "hide"}`}>
-                                <div className="userDetailsForm-container">
-                                    <UserDetailsForm ref={userFormRef} />
+                                        {state.showChangeBtnInDeliveryAddress &&
+                                            <Button title="Change" onClick={() => dispatch({ type: 'SHOW_ADDRESS' })} />}
+                                    </div>
+                                    <div className={`white-box-content ${state.hideDeliveryAddress && "hide"}`}>
+                                        <div className="userDetailsForm-container">
+                                            <UserDetailsForm ref={userFormRef} />
+                                        </div>
+                                        <div className="actions">
+                                            <Button type="solid" title="Continue" onClick={() => dispatch({ type: 'HIDE_ADDRESS' })} />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="actions">
-                                    <Button type="solid" title="Continue" onClick={() => dispatch({ type: 'HIDE_ADDRESS' })} />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="white-box">
-                            <div className="cart-title">
-                                <h2>
-                                    Order Summary
+                                <div className="white-box">
+                                    <div className="cart-title">
+                                        <h2>
+                                            Order Summary
                                 </h2>
-                            </div>
-                            <div className={`white-box-content ${state.hideOrderSummary && "hide"}`}>
-                                <div className="smallProductTitle-container">
-                                    {/* <SmallProductTitle stepper={false} /> */}
+                                    </div>
+                                    <div className={`white-box-content ${state.hideOrderSummary && "hide"}`}>
+                                        <div className="smallProductTitle-container">
+                                            {showProducts()}
+                                        </div>
+                                        <div className="actions">
+                                            <Button type="solid" title="Pay now" onClick={() => console.log(dataToPost)} />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="actions">
-                                    <Button type="solid" title="Pay now" onClick={() => console.log(dataToPost)} />
+                            </div>
+                            <div className="col-3">
+                                <div className="white-box price-details-container">
+                                    <div className="cart-title">
+                                        <h2>
+                                            Bill Details
+                                </h2>
+                                    </div>
+                                    <div className="price-details">
+                                        <div className="items">
+                                            Price (2 items)<span> ₹1,559</span>
+                                        </div>
+                                        <div className="delivery">
+                                            Delivery Fee<span>FREE</span>
+                                        </div>
+
+                                        <div className="totalpay">
+                                            TO PAY<span> ₹1,559</span>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-3">
-                        <div className="white-box price-details-container">
-                            <div className="cart-title">
-                                <h2>
-                                    Bill Details
-                                </h2>
-                            </div>
-                            <div className="price-details">
-                                <div className="items">
-                                    Price (2 items)<span> ₹1,559</span>
-                                </div>
-                                <div className="delivery">
-                                    Delivery Fee<span>FREE</span>
-                                </div>
-
-                                <div className="totalpay">
-                                    TO PAY<span> ₹1,559</span>
-                                </div>
-
-                            </div>
-                        </div>
+                    :
+                    <div className="checkoutPage section-top-spacing-layout container emptyCartMessage">
+                        <h1>{LABELS.CHECKOUT_PAGE.EMPTY_CART}</h1>
+                        <Link className="button button-inverse" to='/'>
+                            {LABELS.CHECKOUT_PAGE.EMPTY_CART_BTN}
+                        </Link>
                     </div>
-                </div>
-            </div>
+            }
         </Layout>
     );
 };

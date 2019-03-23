@@ -1,4 +1,21 @@
 .checkoutPage {
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  .button {
+    font-size: 14px;
+    padding: 6px 15px;
+    height: 38px;
+    width: 150px;
+    text-align: center;
+  }
+  &.emptyCartMessage {
+    text-align: center;
+    h1 {
+      padding: 50px 0 30px;
+    }
+  }
   .smallProductTitle-container {
     .smallProductTitle {
       border-bottom: 1px solid #f0f0f0;
@@ -12,7 +29,7 @@
     justify-content: flex-end;
     padding: 0 20px;
     .button {
-      margin-left: 20px;
+      margin-left: 10px;
     }
   }
   .white-box {
@@ -22,7 +39,7 @@
     .white-box-content {
       max-height: 1000px;
       // transition: max-height 0.75s ease-in;
-      animation-delay: .5s;
+      animation-delay: 0.5s;
       overflow: hidden;
       &.hide {
         // transition: max-height 0.5s ease-out;
@@ -44,11 +61,12 @@
       }
       .button {
         margin: 0;
-        width: 150px;
       }
     }
   }
-  .price-details-container{
+  .price-details-container {
+    position: sticky;
+    top:120px;
     .cart-title {
       border-bottom: 1px solid #f0f0f0;
     }
