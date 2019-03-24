@@ -37,7 +37,7 @@ const OurProducts = (props) => {
     }
 
     const onCloseClick = () => {
-        props.onProductSelection({})
+        props.onProductRemoval('all')
         setToggle(false)
         document.body.classList.remove('productOverlay--open');
     }
@@ -86,6 +86,9 @@ export function mapDispatchToProps(dispatch) {
         onProductSelection: function (token) {
             dispatch(ProductActions.onProductSelection(dispatch, token))
         },
+        onProductRemoval: function (parentId) {
+            dispatch(ProductActions.onProductRemoval(dispatch, parentId))
+        }
     }
 }
 

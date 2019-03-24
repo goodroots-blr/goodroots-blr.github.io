@@ -47,7 +47,7 @@ const RadioButtons = (props) => {
             {
                 <Button type="inverse" title="Checkout now" onClick={onCheckoutClick} />
             }
-            <div className="close-btn" onClick={props.onCloseClick}>x</div>
+            <div className="close-btn" onClick={()=>props.onCloseClick(sParentId)}>x</div>
         </div>
     );
 };

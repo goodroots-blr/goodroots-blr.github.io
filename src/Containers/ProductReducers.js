@@ -7,11 +7,15 @@ const productsReducers = (state = intialState, action) => {
     let newState = _cloneDeep(state);
     switch (action.type) {
         case "PRODUCT_SELECTED" : {
-            newState.selectedProducts = {... newState.selectedProducts, ...action.payload}
+            newState.selectedProducts = {...newState.selectedProducts, ...action.payload}
             break;
         }
         case "PRODUCT_REMOVED" : {
-            delete newState.selectedProducts[action.payload]
+            if(action.payload !== "all") {
+                delete newState.selectedProducts[action.payload]
+            } else {
+                newState.selectedProducts = {}  
+            }
             break;
         }
         case REHYDRATE : {
