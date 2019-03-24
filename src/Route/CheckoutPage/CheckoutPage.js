@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useEffect } from 'react';
+import React, { useReducer, useRef, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import _map from 'lodash/map';
 import _keys from 'lodash/keys';
@@ -12,8 +12,7 @@ import SessionStorage, { STORE_NAME } from './../../resources/helpers/SessionSto
 import { ourProductsData } from './../../resources/data'
 import './CheckoutPage.scss';
 
-const CheckoutPage = (props) => {
-    const passedProps = _get(props, "location.state.products") || JSON.parse(SessionStorage.get(STORE_NAME));
+const constructProductsList = (passedProps) => {
     let items = [];
     !_isEmpty(passedProps) && _map(passedProps, (value, key) => {
         const prodData = ourProductsData.products[key];
@@ -25,8 +24,13 @@ const CheckoutPage = (props) => {
         }
         items.push(obj);
         return items
-    })
+    });
+    return items;
+}
 
+const CheckoutPage = (props) => {
+    const passedProps = _get(props, "location.state.products") || JSON.parse(SessionStorage.get(STORE_NAME));
+    const [items, setItems] = useState(constructProductsList(passedProps))
     const showProducts = () => {
         return (
             <>
@@ -163,9 +167,7 @@ const CheckoutPage = (props) => {
                             <div className="col-3">
                                 <div className="white-box price-details-container">
                                     <div className="cart-title">
-                                        <h2>
-                                            Bill Details
-                                </h2>
+                                        <h2>Bill Details</h2>
                                     </div>
                                     <div className="price-details">
                                         <div className="items">

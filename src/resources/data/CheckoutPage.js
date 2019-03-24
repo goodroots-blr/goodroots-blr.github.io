@@ -8,6 +8,9 @@ export default {
             "TITLE": "My cart ",
             "PLACE_ORDER_BTN": "Place order",
             "SHOPPING_BTN": "Shopping",
+        },
+        "DELIVERY_ADDRESS": {
+            "TITLE": "Delivey Address",
         }
     }
 }
