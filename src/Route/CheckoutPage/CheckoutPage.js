@@ -36,7 +36,16 @@ const constructProductsList = (passedProps) => {
 const CheckoutPage = (props) => {
     const dataToPost = []
     const userFormRef = useRef();
-    const items = constructProductsList(props.selectedProducts)
+    const items = constructProductsList(props.selectedProducts);
+    const itemsPrice = items.reduce((acc, curr) => {
+        acc = acc + parseInt(curr.price)
+        return acc;
+    }, 0);
+
+    const deliveryFee = "FREE";
+    const totalPay = itemsPrice + (isNaN(deliveryFee) ? 0 : deliveryFee);
+    
+
     const handleRemoveClick = (parentId, id) => {
         props.onProductRemoval(parentId);
     }
@@ -180,14 +189,14 @@ const CheckoutPage = (props) => {
                                     </div>
                                     <div className="price-details">
                                         <div className="items">
-                                            Price (2 items)<span> ₹1,559</span>
+                                            Price ({items.length} items)<span> ₹{itemsPrice}</span>
                                         </div>
                                         <div className="delivery">
-                                            Delivery Fee<span>FREE</span>
+                                            Delivery Fee<span>{deliveryFee}</span>
                                         </div>
 
                                         <div className="totalpay">
-                                            TO PAY<span> ₹1,559</span>
+                                            TO PAY<span> ₹{totalPay}</span>
                                         </div>
 
                                     </div>
