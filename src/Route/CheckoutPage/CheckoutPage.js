@@ -10,7 +10,6 @@ import SmallProductTitle from './../../Components/_UI/SmallProductTitle/SmallPro
 import Button from './../../Components/_UI/Button/Button';
 import SessionStorage, { STORE_NAME } from './../../resources/helpers/SessionStorage'
 import { ourProductsData } from './../../resources/data'
-import LABELS from './../../resources/labels'
 import './CheckoutPage.scss';
 
 const CheckoutPage = (props) => {
@@ -109,7 +108,7 @@ const CheckoutPage = (props) => {
                             <div className="col-9">
                                 <div className="white-box">
                                     <div className="cart-title">
-                                        <h2>{LABELS.CHECKOUT_PAGE.MYCART_SECTION.TITLE}
+                                        <h2>{props.data.LABELS.MYCART_SECTION.TITLE}
                                             ({items.length})</h2>
                                         {state.showChangeBtnInOrder &&
                                             <Button title="Change" onClick={() => dispatch({ type: 'SHOW_ORDER' })} />}
@@ -120,10 +119,10 @@ const CheckoutPage = (props) => {
                                         </div>
                                         <div className="actions">
                                             <Link className="button button-inverse" to='/'>
-                                                {LABELS.CHECKOUT_PAGE.MYCART_SECTION.SHOPPING_BTN}
+                                                {props.data.LABELS.MYCART_SECTION.SHOPPING_BTN}
                                             </Link>
                                             <Button type="solid"
-                                                title={LABELS.CHECKOUT_PAGE.MYCART_SECTION.PLACE_ORDER_BTN}
+                                                title={props.data.LABELS.MYCART_SECTION.PLACE_ORDER_BTN}
                                                 onClick={() => dispatch({ type: 'HIDE_ORDER' })} />
                                         </div>
                                     </div>
@@ -187,9 +186,9 @@ const CheckoutPage = (props) => {
                     </div>
                     :
                     <div className="checkoutPage section-top-spacing-layout container emptyCartMessage">
-                        <h1>{LABELS.CHECKOUT_PAGE.EMPTY_CART}</h1>
+                        <h1>{props.data.LABELS.EMPTY_CART}</h1>
                         <Link className="button button-inverse" to='/'>
-                            {LABELS.CHECKOUT_PAGE.EMPTY_CART_BTN}
+                            {props.data.LABELS.EMPTY_CART_BTN}
                         </Link>
                     </div>
             }

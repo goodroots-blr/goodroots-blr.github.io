@@ -1,6 +1,13 @@
 import React from 'react';
 
 export default {
-    deliveryTitle: () => <><strong>Enter </strong>delivery address</>,
-    paragraphs: [`para 1`]
+    "LABELS": {
+        "EMPTY_CART": "You have not selected mango yet !!!",
+        "EMPTY_CART_BTN": "Start shopping",
+        "MYCART_SECTION": {
+            "TITLE": "My cart ",
+            "PLACE_ORDER_BTN": "Place order",
+            "SHOPPING_BTN": "Shopping",
+        }
+    }
 }
