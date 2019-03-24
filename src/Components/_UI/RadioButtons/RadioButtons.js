@@ -1,44 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
-import SessionStorage, { STORE_NAME } from './../../../resources/helpers/SessionStorage'
+import React from 'react';
+import _keys from 'lodash/keys';
+import Button from './../../_UI/Button/Button';
+import { withRouter } from 'react-router-dom';
 import './RadioButtons.scss';
 
-const productObject = (parentId, id, label = "1 dozon") => {
-    const obj = {}, child = {}
-    child[id] = label;
-    obj[parentId] = child
-    return obj;
-}
+const RadioButtons = (props) => {
+    const sParentId = _keys(props.selectedProducts)[0];
+    const handleChange = (parentId, id) => {
+        const obj = {};
+        obj[parentId] = id
+        props.onChange(obj)
+    }
 
-const onProductionSelection = (obj) => {
-    // SessionStorage.set(STORE_NAME, { ...obj });
-}
-
-const RadioButtons = ({
-    availableItems,
-    selectedProductId,
-    onCloseClick
-}) => {
-    const items = [availableItems["product-id-1"], availableItems["product-id-2"]];
-    const [checkoutProducts, setCheckoutProducts] = useState(
-        productObject(selectedProductId, `${selectedProductId}-1`))
-
-    // useEffect(() => {
-    //     if (!SessionStorage.get(STORE_NAME)) {
-    //         onProductionSelection(checkoutProducts);
-    //     }
-    // });
-    const handleChange = (parentId, id, label) => {
-        let updatedCheckoutProducts = { ...checkoutProducts, ...productObject(parentId, id, label) };
-        setCheckoutProducts(updatedCheckoutProducts)
-        // onProductionSelection(updatedCheckoutProducts)
+    const onCheckoutClick = () => {
+        props.history.push('/checkout');
     }
 
     return (
         <div className="RadioButtons">
             <h1 className="main-title small">Choose your mangoes</h1>
             {
-                items.map((item, i) => {
+                props.availableItems.map((item, i) => {
                     return (
                         <section key={`section-${i}`}>
                             <h3>{item.title}</h3>
@@ -49,8 +31,8 @@ const RadioButtons = ({
                                             <label key={`${id}`}
                                                 className="custom-radio">{label} {price}
                                                 <input type="radio"
-                                                    onChange={() => handleChange(parentId, id, label)}
-                                                    defaultChecked={(selectedProductId === parentId) && i === 0}
+                                                    onChange={() => handleChange(parentId, id)}
+                                                    defaultChecked={(sParentId === parentId) && i === 0}
                                                     name={item.title} />
                                                 <span className="checkmark"></span>
                                             </label>
@@ -63,19 +45,11 @@ const RadioButtons = ({
                 })
             }
             {
-                <Link className="button button-inverse"
-                    to={{
-                        pathname: '/checkout',
-                        state: {
-                            products: checkoutProducts,
-                        }
-                    }}>
-                    Checkout now
-                 </Link>
+                <Button type="inverse" title="Checkout now" onClick={onCheckoutClick} />
             }
-            <div className="close-btn" onClick={onCloseClick}>x</div>
+            <div className="close-btn" onClick={props.onCloseClick}>x</div>
         </div>
     );
 };
 
-export default RadioButtons;
+export default withRouter(RadioButtons);

@@ -2,13 +2,15 @@ import React from 'react';
 import Button from './../Button/Button';
 import './MobileProductTile.scss';
 
-const MobileProductTile = ({id, parentId, label, category, img, cost, onClick }) => {
+const MobileProductTile = ({ id, parentId, label, category, img, cost, onClick }) => {
     const handleAddToCart = () => {
-        onClick(id, parentId);
+        const obj = {};
+        obj[id] = { id, parentId, label, category, img, cost }
+        onClick(obj);
     }
 
     return (
-        <div className="mobileProductTile"  id={id} data-parent-id={parentId}>
+        <div className="mobileProductTile" id={id} data-parent-id={parentId}>
             <div className="productImage">
                 <img src={img} alt={label} />
             </div>

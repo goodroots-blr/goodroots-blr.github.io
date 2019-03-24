@@ -15,62 +15,62 @@ export default {
       {data.email}
     </u>
   </>,
-  "products": {
-    "product-id-1": {
-      "id" : "product-id-1",
+  "products": [
+    {
+      "id": "p-1",
       "title": "Alphanso",
       "category": "Alphanso",
       "options": [
         {
-          "id": "product-id-1-1",
-          "parentId":"product-id-1",
+          "id": "p-1-1",
+          "parentId": "p-1",
           "label": "1 dozon",
           "price": "1000",
           "img": img1,
         },
         {
-          "id": "product-id-1-2",
-          "parentId":"product-id-1",
+          "id": "p-1-2",
+          "parentId": "p-1",
           "label": "2 dozon",
           "price": "2000",
           "img": img1,
         },
         {
-          "id": "product-id-1-3",
-          "parentId":"product-id-1",
+          "id": "p-1-3",
+          "parentId": "p-1",
           "label": "3 dozon",
           "price": "3000",
           "img": img1,
         }
       ]
     },
-    "product-id-2": {
-      "id" : "product-id-2",
+    {
+      "id": "p-2",
       "title": "Banganapalli",
       "category": "Banganapalli",
       "options": [
         {
-          "id": "product-id-2-1",
-          "parentId":"product-id-2",
+          "id": "p-2-1",
+          "parentId": "p-2",
           "label": "1 dozon",
           "price": "1000",
           "img": img1,
         },
         {
-          "id": "product-id-2-2",
-          "parentId":"product-id-2",
+          "id": "p-2-2",
+          "parentId": "p-2",
           "label": "2 dozon",
           "price": "2000",
           "img": img1,
         },
         {
-          "id": "product-id-2-3",
-          "parentId":"product-id-2",
+          "id": "p-2-3",
+          "parentId": "p-2",
           "label": "3 dozon",
           "price": "3000",
           "img": img1,
         }
       ]
     }
-  }
+  ]
 }

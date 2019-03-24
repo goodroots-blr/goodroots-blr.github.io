@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === `development`) {
     const logger = createLogger();
     middlewares.push(logger);
 }
-     
+
 const persistConfig = {
     key: "GoodRoots",
     storage,
@@ -37,12 +37,11 @@ const store = compose(
 
 let persistor = persistStore(store)
 
-
 const App = () => {
     return (
-        <Router>
-            <Provider store={store}>
-                <PersistGate loading={null} persistor={persistor}>
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <Router>
                     <div>
                         <Route path="/"
                             exact
@@ -58,9 +57,9 @@ const App = () => {
                             render={(props) => <ReportPage {...props} />}
                         />
                     </div>
-                </PersistGate>
-            </Provider>
-        </Router>
+                </Router>
+            </PersistGate>
+        </Provider>
     );
 };
 

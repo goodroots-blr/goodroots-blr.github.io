@@ -4,7 +4,9 @@ import './ProductTile.scss';
 
 const ProductTile = ({ id, parentId, label, category, img, cost, onClick }) => {
     const handleAddToCart = () => {
-        onClick(id, parentId);
+        const obj = {};
+        obj[parentId] = id
+        onClick(obj);
     }
     return (
         <div className="productTile" id={id} data-parent-id={parentId}>
