@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SessionStorage, { STORE_NAME } from './../../../resources/helpers/SessionStorage'
 import './RadioButtons.scss';
 
-const productObject = (parentId, id, label="1 dozon") => {
+const productObject = (parentId, id, label = "1 dozon") => {
     const obj = {}, child = {}
     child[id] = label;
     obj[parentId] = child
@@ -28,7 +28,6 @@ const RadioButtons = ({
             onProductionSelection(checkoutProducts);
         }
     });
-
     const handleChange = (parentId, id, label) => {
         let updatedCheckoutProducts = { ...checkoutProducts, ...productObject(parentId, id, label) };
         setCheckoutProducts(updatedCheckoutProducts)
@@ -65,7 +64,12 @@ const RadioButtons = ({
             }
             {
                 <Link className="button button-inverse"
-                    to={{ pathname: '/checkout', state: { products: checkoutProducts } }}>
+                    to={{
+                        pathname: '/checkout',
+                        state: {
+                            products: checkoutProducts,
+                        }
+                    }}>
                     Checkout now
                  </Link>
             }

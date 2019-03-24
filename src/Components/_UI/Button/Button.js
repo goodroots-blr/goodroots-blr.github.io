@@ -6,7 +6,7 @@ const Button = props => {
         props.onClick()
     }
     return (
-        <button className={`button button-${props.type}`}
+        <button className={`button button-${props.type} button-${props.size}`}
             onClick={handleClick}>
             {props.title}            
         </button>
@@ -15,9 +15,8 @@ const Button = props => {
 
 Button.defaultProps = {
     type: "primary",
-    onClick: () => {
-        
-    }
+    size: '',
+    onClick: () => { }
 }
 
 export default Button;

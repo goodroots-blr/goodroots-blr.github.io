@@ -29,13 +29,22 @@ const constructProductsList = (passedProps) => {
 }
 
 const CheckoutPage = (props) => {
+    console.log(props);
     const passedProps = _get(props, "location.state.products") || JSON.parse(SessionStorage.get(STORE_NAME));
-    const [items, setItems] = useState(constructProductsList(passedProps))
+    const [items, setItems] = useState(constructProductsList(passedProps));
+    const handleRemoveClick = (id) => {
+        const filteredItems = items.filter(item => item.id !==id);
+        setItems(filteredItems);
+        SessionStorage.set(STORE_NAME, { ...filteredItems[0] });
+    }
     const showProducts = () => {
         return (
             <>
                 {items.map((item) => {
-                    return (<SmallProductTitle key={item.parentId} {...item} />)
+                    return (<SmallProductTitle
+                        onRemoveClick={handleRemoveClick}
+                        key={item.parentId}
+                        {...item} />)
                 })}
             </>
         )
@@ -133,9 +142,7 @@ const CheckoutPage = (props) => {
                                 </div>
                                 <div className="white-box">
                                     <div className="cart-title">
-                                        <h2>
-                                            Delivery Address
-                                </h2>
+                                        <h2>Delivery Address</h2>
                                         {state.showChangeBtnInDeliveryAddress &&
                                             <Button title="Change" onClick={() => dispatch({ type: 'SHOW_ADDRESS' })} />}
                                     </div>

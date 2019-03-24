@@ -9,6 +9,16 @@
     height: 38px;
     width: 150px;
     text-align: center;
+
+    &.button-small {
+      text-transform: uppercase;
+      font-size: 10px;
+      height: 23px;
+      width: auto;
+      padding: 2px 6px;
+      margin-top: 5px;
+      margin-bottom: 0;  
+    }
   }
   &.emptyCartMessage {
     text-align: center;
