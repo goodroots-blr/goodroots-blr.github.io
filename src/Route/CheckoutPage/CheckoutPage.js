@@ -8,7 +8,6 @@ import Layout from './../../Components/_UI/Layout/Layout';
 import UserDetailsForm from './../../Components/_Section/UserDetailsForm/UserDetailsForm';
 import SmallProductTitle from './../../Components/_UI/SmallProductTitle/SmallProductTitle';
 import Button from './../../Components/_UI/Button/Button';
-import SessionStorage, { STORE_NAME } from './../../resources/helpers/SessionStorage'
 import { ourProductsData } from './../../resources/data'
 import './CheckoutPage.scss';
 

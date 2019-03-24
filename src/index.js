@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { applyMiddleware, createStore, compose } from 'redux';
+import {createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { createLogger } from 'redux-logger';
 
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage/session';
@@ -16,23 +15,17 @@ import ReportPage from './Route/ReportPage/ReportPage';
 import rootReducer from './Containers/reducers';
 import { checkoutPageData } from './resources/data'
 import './style.scss';
-let middlewares = [];
-if (process.env.NODE_ENV === `development`) {
-    const logger = createLogger();
-    middlewares.push(logger);
-}
 
 const persistConfig = {
     key: "GoodRoots",
     storage,
+    stateReconciler: autoMergeLevel2,
     version: "1.0.0"
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-const store = compose(
-    applyMiddleware(...middlewares),
-)(createStore)(persistedReducer);
+let store = createStore(persistedReducer);
 
 let persistor = persistStore(store)
 

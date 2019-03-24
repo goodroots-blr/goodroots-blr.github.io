@@ -14,6 +14,11 @@ const productsReducers = (state = intialState, action) => {
             delete newState.selectedProducts[action.payload]
             break;
         }
+        case REHYDRATE : {
+            newState = action.payload ?
+                {selectedProducts: action.payload.ProductReducers.selectedProducts} : newState
+            break;
+        }
         default:
             break;
     }
