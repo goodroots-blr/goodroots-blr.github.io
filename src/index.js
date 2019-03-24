@@ -25,7 +25,6 @@ if (process.env.NODE_ENV === `development`) {
 const persistConfig = {
     key: "GoodRoots",
     storage,
-    stateReconciler: autoMergeLevel2,
     version: "1.0.0"
 }
 

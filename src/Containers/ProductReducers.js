@@ -8,9 +8,11 @@ const productsReducers = (state = intialState, action) => {
     switch (action.type) {
         case "PRODUCT_SELECTED" : {
             newState.selectedProducts = {... newState.selectedProducts, ...action.payload}
+            break;
         }
-        case "REHYDRATE": {
-
+        case "PRODUCT_REMOVED" : {
+            delete newState.selectedProducts[action.payload]
+            break;
         }
         default:
             break;

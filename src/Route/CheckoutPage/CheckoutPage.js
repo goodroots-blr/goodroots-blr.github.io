@@ -1,8 +1,8 @@
 import React, { useReducer, useRef, useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
-import _map from 'lodash/map';
+import ProductActions from './../../Containers/ProductActions';
 import _keys from 'lodash/keys';
-import _get from 'lodash/get';
 import _isEmpty from 'lodash/isEmpty';
 import Layout from './../../Components/_UI/Layout/Layout';
 import UserDetailsForm from './../../Components/_Section/UserDetailsForm/UserDetailsForm';
@@ -14,28 +14,32 @@ import './CheckoutPage.scss';
 
 const constructProductsList = (passedProps) => {
     let items = [];
-    !_isEmpty(passedProps) && _map(passedProps, (value, key) => {
-        const prodData = ourProductsData.products[key];
-        const options = ourProductsData.products[key].options;
-        const rest = options.filter(option => option.id === _keys(value)[0])[0];
-        const obj = {
-            ...rest,
-            category: prodData.category,
-        }
-        items.push(obj);
-        return items
-    });
+    if (!_isEmpty(passedProps)) {
+        const sParentIds = _keys(passedProps);
+        sParentIds.map((sPId) => {
+            const filtered = ourProductsData.products.filter(prodData => prodData.id === sPId)[0]
+            const options = filtered.options.filter((options) => options.id === passedProps[sPId])[0];
+            let obj = {
+                id: options.id,
+                parentId: options.parentId,
+                category: filtered.category,
+                label: options.label,
+                price: options.price,
+                img: options.img
+            }
+            items.push(obj)
+        })
+    }
+
     return items;
 }
 
 const CheckoutPage = (props) => {
-    console.log(props);
-    const passedProps = _get(props, "location.state.products") || JSON.parse(SessionStorage.get(STORE_NAME));
-    const [items, setItems] = useState(constructProductsList(passedProps));
-    const handleRemoveClick = (id) => {
-        const filteredItems = items.filter(item => item.id !==id);
-        setItems(filteredItems);
-        SessionStorage.set(STORE_NAME, { ...filteredItems[0] });
+    const dataToPost = []
+    const userFormRef = useRef();
+    const items = constructProductsList(props.selectedProducts)
+    const handleRemoveClick = (parentId, id) => {
+        props.onProductRemoval(parentId);
     }
     const showProducts = () => {
         return (
@@ -49,8 +53,7 @@ const CheckoutPage = (props) => {
             </>
         )
     }
-    const dataToPost = []
-    const userFormRef = useRef();
+
     let initialState = {
         hideOrder: false,
         showChangeBtnInOrder: false,
@@ -206,4 +209,18 @@ const CheckoutPage = (props) => {
 };
 
 
-export default CheckoutPage;
+export function mapStateToProps(state) {
+    return {
+        selectedProducts: state.ProductReducers.selectedProducts
+    }
+}
+
+export function mapDispatchToProps(dispatch) {
+    return {
+        onProductRemoval: function (parentId) {
+            dispatch(ProductActions.onProductRemoval(dispatch, parentId))
+        },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage);
