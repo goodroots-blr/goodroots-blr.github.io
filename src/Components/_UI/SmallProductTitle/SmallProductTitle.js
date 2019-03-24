@@ -3,7 +3,7 @@ import Stepper from './../Stepper/Stepper'
 import Button from './../Button/Button'
 import './SmallProductTitle.scss'
 
-const SmallProductTitle = ({ id, parentId, category, label, price, img, onRemoveClick }) => {
+const SmallProductTitle = ({ id, parentId, category, label, price, img, removeBtn, onRemoveClick }) => {
     return (
         <div className="smallProductTitle" id={id} data-parent-id={parentId}>
             <div className="smallProductTitle-left">
@@ -14,10 +14,10 @@ const SmallProductTitle = ({ id, parentId, category, label, price, img, onRemove
                 <p className="product-name">{category}</p>
                 <p className="product-quantity">{label}</p>
                 <p className="product-price">{price}</p>
-                <Button type="solid"
+                {removeBtn && <Button type="solid"
                     onClick={() => onRemoveClick(parentId, id)}
                     size="small"
-                    title="remove" />
+                    title="remove" />}
             </div>
         </div>
     );

@@ -49,11 +49,12 @@ const CheckoutPage = (props) => {
     const handleRemoveClick = (parentId, id) => {
         props.onProductRemoval(parentId);
     }
-    const showProducts = () => {
+    const showProducts = (removeBtn) => {
         return (
             <>
                 {items.map((item) => {
                     return (<SmallProductTitle
+                        removeBtn={removeBtn}
                         onRemoveClick={handleRemoveClick}
                         key={item.parentId}
                         {...item} />)
@@ -139,7 +140,7 @@ const CheckoutPage = (props) => {
                                     </div>
                                     <div className={`white-box-content ${state.hideOrder && "hide"}`}>
                                         <div className="smallProductTitle-container">
-                                            {showProducts()}
+                                            {showProducts(true)}
                                         </div>
                                         <div className="actions">
                                             <Link className="button button-inverse" to='/'>
@@ -174,7 +175,7 @@ const CheckoutPage = (props) => {
                                     </div>
                                     <div className={`white-box-content ${state.hideOrderSummary && "hide"}`}>
                                         <div className="smallProductTitle-container">
-                                            {showProducts()}
+                                            {showProducts(false)}
                                         </div>
                                         <div className="actions">
                                             <Button type="solid" title="Pay now" onClick={() => console.log(dataToPost)} />
