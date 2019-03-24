@@ -11,7 +11,7 @@ const productObject = (parentId, id, label = "1 dozon") => {
 }
 
 const onProductionSelection = (obj) => {
-    SessionStorage.set(STORE_NAME, { ...obj });
+    // SessionStorage.set(STORE_NAME, { ...obj });
 }
 
 const RadioButtons = ({
@@ -23,15 +23,15 @@ const RadioButtons = ({
     const [checkoutProducts, setCheckoutProducts] = useState(
         productObject(selectedProductId, `${selectedProductId}-1`))
 
-    useEffect(() => {
-        if (!SessionStorage.get(STORE_NAME)) {
-            onProductionSelection(checkoutProducts);
-        }
-    });
+    // useEffect(() => {
+    //     if (!SessionStorage.get(STORE_NAME)) {
+    //         onProductionSelection(checkoutProducts);
+    //     }
+    // });
     const handleChange = (parentId, id, label) => {
         let updatedCheckoutProducts = { ...checkoutProducts, ...productObject(parentId, id, label) };
         setCheckoutProducts(updatedCheckoutProducts)
-        onProductionSelection(updatedCheckoutProducts)
+        // onProductionSelection(updatedCheckoutProducts)
     }
 
     return (
