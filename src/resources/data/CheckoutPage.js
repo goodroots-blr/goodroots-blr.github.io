@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default {
     "LABELS": {
         "EMPTY_CART": "You have not selected mango yet !!!",

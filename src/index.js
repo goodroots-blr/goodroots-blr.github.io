@@ -12,6 +12,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import HomePage from './Route/HomePage/HomePage';
 import CheckoutPage from './Route/CheckoutPage/CheckoutPage';
 import ReportPage from './Route/ReportPage/ReportPage';
+import ConfirmationPage from './Route/ConfirmationPage/ConfirmationPage';
 import rootReducer from './Containers/reducers';
 import { checkoutPageData } from './resources/data'
 import './style.scss';
@@ -42,6 +43,10 @@ const App = () => {
                         <Route path="/checkout"
                             exact
                             render={(props) => <CheckoutPage {...props} data={checkoutPageData} />}
+                        />
+                        <Route path="/confirmation"
+                            exact
+                            render={(props) => <ConfirmationPage {...props} />}
                         />
 
                         <Route path="/report"
