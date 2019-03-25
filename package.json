@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "crypto": "^1.0.1",
+    "express": "^4.16.4",
     "firebase": "^5.8.6",
     "lodash": "^4.17.11",
     "react": "^16.8.0",

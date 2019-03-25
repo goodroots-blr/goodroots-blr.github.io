@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import ProductActions from './../../Containers/ProductActions';
 import _keys from 'lodash/keys';
+import _values from 'lodash/values';
 import _isEmpty from 'lodash/isEmpty';
 import Layout from './../../Components/_UI/Layout/Layout';
 import UserDetailsForm from './../../Components/_Section/UserDetailsForm/UserDetailsForm';
@@ -48,6 +49,32 @@ const CheckoutPage = (props) => {
 
     const handleRemoveClick = (parentId, id) => {
         props.onProductRemoval(parentId);
+    }
+
+    const getHash = () => {
+        const obj = {
+            fname: dataToPost.userDetails.name,
+            phone: dataToPost.userDetails.contactNumber,
+            email: dataToPost.userDetails.email,
+            pinfo: _values(props.selectedProducts)
+        }
+        
+        fetch('http://localhost:4000', {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(obj),
+        }).then((res) => {
+            return res.text()
+        }).then((htmlString)=> {
+            console.log(htmlString);
+            var div = document.createElement('div');
+            div.innerHTML = htmlString;
+            document.body.appendChild(div);
+            document.getElementById("myForm").submit()
+        })
     }
     const showProducts = (removeBtn) => {
         return (
@@ -178,7 +205,7 @@ const CheckoutPage = (props) => {
                                                     <div className="content">
                                                         <div className="col-6 items">
                                                             {category}
-                                                            <span>({ label })</span>
+                                                            <span>({label})</span>
                                                         </div>
                                                         <div className="col-6 col-6-r cost">{price}</div>
                                                     </div>
@@ -196,7 +223,7 @@ const CheckoutPage = (props) => {
 
                                         </div>
                                         <div className="actions">
-                                            <Button type="solid" title="Pay now" onClick={() => console.log(dataToPost)} />
+                                            <Button type="solid" title="Pay now" onClick={getHash} />
                                         </div>
                                     </div>
                                 </div>
@@ -217,7 +244,6 @@ const CheckoutPage = (props) => {
                                         <div className="totalpay">
                                             TO PAY<span className='cost1'> {totalPay}</span>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
