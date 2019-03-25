@@ -44,7 +44,7 @@ const CheckoutPage = (props) => {
 
     const deliveryFee = "FREE";
     const totalPay = itemsPrice + (isNaN(deliveryFee) ? 0 : deliveryFee);
-    
+
 
     const handleRemoveClick = (parentId, id) => {
         props.onProductRemoval(parentId);
@@ -154,7 +154,7 @@ const CheckoutPage = (props) => {
                                 </div>
                                 <div className="white-box">
                                     <div className="cart-title">
-                                        <h2>Delivery Address</h2>
+                                        <h2> {state.showChangeBtnInDeliveryAddress ? "Address" : "Delivery Address"}</h2>
                                         {state.showChangeBtnInDeliveryAddress &&
                                             <Button title="Change" onClick={() => dispatch({ type: 'SHOW_ADDRESS' })} />}
                                     </div>
@@ -169,13 +169,31 @@ const CheckoutPage = (props) => {
                                 </div>
                                 <div className="white-box">
                                     <div className="cart-title">
-                                        <h2>
-                                            Order Summary
-                                </h2>
+                                        <h2>Order Summary</h2>
                                     </div>
                                     <div className={`white-box-content ${state.hideOrderSummary && "hide"}`}>
-                                        <div className="smallProductTitle-container">
-                                            {showProducts(false)}
+                                        <div className="smallProductTitle-container order-summary-container">
+                                            {items.map(({ category, label, price }) => {
+                                                return (
+                                                    <div className="content">
+                                                        <div className="col-6 items">
+                                                            {category}
+                                                            <span>({ label })</span>
+                                                        </div>
+                                                        <div className="col-6 col-6-r cost">{price}</div>
+                                                    </div>
+                                                )
+                                            })}
+                                            <div className="content delivery-fee">
+                                                <div className="col-6">Delivery Fee</div>
+                                                <div className="col-6  col-6-r">{deliveryFee}</div>
+                                            </div>
+
+                                            <div className="content total-pay">
+                                                <div className="col-6">Total Pay</div>
+                                                <div className="col-6  col-6-r cost">{totalPay}</div>
+                                            </div>
+
                                         </div>
                                         <div className="actions">
                                             <Button type="solid" title="Pay now" onClick={() => console.log(dataToPost)} />
@@ -183,7 +201,7 @@ const CheckoutPage = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-3">
+                            <div className="col-3 desktopOnly">
                                 <div className="white-box price-details-container">
                                     <div className="cart-title">
                                         <h2>Bill Details</h2>
@@ -197,7 +215,7 @@ const CheckoutPage = (props) => {
                                         </div>
 
                                         <div className="totalpay">
-                                            TO PAY<span> ₹{totalPay}</span>
+                                            TO PAY<span className='cost1'> {totalPay}</span>
                                         </div>
 
                                     </div>

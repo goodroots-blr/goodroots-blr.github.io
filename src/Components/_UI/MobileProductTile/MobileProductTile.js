@@ -5,7 +5,7 @@ import './MobileProductTile.scss';
 const MobileProductTile = ({ id, parentId, label, category, img, cost, onClick }) => {
     const handleAddToCart = () => {
         const obj = {};
-        obj[id] = { id, parentId, label, category, img, cost }
+        obj[parentId] = id
         onClick(obj);
     }
 

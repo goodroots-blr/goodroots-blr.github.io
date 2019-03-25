@@ -136,6 +136,13 @@ p {
     }
   }
 
+  .col-6 {
+    width: 49%;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
   .col-9 {
     width: 66.5%;
     @media (max-width: 767px) {
