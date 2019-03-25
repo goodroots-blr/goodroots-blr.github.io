@@ -13,6 +13,7 @@ import HomePage from './Route/HomePage/HomePage';
 import CheckoutPage from './Route/CheckoutPage/CheckoutPage';
 import ReportPage from './Route/ReportPage/ReportPage';
 import ConfirmationPage from './Route/ConfirmationPage/ConfirmationPage';
+import ErrorPage from './Route/ErrorPage/ErrorPage';
 import rootReducer from './Containers/reducers';
 import { checkoutPageData } from './resources/data'
 import './style.scss';
@@ -47,6 +48,11 @@ const App = () => {
                         <Route path="/confirmation"
                             exact
                             render={(props) => <ConfirmationPage {...props} />}
+                        />
+
+                        <Route path="/error"
+                            exact
+                            render={(props) => <ErrorPage {...props} />}
                         />
 
                         <Route path="/report"
