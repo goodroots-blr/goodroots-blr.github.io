@@ -3,10 +3,10 @@ import Button from './../Button/Button';
 import _isEmpty from 'lodash/isEmpty';
 import _map from 'lodash/map';
 import _keyBy from 'lodash/keyBy';
-import './ProductTile.scss';
 import { ourProductsData } from './../../../resources/data';
 import { connect } from 'react-redux';
 import ProductActions from './../../../Containers/ProductActions';
+import './ProductTile.scss';
 
 const ProductTile = (props) => {
     const { id, parentId, label,
