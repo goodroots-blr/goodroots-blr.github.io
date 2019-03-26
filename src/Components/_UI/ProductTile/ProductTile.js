@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from './../Button/Button';
 import _isEmpty from 'lodash/isEmpty';
 import _map from 'lodash/map';
+import _keyBy from 'lodash/keyBy';
 import './ProductTile.scss';
 import { ourProductsData } from './../../../resources/data';
 import { connect } from 'react-redux';
@@ -13,20 +14,16 @@ const ProductTile = (props) => {
         onProductSelection, selectedProducts } = props;
 
     const products = ourProductsData.products.filter((p) => p.id == parentId)[0];
-
-    const otherObj = {};
-    products.options.forEach((v) => {
-        otherObj[v.id] = {
-            price: v.price
-        }
-    })
-
     const variations = products.options.map((v) => ({
         "id": v.id,
-        "label": v.label
+        "label": v.label,
+        "price" : v.price
     }));
-    
-    const [productPrice, setProductPrice] = useState(cost);
+
+    const otherObj = _keyBy(variations, 'id');
+    const selectedPrice = otherObj[selectedProducts[parentId]] ? otherObj[selectedProducts[parentId]].price : cost
+    const effectiveCost =_isEmpty(selectedProducts) ? cost : selectedPrice
+    const [productPrice, setProductPrice] = useState(effectiveCost);
     const contructSelection = () => {
         const selectionObj = {};
         if (_isEmpty(selectedProducts)) {
@@ -42,7 +39,7 @@ const ProductTile = (props) => {
 
 
     const handleOnchange = (e) => {
-        const id = e.target.value
+        const id = e.target.value        
         setProductPrice(otherObj[id].price);
         const obj = {};
         obj[parentId] = id
