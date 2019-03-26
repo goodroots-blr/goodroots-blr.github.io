@@ -1,20 +1,34 @@
 import React from 'react';
 import _keys from 'lodash/keys';
+import _values from 'lodash/values';
+import _isEmpty from 'lodash/isEmpty';
+import _map from 'lodash/map';
 import Button from './../../_UI/Button/Button';
 import { withRouter } from 'react-router-dom';
 import './RadioButtons.scss';
 
-const RadioButtons = (props) => {
-    const sParentId = _keys(props.selectedProducts)[0];
-    const handleChange = (parentId, id) => {
-        const obj = {};
-        obj[parentId] = id
-        props.onChange(obj)
+const RadioButtons = (props) => {    
+    let obj = props.itemClicked;
+    let selectionObj = {};
+    if (_isEmpty(props.selectedProducts)) {
+        const pId = _keys(props.itemClicked)[0]
+        selectionObj[pId] = 0;
+    } else {
+        _map(props.selectedProducts, (value, key) => {
+            selectionObj[key] = value.split('-')[2] - 1
+        })
+    }
+
+
+    const handleChange = (parentId, id) => {        
+        obj[parentId] = id;
     }
 
     const onCheckoutClick = () => {
+        props.onChange(obj);
         props.history.push('/checkout');
     }
+
 
     return (
         <div className="RadioButtons">
@@ -26,13 +40,13 @@ const RadioButtons = (props) => {
                             <h3>{item.title}</h3>
                             {
                                 item.options.map(({ price, label, parentId, id, }, i) => {
-                                    {
+                                    {   
                                         return (
                                             <label key={`${id}`}
                                                 className="custom-radio">{label} {price}
                                                 <input type="radio"
                                                     onChange={() => handleChange(parentId, id)}
-                                                    defaultChecked={(sParentId === parentId) && i === 0}
+                                                    defaultChecked={selectionObj[parentId] === i }
                                                     name={item.title} />
                                                 <span className="checkmark"></span>
                                             </label>
@@ -47,7 +61,7 @@ const RadioButtons = (props) => {
             {
                 <Button type="inverse" title="Checkout now" onClick={onCheckoutClick} />
             }
-            <div className="close-btn" onClick={()=>props.onCloseClick(sParentId)}>x</div>
+            <div className="close-btn" onClick={() => props.onCloseClick()}>x</div>
         </div>
     );
 };

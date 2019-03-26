@@ -30,14 +30,14 @@ const getProductTile = (Component, availableProducts, handleClick) => {
 const OurProducts = (props) => {
     const availableProducts = props.data.products;
     const [toggle, setToggle] = useState(false);
+    const [itemClicked, setItemClicked] = useState(props.selectedProducts);
     const handleClick = (obj) => {
+        setItemClicked(obj)
         document.body.classList.add('productOverlay--open');
-        props.onProductSelection(obj)
         setToggle(true)
     }
 
     const onCloseClick = () => {
-        props.onProductRemoval('all')
         setToggle(false)
         document.body.classList.remove('productOverlay--open');
     }
@@ -54,7 +54,13 @@ const OurProducts = (props) => {
                 </h1>
                 <div className="desktopOnly">
                     <div className="desktop-products-container">
-                        {getProductTile(ProductTile, availableProducts, handleClick)}
+                        {
+                            getProductTile(
+                                ProductTile,
+                                availableProducts,
+                                handleClick
+                            )
+                        }
                     </div>
                 </div>
                 <div className="mobileOnly">
@@ -66,6 +72,7 @@ const OurProducts = (props) => {
             </div>
             {toggle && <MobileOverlay>
                 <RadioButtons
+                    itemClicked={itemClicked}
                     selectedProducts={props.selectedProducts}
                     availableItems={availableProducts}
                     onChange={onChange}

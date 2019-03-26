@@ -1,18 +1,52 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Button from './../Button/Button';
+import _isEmpty from 'lodash/isEmpty';
+import _map from 'lodash/map';
 import './ProductTile.scss';
-import { ourProductsData } from './../../../resources/data'
+import { ourProductsData } from './../../../resources/data';
+import { connect } from 'react-redux';
+import ProductActions from './../../../Containers/ProductActions';
 
-const ProductTile = ({ id, parentId, label, category, img, cost, onClick }) => {
-    const [ productPrice, setProductPrice ] = useState(cost)
+const ProductTile = (props) => {
+    const { id, parentId, label,
+        category, img, cost, onClick,
+        onProductSelection, selectedProducts } = props;
+
     const products = ourProductsData.products.filter((p) => p.id == parentId)[0];
+
+    const otherObj = {};
+    products.options.forEach((v) => {
+        otherObj[v.id] = {
+            price: v.price
+        }
+    })
+
     const variations = products.options.map((v) => ({
-        "label": v.label,
-        "price": v.price,
+        "id": v.id,
+        "label": v.label
     }));
+    
+    const [productPrice, setProductPrice] = useState(cost);
+    const contructSelection = () => {
+        const selectionObj = {};
+        if (_isEmpty(selectedProducts)) {
+            selectionObj[parentId] = 0;
+            return selectionObj;
+        } else {
+            _map(selectedProducts, (value, key) => {
+                selectionObj[key] = value.split('-')[2] - 1
+            })
+            return selectionObj
+        }
+    }
+
 
     const handleOnchange = (e) => {
-        setProductPrice(e.target.value)
+        const id = e.target.value
+        setProductPrice(otherObj[id].price);
+        const obj = {};
+        obj[parentId] = id
+        onProductSelection(obj)
     }
 
     const handleAddToCart = () => {
@@ -30,9 +64,10 @@ const ProductTile = ({ id, parentId, label, category, img, cost, onClick }) => {
                     <div className="">
                         {category && <strong className="title">{category}</strong>}
                         <select onChange={handleOnchange}>
-                            {variations.map((v) => {
+                            {variations.map((v, i) => {
                                 return (
-                                    <option key={v.label} value={v.price}>
+                                    <option selected={contructSelection()[parentId] === i}
+                                        key={v.label} value={v.id}>
                                         {v.label}
                                     </option>
                                 )
@@ -49,4 +84,21 @@ const ProductTile = ({ id, parentId, label, category, img, cost, onClick }) => {
     );
 };
 
-export default ProductTile;
+export function mapStateToProps(state) {
+    return {
+        selectedProducts: state.ProductReducers.selectedProducts
+    }
+}
+
+export function mapDispatchToProps(dispatch) {
+    return {
+        onProductSelection: function (token) {
+            dispatch(ProductActions.onProductSelection(dispatch, token))
+        },
+        onProductRemoval: function (parentId) {
+            dispatch(ProductActions.onProductRemoval(dispatch, parentId))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductTile);
