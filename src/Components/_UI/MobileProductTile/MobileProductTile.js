@@ -17,7 +17,7 @@ const MobileProductTile = (props) => {
     const variations = products.options.map((v) => ({
         "id": v.id,
         "label": v.label,
-        "price" : v.price
+        "price": v.price
     }));
 
     const otherObj = _keyBy(variations, 'id');
@@ -39,7 +39,7 @@ const MobileProductTile = (props) => {
 
 
     const handleOnchange = (e) => {
-        const id = e.target.value        
+        const id = e.target.value
         setProductPrice(otherObj[id].price);
         const obj = {};
         obj[parentId] = id
@@ -56,12 +56,13 @@ const MobileProductTile = (props) => {
         <div className="mobileProductTile" id={id} data-parent-id={parentId}>
             <div className="productImage">
                 <img src={img} alt={label} />
+                {category && <strong>{category}</strong>}
             </div>
             <div className="productInfo">
                 <div className="productExtraInfo">
-                    {category && <strong>{category}</strong>}
                     {/* <strong className="title">{label}</strong> */}
-                    <select onChange={handleOnchange}>
+                    <span class="custom-dropdown">
+                        <select onChange={handleOnchange}>
                             {variations.map((v, i) => {
                                 return (
                                     <option selected={contructSelection()[parentId] === i}
@@ -71,6 +72,7 @@ const MobileProductTile = (props) => {
                                 )
                             })}
                         </select>
+                    </span>
                 </div>
                 <div className="cost">
                     <span>{productPrice}</span>
