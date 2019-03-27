@@ -24,22 +24,22 @@ export default {
         {
           "id": "p-1-1",
           "parentId": "p-1",
-          "label": "1 dozon",
-          "price": "1000",
+          "label": "1/2 dozon",
+          "price": "599",
           "img": img1,
         },
         {
           "id": "p-1-2",
           "parentId": "p-1",
-          "label": "2 dozon",
-          "price": "2000",
+          "label": "1 dozon",
+          "price": "899",
           "img": img1,
         },
         {
           "id": "p-1-3",
           "parentId": "p-1",
-          "label": "3 dozon",
-          "price": "3000",
+          "label": "2 dozon",
+          "price": "1499",
           "img": img1,
         }
       ]
@@ -52,22 +52,22 @@ export default {
         {
           "id": "p-2-1",
           "parentId": "p-2",
-          "label": "1 dozon",
-          "price": "1000",
+          "label": "1/2 dozon",
+          "price": "599",
           "img": img1,
         },
         {
           "id": "p-2-2",
           "parentId": "p-2",
-          "label": "2 dozon",
-          "price": "2000",
+          "label": "1 dozon",
+          "price": "899",
           "img": img1,
         },
         {
           "id": "p-2-3",
           "parentId": "p-2",
-          "label": "3 dozon",
-          "price": "3000",
+          "label": "2 dozon",
+          "price": "1499",
           "img": img1,
         }
       ]
