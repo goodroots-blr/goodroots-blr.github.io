@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 import './RadioButtons.scss';
 
 const RadioButtons = (props) => {    
-    let obj = props.itemClicked;
+    let obj = props.selectedProducts || props.itemClicked;
     let selectionObj = {};
     if (_isEmpty(props.selectedProducts)) {
         const pId = _keys(props.itemClicked)[0]
