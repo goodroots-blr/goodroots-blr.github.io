@@ -7,7 +7,7 @@ import Button from './../../_UI/Button/Button';
 import { withRouter } from 'react-router-dom';
 import './RadioButtons.scss';
 
-const RadioButtons = (props) => {    
+const RadioButtons = (props) => {
     let obj = props.selectedProducts || props.itemClicked;
     let selectionObj = {};
     if (_isEmpty(props.selectedProducts)) {
@@ -20,7 +20,7 @@ const RadioButtons = (props) => {
     }
 
 
-    const handleChange = (parentId, id) => {        
+    const handleChange = (parentId, id) => {
         obj[parentId] = id;
     }
 
@@ -40,13 +40,17 @@ const RadioButtons = (props) => {
                             <h3>{item.title}</h3>
                             {
                                 item.options.map(({ price, label, parentId, id, }, i) => {
-                                    {   
+                                    {
                                         return (
                                             <label key={`${id}`}
-                                                className="custom-radio">{label} {price}
+                                                className="custom-radio">
+                                                <span className="radio-text">
+                                                    {label}
+                                                </span>
+                                                <span className="cost-icon">{price}</span>
                                                 <input type="radio"
                                                     onChange={() => handleChange(parentId, id)}
-                                                    defaultChecked={selectionObj[parentId] === i }
+                                                    defaultChecked={selectionObj[parentId] === i}
                                                     name={item.title} />
                                                 <span className="checkmark"></span>
                                             </label>
