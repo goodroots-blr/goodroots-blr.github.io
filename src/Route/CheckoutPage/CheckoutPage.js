@@ -9,6 +9,7 @@ import Layout from './../../Components/_UI/Layout/Layout';
 import UserDetailsForm from './../../Components/_Section/UserDetailsForm/UserDetailsForm';
 import SmallProductTitle from './../../Components/_UI/SmallProductTitle/SmallProductTitle';
 import Button from './../../Components/_UI/Button/Button';
+import FullPageLoader from './../../Components/_UI/FullPageLoader/FullPageLoader';
 import { ourProductsData } from './../../resources/data'
 import './CheckoutPage.scss';
 
@@ -35,6 +36,7 @@ const constructProductsList = (passedProps) => {
 }
 
 const CheckoutPage = (props) => {
+    const [showLoader, setShowLoader] = useState(false)
     const dataToPost = []
     const userFormRef = useRef();
     const items = constructProductsList(props.selectedProducts);
@@ -52,6 +54,7 @@ const CheckoutPage = (props) => {
     }
 
     const getHash = () => {
+        setShowLoader(true)
         const obj = {
             fname: dataToPost.userDetails.name,
             phone: dataToPost.userDetails.contactNumber,
@@ -257,6 +260,7 @@ const CheckoutPage = (props) => {
                         </Link>
                     </div>
             }
+            {showLoader && <FullPageLoader />}
         </Layout>
     );
 };
