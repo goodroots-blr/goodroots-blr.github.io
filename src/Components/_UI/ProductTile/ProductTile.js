@@ -17,12 +17,12 @@ const ProductTile = (props) => {
     const variations = products.options.map((v) => ({
         "id": v.id,
         "label": v.label,
-        "price" : v.price
+        "price": v.price
     }));
 
     const otherObj = _keyBy(variations, 'id');
     const selectedPrice = otherObj[selectedProducts[parentId]] ? otherObj[selectedProducts[parentId]].price : cost
-    const effectiveCost =_isEmpty(selectedProducts) ? cost : selectedPrice
+    const effectiveCost = _isEmpty(selectedProducts) ? cost : selectedPrice
     const [productPrice, setProductPrice] = useState(effectiveCost);
     const contructSelection = () => {
         const selectionObj = {};
@@ -39,7 +39,7 @@ const ProductTile = (props) => {
 
 
     const handleOnchange = (e) => {
-        const id = e.target.value        
+        const id = e.target.value
         setProductPrice(otherObj[id].price);
         const obj = {};
         obj[parentId] = id
@@ -60,16 +60,18 @@ const ProductTile = (props) => {
                 <div className="productExtraInfo">
                     <div className="">
                         {category && <strong className="title">{category}</strong>}
-                        <select onChange={handleOnchange}>
-                            {variations.map((v, i) => {
-                                return (
-                                    <option selected={contructSelection()[parentId] === i}
-                                        key={v.label} value={v.id}>
-                                        {v.label}
-                                    </option>
-                                )
-                            })}
-                        </select>
+                        <span class="custom-dropdown">
+                            <select onChange={handleOnchange}>
+                                {variations.map((v, i) => {
+                                    return (
+                                        <option selected={contructSelection()[parentId] === i}
+                                            key={v.label} value={v.id}>
+                                            {v.label}
+                                        </option>
+                                    )
+                                })}
+                            </select>
+                        </span>
                         {/* <strong className="title">&nbsp;&nbsp;{label}</strong> */}
                     </div>
                     {/* {cost && <span className="cost">{cost}</span>} */}

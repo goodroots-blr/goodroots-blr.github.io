@@ -1,4 +1,11 @@
 .productTile {
+  .custom-dropdown select {
+    width: 130px;
+    height: 42px;
+    font-size: 16px;
+    padding: 0.5em;
+    padding-right: 2.5em;
+  }
   // display: flex;
   // flex-direction: column;
   // justify-content: space-between;
@@ -35,6 +42,7 @@
       text-align: center;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 10px;
     }
   }
   .title {
@@ -44,7 +52,6 @@
   .cost {
     display: block;
     font-size: 1.6rem;
-    padding-top: 0.8em;
     &::before {
       font-family: Arial, Helvetica, sans-serif;
       content: "₹";
@@ -52,4 +59,54 @@
       padding-right: 5px;
     }
   }
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 20px 0 10px; /* demo only */
+}
+
+.custom-dropdown select {
+  background-color: transparent;
+  border: 2px #f28c14 solid;
+  color: #fff;
+  color: #000;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: "";
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+  &:focus {
+    outline: none;
+  }
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after {
+  /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: 0.625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -0.5em;
+}
+
+.custom-dropdown::before {
+  /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
 }
