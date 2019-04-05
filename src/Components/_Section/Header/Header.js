@@ -3,6 +3,7 @@ import Logo from './images/logo.jpg';
 import Navigation from './../../_UI/Navigation/Navigation';
 import Hamburger from './../../_UI/Hamburger/Hamburger';
 import SocialIcons from './../../_UI/SocialIcons/SocialIcons';
+import { Link as RLink } from "react-router-dom";
 import './Header.scss';
 
 const Header = ({ data, showNavigation }) => {
@@ -55,6 +56,10 @@ const Header = ({ data, showNavigation }) => {
                 <a href="/">
                     <img className="logo" src={Logo} alt="GoodRoots" />
                 </a>
+                <RLink className="mobileOnly cart" to='/checkout'>
+                    <i className="icon-shopping-cart"></i>
+                    <span>cart</span>
+                </RLink>
                 {showNavigation && <Navigation toggle={toggle} />}
             </div>
         </header>

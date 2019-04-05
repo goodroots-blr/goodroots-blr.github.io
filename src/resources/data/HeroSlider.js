@@ -29,8 +29,7 @@ export default [
     content:
       `A gift like no other. Gift your loved ones this season`,
     action: {
-      isClickable: true,
-      text: "Prebook now",
+      text: "Our Products",
       scrollTo: "ourProducts"
     }
   }

@@ -4,6 +4,7 @@ import {
     Link,
     Events,
 } from "react-scroll";
+import { Link as RLink } from "react-router-dom";
 import Button from './../Button/Button';
 // import ProductOverlay from './../../_Section/ProductOverlay/ProductOverlay';
 
@@ -107,6 +108,12 @@ const Navigation = props => {
                         </li>
                     )
                 })}
+                <li>
+                    <RLink className="desktopOnly cart" to='/checkout'>
+                        <i className="icon-shopping-cart"></i>
+                        Cart
+                    </RLink>
+                </li>
             </ul>
         </nav>
     );
