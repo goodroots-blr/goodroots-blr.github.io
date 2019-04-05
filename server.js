@@ -37,7 +37,7 @@ const product = {
     }
 }
 
-const hiddenForm = (amount,name, email, phone, hash, prodInfo) => {
+const hiddenForm = (amount, name, email, phone, hash, prodInfo, udf1) => {
     return '<form id=\"myForm\" action=\"https://sandboxsecure.payu.in/_payment" method=\"post\">' +
         '<input type=\"hidden\" name=\"key\" value=\"' + key + '\" />' +
         '<input type=\"hidden\" name=\"txnid\" value=\"' + txnid + '\" />' +
@@ -46,6 +46,7 @@ const hiddenForm = (amount,name, email, phone, hash, prodInfo) => {
         '<input type=\"hidden\" name=\"firstname\" value=\"' + name + '\" />' +
         '<input type=\"hidden\" name=\"email\" value=\"' + email + '\" />' +
         '<input type=\"hidden\" name=\"phone\" value=\"' + phone + '\" />' +
+        '<input type=\"hidden\" name=\"udf1\" value=\"' + udf1 + '\" />' +
         '<input type=\"hidden\" name=\"surl\" value=\"http://localhost:4000/confirmation\" />' +
         '<input type=\"hidden\" name=\"furl\" value=\"http://localhost:4000/error\" />' +
         '<input type=\"hidden\" name=\"hash\" value=\"' + hash + '\" />' +
@@ -61,21 +62,21 @@ app.post('/', (req, res) => {
     });
 
     req.on('end', function () {
-        let {fname, email, phone, pinfo} = JSON.parse(strdat);
-        
-        const prodInfo = pinfo.map((p)=> {
+        let { fname, email, phone, pinfo, udf1 } = JSON.parse(strdat);
+
+        const prodInfo = pinfo.map((p) => {
             return product[p]['label']
         }).join(' and ')
-           
+
         let amount = parseInt(product[pinfo[0]]['amount']) + parseInt(pinfo[1] ? product[pinfo[1]]['amount'] : 0)
-        
+
         let cryp = crypto.createHash('sha512');
-        let text = key + '|' + txnid + '|' + amount + '|' + prodInfo + '|' + fname + '|' + email + '|||||||||||' + salt;
+        let text = key + '|' + txnid + '|' + amount + '|' + prodInfo + '|' + fname + '|' + email + '|' + udf1 + '||||||||||' + salt;
         cryp.update(text);
         let hash = cryp.digest('hex');
         res.setHeader("Content-Type", "text/json");
         res.setHeader("Access-Control-Allow-Origin", "*");
-        const form = hiddenForm(amount, fname, email, phone, hash, prodInfo)
+        const form = hiddenForm(amount, fname, email, phone, hash, prodInfo, udf1)
         res.end(form);
     });
 })

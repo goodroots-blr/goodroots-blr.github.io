@@ -59,7 +59,8 @@ const CheckoutPage = (props) => {
             fname: dataToPost.userDetails.name,
             phone: dataToPost.userDetails.contactNumber,
             email: dataToPost.userDetails.email,
-            pinfo: _values(props.selectedProducts)
+            pinfo: _values(props.selectedProducts),
+            udf1: dataToPost.userDetails.address.replace(/(\r\n|\n|\r)/gm, ""),
         }
         
         fetch('http://localhost:4000', {
