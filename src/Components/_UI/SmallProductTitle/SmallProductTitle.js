@@ -14,10 +14,10 @@ const SmallProductTitle = ({ id, parentId, category, label, price, img, removeBt
                 <p className="product-name">{category}</p>
                 <p className="product-quantity">{label}</p>
                 <p className="product-price cost">{price}</p>
-                {/* {removeBtn && <Button type="solid"
+                {removeBtn && <Button type="solid"
                     onClick={() => onRemoveClick(parentId, id)}
                     size="small"
-                    title="remove" />} */}
+                    title="remove" />}
             </div>
         </div>
     );
