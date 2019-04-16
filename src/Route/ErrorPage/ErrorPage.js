@@ -25,7 +25,7 @@ const ErrorPage = (props) => {
                     </svg>
                 </div>
                 <div>
-                    We have captured your details successfully. <br />We will reach out to you very soon.
+                    Opps, Something went wrong !! <br /> Please try again.
                 </div>
             </div>
         </Layout>

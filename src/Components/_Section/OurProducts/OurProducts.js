@@ -70,6 +70,9 @@ const OurProducts = (props) => {
                     {props.data.bulkOrderText()}
                 </p>
             </div>
+            <p className="delivery">
+                We deliver on <strong>Friday</strong>, <strong>Saturday</strong> or <strong>Sunday</strong>.
+            </p>
             {toggle && <MobileOverlay>
                 <RadioButtons
                     itemClicked={itemClicked}
