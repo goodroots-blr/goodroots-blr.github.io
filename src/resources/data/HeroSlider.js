@@ -5,9 +5,9 @@ import img3 from "./../images/HeroSlider/3.jpg";
 export default [
   {
     img: img1,
-    title: "Looking for juicy <br />& fresh mangoes?",
+    title: "Sweetest Australian <br /> in Bangalore",
     content:
-      `Now, you can buy mangoes online from <br />the comfort of your home.`,
+      `Australian Kenisington pride, the super sweet pulpy mangoes<br /> now in BANGALORE grown in Karnataka.`,
     action: {
       text: "Why GoodRoots",
       scrollTo: "whyMango"

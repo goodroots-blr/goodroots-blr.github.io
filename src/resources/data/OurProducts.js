@@ -24,21 +24,21 @@ export default {
         {
           "id": "p-1-1",
           "parentId": "p-1",
-          "label": "1/2 dozon",
+          "label": "1/2 dozen",
           "price": "599",
           "img": img1,
         },
         {
           "id": "p-1-2",
           "parentId": "p-1",
-          "label": "1 dozon",
+          "label": "1 dozen",
           "price": "899",
           "img": img1,
         },
         {
           "id": "p-1-3",
           "parentId": "p-1",
-          "label": "2 dozon",
+          "label": "2 dozen",
           "price": "1499",
           "img": img1,
         }
@@ -46,27 +46,27 @@ export default {
     },
     {
       "id": "p-2",
-      "title": "Banganapalli",
-      "category": "Banganapalli",
+      "title": "Kensington Pride",
+      "category": "Kensington Pride",
       "options": [
         {
           "id": "p-2-1",
           "parentId": "p-2",
-          "label": "1/2 dozon",
+          "label": "1/2 dozen",
           "price": "599",
           "img": img1,
         },
         {
           "id": "p-2-2",
           "parentId": "p-2",
-          "label": "1 dozon",
+          "label": "1 dozen",
           "price": "899",
           "img": img1,
         },
         {
           "id": "p-2-3",
           "parentId": "p-2",
-          "label": "2 dozon",
+          "label": "2 dozen",
           "price": "1499",
           "img": img1,
         }

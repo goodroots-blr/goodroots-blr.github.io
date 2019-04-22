@@ -13,7 +13,7 @@ const MobileProductTile = (props) => {
         category, img, cost, onClick,
         onProductSelection, selectedProducts } = props;
 
-    const products = ourProductsData.products.filter((p) => p.id == parentId)[0];
+    const products = ourProductsData.products.filter((p) => p.id === parentId)[0];
     const variations = products.options.map((v) => ({
         "id": v.id,
         "label": v.label,
