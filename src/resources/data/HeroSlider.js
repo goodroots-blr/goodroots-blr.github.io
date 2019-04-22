@@ -17,7 +17,7 @@ export default [
     img: img2,
     title: "Fresh Produce<br /> Right to Your Door step",
     content:
-      ` The best of Alphonso and Kenisington pride mangoes from <br /> our farms to your home`,
+      ` The best of Alphonso and Kensington Pride mangoes from <br /> our farms to your home`,
     action: {
       text: "Who we are",
       scrollTo: "whoweare"

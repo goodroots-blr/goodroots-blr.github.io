@@ -91,9 +91,9 @@ class UserForm extends Component {
         const { alphanso, banganapalli } = this.state
         let types = '';
         if(alphanso && banganapalli) {
-            types = "Alphonso, Banganapalli"
+            types = "Alphonso, Kensington Pride"
         } else if(banganapalli) {
-            types = "Banganapalli"
+            types = "Kensington Pride"
         } else {
             types = "Alphonso"
         }
@@ -153,7 +153,7 @@ class UserForm extends Component {
                                 id="banganapalli"
                                 onChange={() => this.mangoTypeChange({ "banganapalli": this.state.banganapalli })}
                                 checked={this.state.banganapalli}
-                            />Kenisington pride
+                            />Kensington Pride
                         </label>
                     </div>
                 </div>
