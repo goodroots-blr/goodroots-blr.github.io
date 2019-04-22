@@ -5,7 +5,7 @@ export default {
     img: img,
     alt: "who we are",
     title: () => <><strong>Who</strong> we are</>,
-    subTitle: "welcome to GoodRoots - we produce organic Alphonso & Banganapalli mangoes",
+    subTitle: "welcome to GoodRoots - we produce organic Alphonso & Kenisington pride mangoes",
     paragraph: `We are the third generation cultivating our ancestral mango 
     farm in a small town near Bellary. Our mission is to 
     bring back the real taste of naturally ripened Ratnagiri Alphonso and Banaganapalli mangoes 

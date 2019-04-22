@@ -153,7 +153,7 @@ class UserForm extends Component {
                                 id="banganapalli"
                                 onChange={() => this.mangoTypeChange({ "banganapalli": this.state.banganapalli })}
                                 checked={this.state.banganapalli}
-                            />Banganapalli
+                            />Kenisington pride
                         </label>
                     </div>
                 </div>

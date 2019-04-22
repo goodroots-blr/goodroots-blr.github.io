@@ -5,9 +5,9 @@ import img3 from "./../images/HeroSlider/3.jpg";
 export default [
   {
     img: img1,
-    title: "Looking for juicy <br />& fresh mangoes?",
+    title: "Sweetest Australian <br />in Bangalore",
     content:
-      `Now, you can buy mangoes online from <br />the comfort of your home.`,
+      `Australian Kensington pride, the super sweet pulpy mangoes<br /> now in BANGALORE grown in Karnataka.`,
     action: {
       text: "Why GoodRoots",
       scrollTo: "whyMango"
@@ -17,7 +17,7 @@ export default [
     img: img2,
     title: "Fresh Produce<br /> Right to Your Door step",
     content:
-      ` The best of Alphonso and Banganapalli mangoes from <br /> our farms to your home`,
+      ` The best of Alphonso and Kenisington pride mangoes from <br /> our farms to your home`,
     action: {
       text: "Who we are",
       scrollTo: "whoweare"
