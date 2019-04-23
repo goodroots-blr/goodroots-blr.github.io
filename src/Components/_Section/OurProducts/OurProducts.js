@@ -14,12 +14,12 @@ const getProductTile = (Component, availableProducts, handleClick) => {
             return (
                 <div className="products" key={products.id}>
                     <Component
-                        id={products.options[0].id}
-                        parentId={products.options[0].parentId}
-                        label={products.options[0].label}
+                        id={products.options[1].id}
+                        parentId={products.options[1].parentId}
+                        label={products.options[1].label}
                         category={products.category}
-                        img={products.options[0].img}
-                        cost={products.options[0].price}
+                        img={products.options[1].img}
+                        cost={products.options[1].price}
                         onClick={handleClick} />
                 </div>
             )

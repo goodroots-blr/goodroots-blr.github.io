@@ -27,12 +27,15 @@ const MobileProductTile = (props) => {
     const contructSelection = () => {
         const selectionObj = {};
         if (_isEmpty(selectedProducts)) {
-            selectionObj[parentId] = 0;
+            selectionObj[parentId] = 1;
             return selectionObj;
         } else {
             _map(selectedProducts, (value, key) => {
                 selectionObj[key] = value.split('-')[2] - 1
-            })
+            });
+            if(!selectedProducts.hasOwnProperty(parentId)) {
+                selectionObj[parentId] = 1;
+            }
             return selectionObj
         }
     }

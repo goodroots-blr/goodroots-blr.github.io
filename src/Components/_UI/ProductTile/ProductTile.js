@@ -27,16 +27,18 @@ const ProductTile = (props) => {
     const contructSelection = () => {
         const selectionObj = {};
         if (_isEmpty(selectedProducts)) {
-            selectionObj[parentId] = 0;
+            selectionObj[parentId] = 1;
             return selectionObj;
         } else {
             _map(selectedProducts, (value, key) => {
                 selectionObj[key] = value.split('-')[2] - 1
-            })
+            });
+            if(!selectedProducts.hasOwnProperty(parentId)) {
+                selectionObj[parentId] = 1;
+            }
             return selectionObj
         }
     }
-
 
     const handleOnchange = (e) => {
         const id = e.target.value
@@ -60,7 +62,7 @@ const ProductTile = (props) => {
                 <div className="productExtraInfo">
                     <div className="">
                         {category && <strong className="title">{category}</strong>}
-                        <span class="custom-dropdown">
+                        <span className="custom-dropdown">
                             <select onChange={handleOnchange}>
                                 {variations.map((v, i) => {
                                     return (

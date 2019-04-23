@@ -12,7 +12,7 @@ const RadioButtons = (props) => {
     let selectionObj = {};
     if (_isEmpty(props.selectedProducts)) {
         const pId = _keys(props.itemClicked)[0]
-        selectionObj[pId] = 0;
+        selectionObj[pId] = 1;
     } else {
         _map(props.selectedProducts, (value, key) => {
             selectionObj[key] = value.split('-')[2] - 1
