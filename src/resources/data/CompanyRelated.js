@@ -1,7 +1,7 @@
 export default {
-    aboutUs: `Red soils of Karnataka and firece hot temperature of Bellary coupled 
-    with the help of decades of best organic agricultural practice - we bring 
-    the best of Ratnagiri Alphonso Mangoes and Kensington Pride Mangoes to your 
+    aboutUs: `Red soils of Karnataka and Fierce hot temperature of Bellary coupled 
+    with the help of decades of best organic agricultural practice - 
+    we bring the best of ratnagiri alphonso and kensington pride mangoes to your 
     door step in Namma Bengaluru. Yes you read it right!`,
     address: {
         title: "Good Roots LLP",

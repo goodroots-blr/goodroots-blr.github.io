@@ -71,7 +71,8 @@ const OurProducts = (props) => {
                 </p>
             </div>
             <p className="delivery">
-                We deliver on <strong>Friday</strong>, <strong>Saturday</strong> or <strong>Sunday</strong>.
+                Deliveries on <strong>Friday's</strong> and <strong>weekends</strong>
+                {/* We deliver on <strong>Friday</strong>, <strong>Saturday</strong> or <strong>Sunday</strong>. */}
             </p>
             {toggle && <MobileOverlay>
                 <RadioButtons

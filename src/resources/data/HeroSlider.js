@@ -5,9 +5,9 @@ import img3 from "./../images/HeroSlider/3.jpg";
 export default [
   {
     img: img1,
-    title: "Sweetest Australian <br /> in Bangalore",
+    title: "Sweetest Australian Mangoes <br/> NOW in bangalore",
     content:
-      `Australian Kenisington pride, the super sweet pulpy mangoes<br /> now in BANGALORE grown in Karnataka.`,
+      `Introducing Kensington Pride, the super sweet puply mangoes<br/> now available in your city. `,
     action: {
       text: "Why GoodRoots",
       scrollTo: "whyMango"
@@ -29,7 +29,7 @@ export default [
     content:
       `A gift like no other. Gift your loved ones this season`,
     action: {
-      text: "Our Products",
+      text: "Order Now",
       scrollTo: "ourProducts"
     }
   }

@@ -7,7 +7,7 @@ export default {
     title: () => <><strong>Who</strong> we are</>,
     subTitle: "Welcome To GoodRoots - We Produce Organic Alphonso & Kensington Pride Mangoes",
     paragraphs: [
-        `We are Third generation mango growers with farm in a small town near bellary. 
+        `We are Third generation mango cultivators with farm in a small town near bellary. 
         Our mission is to bring back the real taste of 
         naturally ripened Alphonso & Kensington Pride mangoes to true mango lovers.`,
         `We are happy to bring our premium category of 

@@ -1,7 +1,7 @@
 export default {
     "LABELS": {
-        "EMPTY_CART": "You have not selected mango yet !!!",
-        "EMPTY_CART_BTN": "Start shopping",
+        "EMPTY_CART": "Ready to tingle your taste buds 😊",
+        "EMPTY_CART_BTN": "Place order",
         "MYCART_SECTION": {
             "TITLE": "My cart ",
             "PLACE_ORDER_BTN": "Place order",

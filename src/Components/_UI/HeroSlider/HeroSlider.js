@@ -25,6 +25,7 @@ const HeroSlider = ({ slides }) => {
         autoPlay
         infiniteLoop
         emulateTouch
+        transitionTime={500}
         stopOnHover={false}
         showStatus={false}
         showThumbs={false}>

@@ -13,27 +13,35 @@ const txnid = `GR-${new Date().getTime()}`;
 const product = {
     "p-1-1": {
         "amount": "599",
-        "label": "Alphanso 1/2 dozen",
+        "label": "Kensington Pride 1/2 dozen",
     },
     "p-1-2": {
-        "amount": "899",
-        "label": "Alphanso 1 dozen",
+        "amount": "999",
+        "label": "Kensington Pride 1 dozen",
     },
     "p-1-3": {
-        "amount": "1499",
-        "label": "Alphanso 2 dozen",
+        "amount": "1599",
+        "label": "Kensington Pride 2 dozen",
+    },
+    "p-1-4": {
+        "amount": "2499",
+        "label": "Kensington Pride 3 dozen",
     },
     "p-2-1": {
         "amount": "599",
-        "label": "Kensington Pride 1/2 dozen",
+        "label": "Alphonso 1/2 dozen",
     },
     "p-2-2": {
-        "amount": "899",
-        "label": "Kensington Pride 1 dozen",
+        "amount": "999",
+        "label": "Alphonso 1 dozen",
     },
     "p-2-3": {
-        "amount": "1499",
-        "label": "Kensington Pride 2 dozen",
+        "amount": "1599",
+        "label": "Alphonso 2 dozen",
+    },
+    "p-2-4": {
+        "amount": "2499",
+        "label": "Alphonso 3 dozen",
     }
 }
 
