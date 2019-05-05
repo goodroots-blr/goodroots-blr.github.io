@@ -9,14 +9,13 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 const key = "yGf2xak9";
 const salt = "Vg1fM0UYz9";
-const txnid = `GR-${new Date().getTime()}`;
 const product = {
     "p-1-1": {
         "amount": "599",
         "label": "Kensington Pride 1/2 dozen",
     },
     "p-1-2": {
-        "amount": "999",
+        "amount": "899",
         "label": "Kensington Pride 1 dozen",
     },
     "p-1-3": {
@@ -24,7 +23,7 @@ const product = {
         "label": "Kensington Pride 2 dozen",
     },
     "p-1-4": {
-        "amount": "2499",
+        "amount": "2399",
         "label": "Kensington Pride 3 dozen",
     },
     "p-2-1": {
@@ -32,7 +31,7 @@ const product = {
         "label": "Alphonso 1/2 dozen",
     },
     "p-2-2": {
-        "amount": "999",
+        "amount": "899",
         "label": "Alphonso 1 dozen",
     },
     "p-2-3": {
@@ -40,12 +39,12 @@ const product = {
         "label": "Alphonso 2 dozen",
     },
     "p-2-4": {
-        "amount": "2499",
+        "amount": "2399",
         "label": "Alphonso 3 dozen",
     }
 }
 
-const hiddenForm = (amount, name, email, phone, hash, prodInfo, udf1) => {
+const hiddenForm = (txnid, amount, name, email, phone, hash, prodInfo, udf1) => {
     return '<form id=\"myForm\" action=\"https://sandboxsecure.payu.in/_payment" method=\"post\">' +
         '<input type=\"hidden\" name=\"key\" value=\"' + key + '\" />' +
         '<input type=\"hidden\" name=\"txnid\" value=\"' + txnid + '\" />' +
@@ -63,6 +62,7 @@ const hiddenForm = (amount, name, email, phone, hash, prodInfo, udf1) => {
 }
 
 app.post('/', (req, res) => {
+    const txnid = `GR-${new Date().getTime()}`;
     let strdat = '';
 
     req.on('data', function (chunk) {
@@ -84,7 +84,7 @@ app.post('/', (req, res) => {
         let hash = cryp.digest('hex');
         res.setHeader("Content-Type", "text/json");
         res.setHeader("Access-Control-Allow-Origin", "*");
-        const form = hiddenForm(amount, fname, email, phone, hash, prodInfo, udf1)
+        const form = hiddenForm(txnid, amount, fname, email, phone, hash, prodInfo, udf1)
         res.end(form);
     });
 })

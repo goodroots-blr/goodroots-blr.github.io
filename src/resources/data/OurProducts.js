@@ -32,7 +32,7 @@ export default {
           "id": "p-1-2",
           "parentId": "p-1",
           "label": "1 dozen",
-          "price": "999",
+          "price": "899",
           "img": img1,
         },
         {
@@ -46,7 +46,7 @@ export default {
           "id": "p-1-4",
           "parentId": "p-1",
           "label": "3 dozen",
-          "price": "2499",
+          "price": "2399",
           "img": img1,
         }
       ]
@@ -67,7 +67,7 @@ export default {
           "id": "p-2-2",
           "parentId": "p-2",
           "label": "1 dozen",
-          "price": "999",
+          "price": "899",
           "img": img1,
         },
         {
@@ -81,7 +81,7 @@ export default {
           "id": "p-2-4",
           "parentId": "p-2",
           "label": "3 dozen",
-          "price": "2499",
+          "price": "2399",
           "img": img1,
         }
       ]
