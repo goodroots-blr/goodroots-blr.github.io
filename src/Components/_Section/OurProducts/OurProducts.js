@@ -91,6 +91,7 @@ const OurProducts = (props) => {
                             </tr>
                         </tbody>
                     </table>
+                    <div className="disclaimer">* Weights shown above are approximate.</div>
                 </div>
                 <p className="bulkOrderText">
                     {props.data.bulkOrderText()}

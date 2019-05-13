@@ -24,6 +24,12 @@
     align-items: center;
     margin-bottom: 40px;
     margin-top: 40px;
+    flex-direction: column;
+    .disclaimer {
+      padding-top: 10px;
+      font-size: 12px;
+      color: #a5a3a3;
+    }
     table {
       box-shadow: 0px 40px 20px -40px #858585;
       width: 85%;
