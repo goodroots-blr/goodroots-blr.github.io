@@ -61,7 +61,7 @@ const hiddenForm = (txnid, amount, name, email, phone, hash, prodInfo, udf1) => 
         '</form>';
 }
 
-app.post('/', (req, res) => {
+app.post('/payment', (req, res) => {
     const txnid = `GR-${new Date().getTime()}`;
     let strdat = '';
 

@@ -63,7 +63,7 @@ const CheckoutPage = (props) => {
             udf1: dataToPost.userDetails.address.replace(/(\r\n|\n|\r)/gm, ""),
         }
         
-        fetch('http://localhost:4000', {
+        fetch('http://localhost:4000/payment', {
             method: "POST",
             mode: "cors",
             headers: {

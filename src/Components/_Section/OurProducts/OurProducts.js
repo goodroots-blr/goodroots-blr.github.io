@@ -66,13 +66,38 @@ const OurProducts = (props) => {
                 <div className="mobileOnly">
                     {getProductTile(MobileProductTile, availableProducts, handleClick)}
                 </div>
+                <div className="details"> 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>1 dozen</th>
+                                <th>2 dozen</th>
+                                <th>3 dozen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Kensington Pride</th>
+                                <td>3.5 - 4 kgs</td>
+                                <td>6.5 - 7 kgs</td>
+                                <td>9.5 - 10.5 kgs</td>
+                            </tr>
+                            <tr>
+                                <th>Alphonso</th>
+                                <td>3 - 3.5 kgs</td>
+                                <td>6 - 6.5 kgs</td>
+                                <td>9 - 10 kgs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p className="bulkOrderText">
                     {props.data.bulkOrderText()}
                 </p>
             </div>
             <p className="delivery">
                 Deliveries on <strong>Friday's</strong> and <strong>weekends</strong>
-                {/* We deliver on <strong>Friday</strong>, <strong>Saturday</strong> or <strong>Sunday</strong>. */}
             </p>
             {toggle && <MobileOverlay>
                 <RadioButtons

@@ -1,6 +1,6 @@
 import React from 'react';
 import img1 from "./../images/OurProducts/product-1.png";
-// import img2 from "./../images/OurProducts/product-2.png";
+import img2 from "./../images/OurProducts/product-2.png";
 // import img3 from "./../images/OurProducts/product-3.png";
 // import img4 from "./../images/OurProducts/product-4.png";
 // import img5 from "./../images/OurProducts/product-5.png";
@@ -26,28 +26,28 @@ export default {
           "parentId": "p-1",
           "label": "1/2 dozen",
           "price": "599",
-          "img": img1,
+          "img": img2,
         },
         {
           "id": "p-1-2",
           "parentId": "p-1",
           "label": "1 dozen",
           "price": "899",
-          "img": img1,
+          "img": img2,
         },
         {
           "id": "p-1-3",
           "parentId": "p-1",
           "label": "2 dozen",
           "price": "1599",
-          "img": img1,
+          "img": img2,
         },
         {
           "id": "p-1-4",
           "parentId": "p-1",
           "label": "3 dozen",
           "price": "2399",
-          "img": img1,
+          "img": img2,
         }
       ]
     },
