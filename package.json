@@ -6,6 +6,7 @@
     "crypto": "^1.0.1",
     "express": "^4.16.4",
     "firebase": "^5.8.6",
+    "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.11",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",

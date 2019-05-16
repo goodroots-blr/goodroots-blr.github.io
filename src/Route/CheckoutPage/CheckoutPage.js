@@ -11,6 +11,7 @@ import SmallProductTitle from './../../Components/_UI/SmallProductTitle/SmallPro
 import Button from './../../Components/_UI/Button/Button';
 import FullPageLoader from './../../Components/_UI/FullPageLoader/FullPageLoader';
 import { ourProductsData } from './../../resources/data'
+import fetch from 'isomorphic-unfetch';
 import './CheckoutPage.scss';
 
 const constructProductsList = (passedProps) => {
