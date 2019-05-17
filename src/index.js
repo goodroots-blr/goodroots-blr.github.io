@@ -14,6 +14,7 @@ import CheckoutPage from './Route/CheckoutPage/CheckoutPage';
 // import ReportPage from './Route/ReportPage/ReportPage';
 import ConfirmationPage from './Route/ConfirmationPage/ConfirmationPage';
 import ErrorPage from './Route/ErrorPage/ErrorPage';
+import TimeoutPage from './Route/TimeoutPage/TimeoutPage';
 import rootReducer from './Containers/reducers';
 import { checkoutPageData } from './resources/data'
 import './style.scss';
@@ -53,6 +54,11 @@ const App = () => {
                         <Route path="/error"
                             exact
                             render={(props) => <ErrorPage {...props} />}
+                        />
+
+                        <Route path="/timeout"
+                            exact
+                            render={(props) => <TimeoutPage {...props} />}
                         />
 
                         {/* <Route path="/report"

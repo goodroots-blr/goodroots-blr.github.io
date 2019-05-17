@@ -64,6 +64,9 @@ const CheckoutPage = (props) => {
             udf1: dataToPost.userDetails.address.replace(/(\r\n|\n|\r)/gm, ""),
         }
         
+        window.setTimeout(function(){
+            props.history.replace('/timeout');
+        }, 5000)
         fetch('http://localhost:4000/payment', {
             method: "POST",
             mode: "cors",
@@ -72,9 +75,11 @@ const CheckoutPage = (props) => {
             },
             body: JSON.stringify(obj),
         }).then((res) => {
+            if (res.status >= 400) {
+                props.history.replace('/timeout');
+            }
             return res.text()
         }).then((htmlString)=> {
-            console.log(htmlString);
             var div = document.createElement('div');
             div.innerHTML = htmlString;
             document.body.appendChild(div);
