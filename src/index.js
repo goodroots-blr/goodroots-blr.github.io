@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import {createStore } from 'redux';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import { persistStore, persistReducer } from 'redux-persist';
@@ -11,13 +11,38 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import HomePage from './Route/HomePage/HomePage';
 import CheckoutPage from './Route/CheckoutPage/CheckoutPage';
-// import ReportPage from './Route/ReportPage/ReportPage';
 import ConfirmationPage from './Route/ConfirmationPage/ConfirmationPage';
-import ErrorPage from './Route/ErrorPage/ErrorPage';
-import TimeoutPage from './Route/TimeoutPage/TimeoutPage';
+import MangoPage from './Route/MangoPage/MangoPage';
+import InfoPage from './Route/InfoPage/InfoPage';
+import ReportPage from './Route/ReportPage/ReportPage';
 import rootReducer from './Containers/reducers';
 import { checkoutPageData } from './resources/data'
 import './style.scss';
+
+
+const pageNotFoundMessage = () => {
+    return (
+        <Fragment>
+            Fruit which you are <br />looking for currently not available !!
+        </Fragment>
+    )
+}
+
+const errorMessage = () => {
+    return (
+        <Fragment>
+            Opps, Something went wrong !! <br />Please try again.
+        </Fragment>
+    )
+}
+
+const timeoutMessage = () => {
+    return (
+        <Fragment>
+            High traffic !! <br />Please try again, after some time.
+        </Fragment>
+    )
+}
 
 const persistConfig = {
     key: "GoodRoots",
@@ -37,14 +62,22 @@ const App = () => {
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                 <Router>
-                    <div>
+                    <Switch>
                         <Route path="/"
                             exact
                             render={(props) => <HomePage {...props} showNavigation />}
                         />
+                        <Route path="/mango"
+                            exact
+                            render={(props) => <MangoPage {...props} showNavigation />}
+                        />
                         <Route path="/checkout"
                             exact
                             render={(props) => <CheckoutPage {...props} data={checkoutPageData} />}
+                        />
+                        <Route path="/report"
+                            exact
+                            render={(props) => <ReportPage {...props} />}
                         />
                         <Route path="/confirmation"
                             exact
@@ -53,19 +86,17 @@ const App = () => {
 
                         <Route path="/error"
                             exact
-                            render={(props) => <ErrorPage {...props} />}
+                            render={(props) => <InfoPage {...props} message={errorMessage} />}
                         />
 
                         <Route path="/timeout"
                             exact
-                            render={(props) => <TimeoutPage {...props} />}
+                            render={(props) => <InfoPage {...props} message={timeoutMessage} />}
                         />
-
-                        {/* <Route path="/report"
-                            exact
-                            render={(props) => <ReportPage {...props} />}
-                        /> */}
-                    </div>
+                        <Route path="*"
+                            render={(props) => <InfoPage {...props} message={pageNotFoundMessage} />}
+                        /> 
+                    </Switch>
                 </Router>
             </PersistGate>
         </Provider>

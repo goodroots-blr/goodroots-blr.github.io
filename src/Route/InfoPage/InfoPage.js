@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import Layout from './../../Components/_UI/Layout/Layout';
-import './ErrorPage.scss';
+import './InfoPage.scss';
 
 
-const ErrorPage = (props) => {
+const InfoPage = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     })
 
     return (
         <Layout>
-            <div className="ErrorPage section-top-spacing-layout container">
+            <div className="InfoPage section-top-spacing-layout container">
                 <div className="svg-box">
                     <svg className="circular red-stroke">
                         <circle className="path" cx="75" cy="75" r="50" fill="none" strokeWidth="5" strokeMiterlimit="10" />
@@ -25,7 +25,7 @@ const ErrorPage = (props) => {
                     </svg>
                 </div>
                 <div>
-                    Opps, Something went wrong !! <br /> Please try again.
+                    {props.message()}
                 </div>
             </div>
         </Layout>
@@ -33,4 +33,4 @@ const ErrorPage = (props) => {
 };
 
 
-export default (ErrorPage);
+export default (InfoPage);
