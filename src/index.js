@@ -12,7 +12,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 import HomePage from './Route/HomePage/HomePage';
 import CheckoutPage from './Route/CheckoutPage/CheckoutPage';
 import ConfirmationPage from './Route/ConfirmationPage/ConfirmationPage';
-import MangoPage from './Route/MangoPage/MangoPage';
+// import MangoPage from './Route/MangoPage/MangoPage';
+import FruitPage from './Route/FruitPage/FruitPage';
 import InfoPage from './Route/InfoPage/InfoPage';
 import ReportPage from './Route/ReportPage/ReportPage';
 import rootReducer from './Containers/reducers';
@@ -67,10 +68,38 @@ const App = () => {
                             exact
                             render={(props) => <HomePage {...props} showNavigation />}
                         />
+
                         <Route path="/mango"
                             exact
-                            render={(props) => <MangoPage {...props} showNavigation />}
+                            render={(props) => <FruitPage {...props}
+                                klassName="mango"
+                                showNavigation />}
                         />
+
+                        <Route path="/pomegrante"
+                            exact
+                            render={(props) => <FruitPage {...props}
+                                isPrebook={true}
+                                klassName="pomegrante"
+                                showNavigation />}
+                        />
+
+                        <Route path="/guava"
+                            exact
+                            render={(props) => <FruitPage {...props}
+                                isPrebook={true}
+                                klassName="guava"
+                                showNavigation />}
+                        />
+
+                        <Route path="/dragon-fruit"
+                            exact
+                            render={(props) => <FruitPage {...props}
+                                isPrebook={true}
+                                klassName="dragon-fruit"
+                                showNavigation />}
+                        />
+
                         <Route path="/checkout"
                             exact
                             render={(props) => <CheckoutPage {...props} data={checkoutPageData} />}
@@ -95,7 +124,7 @@ const App = () => {
                         />
                         <Route path="*"
                             render={(props) => <InfoPage {...props} message={pageNotFoundMessage} />}
-                        /> 
+                        />
                     </Switch>
                 </Router>
             </PersistGate>

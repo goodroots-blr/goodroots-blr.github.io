@@ -66,7 +66,7 @@ const OurProducts = (props) => {
                 <div className="mobileOnly">
                     {getProductTile(MobileProductTile, availableProducts, handleClick)}
                 </div>
-                <div className="details"> 
+                {!props.isPrebook && <div className="details"> 
                     <table>
                         <thead>
                             <tr>
@@ -92,14 +92,14 @@ const OurProducts = (props) => {
                         </tbody>
                     </table>
                     <div className="disclaimer">* Weights shown above are approximate.</div>
-                </div>
+                </div>}
                 <p className="bulkOrderText">
                     {props.data.bulkOrderText()}
                 </p>
             </div>
-            <p className="delivery">
+            {!props.isPrebook && <p className="delivery">
                 Deliveries on <strong>Friday's</strong> and <strong>weekends</strong>
-            </p>
+            </p>}
             {toggle && <MobileOverlay>
                 <RadioButtons
                     itemClicked={itemClicked}

@@ -8,9 +8,9 @@ import Header from './../../_Section/Header/Header';
 import Footer from './../../_Section/Footer/Footer';
 import CopyrightFooter from './../../_Section/CopyrightFooter/CopyrightFooter';
 
-const Layout = ({ children, showNavigation = false }) => {
+const Layout = ({ children, showNavigation = false, klassName }) => {
     return (
-        <div>
+        <div className={klassName}>
             <Header data={companyRelatedData} showNavigation={showNavigation} />
             <div className="bodyarera">
                 {children}

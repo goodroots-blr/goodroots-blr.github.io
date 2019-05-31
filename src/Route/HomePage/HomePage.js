@@ -8,7 +8,7 @@ const HomePage = (props) => {
                 <ul>
                     <li>Mango</li>
                     <li>Guava</li>
-                    <li>Gragon Fruit</li>
+                    <li>Dragon Fruit</li>
                     <li>Pomegranate</li>
                 </ul>
             </main>
