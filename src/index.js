@@ -72,15 +72,15 @@ const App = () => {
                         <Route path="/mango"
                             exact
                             render={(props) => <FruitPage {...props}
-                                klassName="mango"
+                                type="mango"
                                 showNavigation />}
                         />
 
-                        <Route path="/pomegrante"
+                        <Route path="/pomegranate"
                             exact
                             render={(props) => <FruitPage {...props}
                                 isPrebook={true}
-                                klassName="pomegrante"
+                                type="pomegrante"
                                 showNavigation />}
                         />
 
@@ -88,7 +88,7 @@ const App = () => {
                             exact
                             render={(props) => <FruitPage {...props}
                                 isPrebook={true}
-                                klassName="guava"
+                                type="guava"
                                 showNavigation />}
                         />
 
@@ -96,7 +96,7 @@ const App = () => {
                             exact
                             render={(props) => <FruitPage {...props}
                                 isPrebook={true}
-                                klassName="dragon-fruit"
+                                type="dragon-fruit"
                                 showNavigation />}
                         />
 

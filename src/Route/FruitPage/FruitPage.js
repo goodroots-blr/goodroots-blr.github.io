@@ -21,7 +21,7 @@ import Givingback from './../../Components/_Section/Givingback/Givingback';
 import './FruitPage.scss';
 const FruitPage = (props) => {
     return (
-        <Layout showNavigation={props.showNavigation} klassName={props.klassName}>
+        <Layout showNavigation={props.showNavigation} klassName={props.type}>
             <HeroSlider slides={heroSliderData} />
             <main>
                 <AboutUs content={companyRelatedData.aboutUs} />
