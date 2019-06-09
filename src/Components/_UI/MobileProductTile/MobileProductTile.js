@@ -11,9 +11,9 @@ import './MobileProductTile.scss';
 const MobileProductTile = (props) => {
     const { id, parentId, label,
         category, img, cost, onClick,
-        onProductSelection, selectedProducts } = props;
+        onProductSelection, selectedProducts, type } = props;
 
-    const products = ourProductsData.products.filter((p) => p.id === parentId)[0];
+    const products = ourProductsData[type].products.filter((p) => p.id === parentId)[0];
     const variations = products.options.map((v) => ({
         "id": v.id,
         "label": v.label,

@@ -28,7 +28,9 @@ const FruitPage = (props) => {
                 <WhoWeAre data={whoWeAreData} />
                 <OurFarm data={ourFarmData} />
                 <WhyMango data={whyMangoData} />
-                <OurProducts data={ourProductsData} isPrebook={props.isPrebook} />
+                <OurProducts data={ourProductsData[props.type]} 
+                    type={props.type}
+                    isPrebook={props.isPrebook} />
                 <Givingback data={givingBackData} />
                 <Certificates data={certificatesData} />
             </main>

@@ -1,13 +1,123 @@
 import React from 'react';
-import img1 from "./../images/OurProducts/product-1.png";
-import img2 from "./../images/OurProducts/product-2.png";
-// import img3 from "./../images/OurProducts/product-3.png";
-// import img4 from "./../images/OurProducts/product-4.png";
-// import img5 from "./../images/OurProducts/product-5.png";
-// import img6 from "./../images/OurProducts/product-6.png";
+import mango1 from "./../images/OurProducts/mango-1.png";
+import mango2 from "./../images/OurProducts/mango-2.png";
+import guava1 from "./../images/OurProducts/guava-1.png";
 import data from './CompanyRelated';
 
-export default {
+const guavaProducts = [
+  {
+    "id": "p-1",
+    "title": "Guava Fruit",
+    "category": "Guava Fruit",
+    "options": [
+      {
+        "id": "p-1-1",
+        "parentId": "p-1",
+        "label": "1/2 dozen",
+        "price": "599",
+        "img": guava1,
+      },
+      {
+        "id": "p-1-2",
+        "parentId": "p-1",
+        "label": "1 dozen",
+        "price": "899",
+        "img": guava1,
+      },
+      {
+        "id": "p-1-3",
+        "parentId": "p-1",
+        "label": "2 dozen",
+        "price": "1599",
+        "img": guava1,
+      },
+      {
+        "id": "p-1-4",
+        "parentId": "p-1",
+        "label": "3 dozen",
+        "price": "2399",
+        "img": guava1,
+      }
+    ]
+  }
+]
+
+const mangoProducts = [
+  {
+    "id": "p-1",
+    "title": "Kensington Pride",
+    "category": "Kensington Pride",
+    "options": [
+      {
+        "id": "p-1-1",
+        "parentId": "p-1",
+        "label": "1/2 dozen",
+        "price": "599",
+        "img": mango2,
+      },
+      {
+        "id": "p-1-2",
+        "parentId": "p-1",
+        "label": "1 dozen",
+        "price": "899",
+        "img": mango2,
+      },
+      {
+        "id": "p-1-3",
+        "parentId": "p-1",
+        "label": "2 dozen",
+        "price": "1599",
+        "img": mango2,
+      },
+      {
+        "id": "p-1-4",
+        "parentId": "p-1",
+        "label": "3 dozen",
+        "price": "2399",
+        "img": mango2,
+      }
+    ]
+  },
+  {
+    "id": "p-2",
+    "title": "Alphonso",
+    "category": "Alphonso",
+    "options": [
+      {
+        "id": "p-2-1",
+        "parentId": "p-2",
+        "label": "1/2 dozen",
+        "price": "599",
+        "img": mango1,
+      },
+      {
+        "id": "p-2-2",
+        "parentId": "p-2",
+        "label": "1 dozen",
+        "price": "899",
+        "img": mango1,
+      },
+      {
+        "id": "p-2-3",
+        "parentId": "p-2",
+        "label": "2 dozen",
+        "price": "1599",
+        "img": mango1,
+      },
+      {
+        "id": "p-2-4",
+        "parentId": "p-2",
+        "label": "3 dozen",
+        "price": "2399",
+        "img": mango1,
+      }
+    ]
+  }
+]
+
+
+
+const mangoData = {
   "title": () => <><strong>Our</strong> products</>,
   "bulkOrderText": () => <>
     For bulk orders or for regular supply of our mangoes please write to us at &nbsp;
@@ -15,76 +125,25 @@ export default {
       {data.email}
     </u>
   </>,
-  "products": [
-    {
-      "id": "p-1",
-      "title": "Kensington Pride",
-      "category": "Kensington Pride",
-      "options": [
-        {
-          "id": "p-1-1",
-          "parentId": "p-1",
-          "label": "1/2 dozen",
-          "price": "599",
-          "img": img2,
-        },
-        {
-          "id": "p-1-2",
-          "parentId": "p-1",
-          "label": "1 dozen",
-          "price": "899",
-          "img": img2,
-        },
-        {
-          "id": "p-1-3",
-          "parentId": "p-1",
-          "label": "2 dozen",
-          "price": "1599",
-          "img": img2,
-        },
-        {
-          "id": "p-1-4",
-          "parentId": "p-1",
-          "label": "3 dozen",
-          "price": "2399",
-          "img": img2,
-        }
-      ]
-    },
-    {
-      "id": "p-2",
-      "title": "Alphonso",
-      "category": "Alphonso",
-      "options": [
-        {
-          "id": "p-2-1",
-          "parentId": "p-2",
-          "label": "1/2 dozen",
-          "price": "599",
-          "img": img1,
-        },
-        {
-          "id": "p-2-2",
-          "parentId": "p-2",
-          "label": "1 dozen",
-          "price": "899",
-          "img": img1,
-        },
-        {
-          "id": "p-2-3",
-          "parentId": "p-2",
-          "label": "2 dozen",
-          "price": "1599",
-          "img": img1,
-        },
-        {
-          "id": "p-2-4",
-          "parentId": "p-2",
-          "label": "3 dozen",
-          "price": "2399",
-          "img": img1,
-        }
-      ]
-    }
-  ]
+  "delivery": () => <>Deliveries on <strong>Friday's</strong> and <strong>weekends</strong></>,
+  "products": mangoProducts
 }
+
+const guavaData = {
+  "title": () => <><strong>Our</strong> products</>,
+  "bulkOrderText": () => <>
+    For bulk orders or for regular supply of our mangoes please write to us at &nbsp;
+    <u>
+      {data.email}
+    </u>
+  </>,
+  "delivery": () => <>Deliveries on <strong>Friday's</strong> and <strong>weekends</strong></>,
+  "products": guavaProducts
+}
+
+const ourProductsData = {
+  'mango': mangoData,
+  'guava': guavaData
+}
+
+export default ourProductsData

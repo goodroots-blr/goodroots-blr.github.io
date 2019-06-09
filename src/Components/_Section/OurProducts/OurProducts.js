@@ -8,12 +8,13 @@ import { connect } from 'react-redux';
 import ProductActions from './../../../Containers/ProductActions';
 import './OurProducts.scss';
 
-const getProductTile = (Component, availableProducts, handleClick) => {
+const getProductTile = (Component, availableProducts, handleClick, type) => {
     return (
         availableProducts.map((products) => {
             return (
                 <div className="products" key={products.id}>
                     <Component
+                        type={type}
                         id={products.options[1].id}
                         parentId={products.options[1].parentId}
                         label={products.options[1].label}
@@ -58,15 +59,16 @@ const OurProducts = (props) => {
                             getProductTile(
                                 ProductTile,
                                 availableProducts,
-                                handleClick
+                                handleClick,
+                                props.type
                             )
                         }
                     </div>
                 </div>
                 <div className="mobileOnly">
-                    {getProductTile(MobileProductTile, availableProducts, handleClick)}
+                    {getProductTile(MobileProductTile, availableProducts, handleClick, props.type)}
                 </div>
-                {!props.isPrebook && <div className="details"> 
+                {!props.isPrebook && <div className="details">
                     <table>
                         <thead>
                             <tr>
@@ -98,7 +100,7 @@ const OurProducts = (props) => {
                 </p>
             </div>
             {!props.isPrebook && <p className="delivery">
-                Deliveries on <strong>Friday's</strong> and <strong>weekends</strong>
+                {props.data.delivery()}
             </p>}
             {toggle && <MobileOverlay>
                 <RadioButtons
