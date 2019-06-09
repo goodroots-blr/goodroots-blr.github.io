@@ -22,7 +22,7 @@ import './FruitPage.scss';
 const FruitPage = (props) => {
     return (
         <Layout showNavigation={props.showNavigation} klassName={props.type}>
-            <HeroSlider slides={heroSliderData} />
+            <HeroSlider slides={heroSliderData[props.type]} />
             <main>
                 <AboutUs content={companyRelatedData.aboutUs} />
                 <WhoWeAre data={whoWeAreData} />

@@ -97,11 +97,11 @@
     border-top-color: $color;
   }
 }
-// $pomegrante-color: #a61a1d;
-// $pomegrante-color: #a90735;
-$pomegrante-color: #d2252e;
-.pomegrante {
-  @include update-css($pomegrante-color);
+// $pomegranate-color: #a61a1d;
+// $pomegranate-color: #a90735;
+$pomegranate-color: #d2252e;
+.pomegranate {
+  @include update-css($pomegranate-color);
 }
 
 // $guava-color: #9bc023;

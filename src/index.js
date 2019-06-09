@@ -80,7 +80,7 @@ const App = () => {
                             exact
                             render={(props) => <FruitPage {...props}
                                 isPrebook={true}
-                                type="pomegrante"
+                                type="pomegranate"
                                 showNavigation />}
                         />
 
