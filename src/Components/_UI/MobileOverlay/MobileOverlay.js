@@ -4,7 +4,7 @@ import './MobileOverlay.scss';
 
 const MobileOverlay = props => {
     return ReactDom.createPortal(
-        <div className={`MobileOverlay ${props.type}`}>
+        <div className={`MobileOverlay ${props.klassName}`}>
             {props.children}
         </div>,
         document.body

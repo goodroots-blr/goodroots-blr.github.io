@@ -102,7 +102,7 @@ const OurProducts = (props) => {
             {!props.isPrebook && <p className="delivery">
                 {props.data.delivery()}
             </p>}
-            {toggle && <MobileOverlay>
+            {toggle && <MobileOverlay klassName={props.type}>
                 <RadioButtons
                     itemClicked={itemClicked}
                     selectedProducts={props.selectedProducts}

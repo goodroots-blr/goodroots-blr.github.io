@@ -84,6 +84,16 @@
       }
     }
   }
+  .button.button-inverse {
+    background-color: $color;
+    &:hover {
+      background-color: transparent;
+      border-color: $color;
+    }
+  }
+  .RadioButtons .custom-radio input:checked ~ .checkmark {
+    background-color: $color;
+  }
   .main-title::before {
     background-color: $color;
   }
