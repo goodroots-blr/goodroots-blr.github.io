@@ -74,9 +74,8 @@ const ProductTile = (props) => {
                                 })}
                             </select>
                         </span>
-                        {/* <strong className="title">&nbsp;&nbsp;{label}</strong> */}
+
                     </div>
-                    {/* {cost && <span className="cost">{cost}</span>} */}
                     {productPrice && <span className="cost">{productPrice}</span>}
                 </div>
                 <Button title="Add to cart" onClick={handleAddToCart} />
