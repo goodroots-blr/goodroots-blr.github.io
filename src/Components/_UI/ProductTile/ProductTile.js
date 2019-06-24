@@ -63,7 +63,7 @@ const ProductTile = (props) => {
                     <div className="">
                         {category && <strong className="title">{category}</strong>}
                         <span className="custom-dropdown">
-                            <select onChange={handleOnchange}>
+                            <select disabled onChange={handleOnchange}>
                                 {variations.map((v, i) => {
                                     return (
                                         <option selected={contructSelection()[parentId] === i}
@@ -79,7 +79,7 @@ const ProductTile = (props) => {
                     {/* {cost && <span className="cost">{cost}</span>} */}
                     {productPrice && <span className="cost">{productPrice}</span>}
                 </div>
-                <Button title="Add to cart" onClick={handleAddToCart} />
+                <Button disabled="disabled" title="Add to cart" onClick={handleAddToCart} />
             </div>
         </div>
     );

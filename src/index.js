@@ -44,8 +44,12 @@ const App = () => {
                         />
                         <Route path="/checkout"
                             exact
-                            render={(props) => <CheckoutPage {...props} data={checkoutPageData} />}
+                            render={(props) => <ErrorPage {...props} />}
                         />
+                        {/* <Route path="/checkout"
+                            exact
+                            render={(props) => <CheckoutPage {...props} data={checkoutPageData} />}
+                        /> */}
                         <Route path="/confirmation"
                             exact
                             render={(props) => <ConfirmationPage {...props} />}

@@ -65,7 +65,7 @@ const MobileProductTile = (props) => {
                 <div className="productExtraInfo">
                     {/* <strong className="title">{label}</strong> */}
                     <span class="custom-dropdown">
-                        <select onChange={handleOnchange}>
+                        <select disabled onChange={handleOnchange}>
                             {variations.map((v, i) => {
                                 return (
                                     <option selected={contructSelection()[parentId] === i}
@@ -80,7 +80,7 @@ const MobileProductTile = (props) => {
                 <div className="cost">
                     <span>{productPrice}</span>
                 </div>
-                {<Button title="Add to cart" onClick={handleAddToCart} />}
+                {<Button title="Add to cart" onClick={handleAddToCart} disabled="disabled" />}
             </div>
         </div>
     );

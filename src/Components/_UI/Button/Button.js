@@ -6,8 +6,9 @@ const Button = props => {
         props.onClick()
     }
     return (
-        <button className={`button button-${props.type} button-${props.size}`}
-            onClick={handleClick}>
+        <button className={`button button-${props.type} button-${props.size} button-${props.disabled}`}
+            onClick={handleClick}
+            >
             {props.title}            
         </button>
     );
@@ -15,6 +16,7 @@ const Button = props => {
 
 Button.defaultProps = {
     type: "primary",
+    disabled: '',
     size: '',
     onClick: () => { }
 }

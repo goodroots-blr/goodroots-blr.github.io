@@ -52,6 +52,7 @@ const OurProducts = (props) => {
                 <h1 className="main-title">
                     {props.data.title()}
                 </h1>
+                <h3 className="hello">Mangoes season for this year is over. Try our other fruits.</h3>
                 <div className="desktopOnly">
                     <div className="desktop-products-container">
                         {
@@ -66,7 +67,7 @@ const OurProducts = (props) => {
                 <div className="mobileOnly">
                     {getProductTile(MobileProductTile, availableProducts, handleClick)}
                 </div>
-                <div className="details"> 
+                <div className="details">
                     <table>
                         <thead>
                             <tr>
@@ -98,7 +99,8 @@ const OurProducts = (props) => {
                 </p>
             </div>
             <p className="delivery">
-                Deliveries on <strong>Friday's</strong> and <strong>weekends</strong>
+                Mangoes season for this year is over. Try our other fruits.
+                {/* Deliveries on <strong>Friday's</strong> and <strong>weekends</strong> */}
             </p>
             {toggle && <MobileOverlay>
                 <RadioButtons

@@ -108,12 +108,12 @@ const Navigation = props => {
                         </li>
                     )
                 })}
-                <li>
+                {/* <li>
                     <RLink className="desktopOnly cart" to='/checkout'>
                         <i className="icon-shopping-cart"></i>
                         Cart
                     </RLink>
-                </li>
+                </li> */}
             </ul>
         </nav>
     );

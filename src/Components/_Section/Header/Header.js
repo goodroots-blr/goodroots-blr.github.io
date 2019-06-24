@@ -56,10 +56,10 @@ const Header = ({ data, showNavigation }) => {
                 <a href="/">
                     <img className="logo" src={Logo} alt="GoodRoots" />
                 </a>
-                <RLink className="mobileOnly cart" to='/checkout'>
+                {/* <RLink className="mobileOnly cart" to='/checkout'>
                     <i className="icon-shopping-cart"></i>
                     <span>cart</span>
-                </RLink>
+                </RLink> */}
                 {showNavigation && <Navigation toggle={toggle} />}
             </div>
         </header>

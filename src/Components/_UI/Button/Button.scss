@@ -58,6 +58,17 @@
       }
     }
 
+    &.button-disabled {
+      background: #ccc;
+      border-color: #ccc;
+      &:hover {
+        cursor: not-allowed;
+        color: #000;
+        background: #ccc;
+        border-color: #ccc;
+      }
+    }
+
     &:focus {
       outline: none;
     }

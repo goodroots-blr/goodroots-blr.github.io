@@ -32,8 +32,9 @@ const RadioButtons = (props) => {
 
     return (
         <div className="RadioButtons">
-            <h1 className="main-title small">Choose your mangoes</h1>
-            {
+            {/* <h1 className="main-title small">Choose your mangoes</h1> */}
+            <h3>Mangoes season for this year is over. Try our other fruits.</h3>
+            {/* {
                 props.availableItems.map((item, i) => {
                     return (
                         <section key={`section-${i}`}>
@@ -64,7 +65,7 @@ const RadioButtons = (props) => {
             }
             {
                 <Button type="inverse" title="Checkout now" onClick={onCheckoutClick} />
-            }
+            } */}
             <div className="close-btn" onClick={() => props.onCloseClick()}>x</div>
         </div>
     );
