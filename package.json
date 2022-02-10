@@ -21,7 +21,7 @@
     "release": "npm run build && git checkout master && sh ./build.sh"
   },
   "devDependencies": {
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "react-scripts": "latest"
   },
   "browserslist": [
